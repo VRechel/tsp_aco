@@ -1,11 +1,13 @@
 package main;
 
 import random.MersenneTwisterFast;
+import tsp.Landscape;
 
 public enum Configuration {
     instance;
     //Init
     public MersenneTwisterFast randomNumberGenerator = new MersenneTwisterFast(System.currentTimeMillis());
+    public Landscape landscape = new Landscape();
 
     //Parameters
     public static final double quality = 0.95;
