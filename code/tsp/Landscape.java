@@ -6,16 +6,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Viktor on 18.10.2017.
+ * @author Viktor
  */
 public class Landscape {
-    private Map<Pair<String,String>, Integer> neighbours = new HashMap<>();
+    private Map<Pair<City,City>, Integer> neighbours = new HashMap<>();
 
-    public void addNeighbour(String city,String neighbour, int distance){
+    public void addNeighbour(City city,City neighbour, int distance){
         neighbours.put(new Pair<>(city,neighbour),distance);
     }
 
-    public int getDistance(String city, String neighbour){
+    public int getDistance(City city, City neighbour){
         return neighbours.get(new Pair<>(city, neighbour));
     }
 }

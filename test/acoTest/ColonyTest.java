@@ -1,12 +1,13 @@
 package acoTest;
 
 import aco.Colony;
-import aco.PheromoneInitializationError;
+import aco.PheromoneInitializationException;
 import org.junit.Assert;
 import org.junit.Test;
+import tsp.City;
 
 /**
- * Created by Viktor on 18.10.2017.
+ * @author Viktor
  */
 public class ColonyTest {
     @Test
@@ -14,11 +15,11 @@ public class ColonyTest {
         Colony colony = new Colony();
         try {
             colony.initPheromone();
-        } catch (PheromoneInitializationError pheromoneInitializationError) {
-            pheromoneInitializationError.printStackTrace();
+        } catch (PheromoneInitializationException pe) {
+            pe.printStackTrace();
         }
-        colony.updatePheromones("A", "B", 5);
-        Assert.assertEquals(5, colony.getPheromones("A", "B"));
+        colony.updatePheromone(new City("A"), new City("B"), 5);
+        Assert.assertEquals(5, colony.getPheromones(new City("A"), new City("B")));
     }
 
     @Test
@@ -26,13 +27,13 @@ public class ColonyTest {
         Colony colony = new Colony();
         try {
             colony.initPheromone();
-        } catch (PheromoneInitializationError pheromoneInitializationError) {
-            pheromoneInitializationError.printStackTrace();
+        } catch (PheromoneInitializationException pe) {
+            pe.printStackTrace();
         }
         try{
             colony.initPheromone();
         }
-        catch(PheromoneInitializationError e){
+        catch(PheromoneInitializationException e){
             Assert.assertTrue(true);
         }
     }
@@ -42,8 +43,8 @@ public class ColonyTest {
         Colony colony = new Colony();
         try {
             colony.initPheromone();
-        } catch (PheromoneInitializationError pheromoneInitializationError) {
-            pheromoneInitializationError.printStackTrace();
+        } catch (PheromoneInitializationException pe) {
+            pe.printStackTrace();
         }
         Assert.assertTrue(colony.getInitialized());
     }
