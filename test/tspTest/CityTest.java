@@ -29,6 +29,12 @@ public class CityTest {
         }catch(VisitationException ve){
             ve.printStackTrace();
         }
-        Assert.assertTrue(city.getVisited());
+        try {
+            city.visit();
+        }catch(VisitationException ve){
+            Assert.assertTrue(true);
+            return;
+        }
+        Assert.fail();
     }
 }

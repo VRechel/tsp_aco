@@ -35,7 +35,9 @@ public class ColonyTest {
         }
         catch(PheromoneInitializationException e){
             Assert.assertTrue(true);
+            return;
         }
+        Assert.fail();
     }
 
     @Test
