@@ -1,4 +1,4 @@
-package hsqldb;
+package util;
 
 import main.Configuration;
 

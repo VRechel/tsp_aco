@@ -1,12 +1,14 @@
 package main;
 
-import random.MersenneTwisterFast;
+import util.HSQLDBManager;
+import util.MersenneTwisterFast;
 import tsp.Landscape;
 
 public enum Configuration {
     instance;
     //Init
-    public MersenneTwisterFast randomNumberGenerator = new MersenneTwisterFast(System.currentTimeMillis());
+    public final MersenneTwisterFast randomNumberGenerator = new MersenneTwisterFast(System.currentTimeMillis());
+    public final HSQLDBManager dbManager = HSQLDBManager.instance;
     public Landscape landscape = new Landscape();
 
     //Parameters
