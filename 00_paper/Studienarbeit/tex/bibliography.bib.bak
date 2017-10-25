@@ -1,0 +1,67 @@
+@article{Dapp2014,
+  author = {Thomas F. Dapp and Veronika Heine},
+  title  = {Big Data - Die ungezähmte Macht},
+  year   = {2014},
+  pages  = {1-39},
+  month  = mar,
+  url    = {https://www.deutsche-bank.de/fk/de/docs/Big_Data_die_ungezaehmte_Macht.pdf},
+}
+
+@article{Forest2014,
+  author = {Helena Forest and  Evelyn Foo and  Donya Rose and  Dmitriy Berenzon},
+  title  = {Big Data - How it can become a differentiator},
+  year   = {2014},
+  pages  = {1-28},
+  url    = {http://cib.db.com/docs_new/GTB_Big_Data_Whitepaper_(DB0324)_v2.pdf},
+}
+
+@article{Smith,
+  author = {Matthew Smith and  Christian Szongott and  Benjamin Henne and  Gabriele von Voigt},
+  title  = {Big Data Privacy Issues in Public Social Media},
+  pages  = {1-6},
+  url    = {https://www.chi.uni-hannover.de/uploads/tx_tkpublikationen/bdp.pdf},
+}
+
+@techreport{Jeske2013,
+  author      = {Martin Jeske and  Moritz Grüner and  Frank Wei},
+  title       = {Big Data in Logistics},
+  institution = {DHL Customer Solutions \& Innovation},
+  year        = {2013},
+  month       = dec,
+  pages       = {1-31},
+  url         = {https://delivering-tomorrow.com/wp-content/uploads/2015/08/CSI_Studie_BIG_DATA_FINAL-ONLINE.pdf},
+}
+
+@techreport{2012,
+  title       = {Top Ten Big Data Security and Privacy Challenges},
+  institution = {Cloud Security Alliance},
+  year        = {2012},
+  month       = nov,
+  url         = {http://www.isaca.org/Groups/Professional-English/big-data/GroupDocuments/Big_Data_Top_Ten_v1.pdf},
+}
+
+@electronic{Dutta2017,
+  author       = {Angsuman Dutta},
+  year         = {2017},
+  title        = {Big Data Security \& Internal Threat Detection - The Critical Role of Machine Learning},
+  language     = {English},
+  organization = {Pricchaa, Inc},
+  url          = {http://res.cdn.sys-con.com/session/3529/Angsuman_Dutta.pdf},
+}
+
+@manual{Reading,
+  title = {Reading List},
+  url   = {https://www.uschamberfoundation.org/sites/default/files/Big%20Data%20Security%20and%20Privacy.pdf},
+}
+
+@techreport{2013,
+  title       = {Big Data Analytics for Security Intelligence},
+  institution = {Cloud Security Alliance},
+  year        = {2013},
+  url         = {https://downloads.cloudsecurityalliance.org/initiatives/bdwg/Big_Data_Analytics_for_Security_Intelligence.pdf},
+}
+
+@misc{Pharma,
+  title = {Big Data for the Pharmaceutical Industry},
+  url   = {https://www.informatica.com/content/dam/informatica-com/global/amer/us/collateral/executive-brief/big-data-pharmaceutical-industry_ebook_2341.pdf},
+}
