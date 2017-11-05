@@ -2,7 +2,7 @@
 \defcounter {refsection}{0}\relax 
 \select@language {ngerman}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Abk\IeC {\"u}rzungsverzeichnis}{v}{chapter*.6}
+\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{v}{chapter*.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Abbildungsverzeichnis}{vi}{section*.7}
 \defcounter {refsection}{0}\relax 
@@ -10,30 +10,46 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Konzeptionierung}{2}{chapter.2}
+\contentsline {chapter}{\numberline {2}Stand der Technik \& Forschung}{2}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Architektur}{2}{section.2.1}
+\contentsline {section}{\numberline {2.1}Traveling Salesman Problem}{2}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}UML-Diagramm}{2}{section.2.2}
+\contentsline {section}{\numberline {2.2}Ant Colony Optimization}{2}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Ausgew\IeC {\"a}hlte Algorithmen}{2}{section.2.3}
+\contentsline {chapter}{\numberline {3}Konzeptionierung}{3}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Sensitivit\IeC {\"a}tsanalyse}{2}{section.2.4}
+\contentsline {section}{\numberline {3.1}Architektur}{3}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Implementierung}{3}{chapter.3}
+\contentsline {section}{\numberline {3.2}UML-Diagramm}{3}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Klassendiagramm}{3}{section.3.1}
+\contentsline {section}{\numberline {3.3}Umsetzung der SOLID-Prinzipien}{3}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Beschreibung der Implementierung}{3}{section.3.2}
+\contentsline {subsection}{\numberline {3.3.1}Single Responsibility}{3}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}ER-Diagramm}{3}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.2}Open / Closed}{3}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Komponenten-Diagramm}{3}{section.3.4}
+\contentsline {subsection}{\numberline {3.3.3}Liskov Substitution}{3}{subsection.3.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Paket-Diagramm}{3}{section.3.5}
+\contentsline {subsection}{\numberline {3.3.4}Interface Segregation}{3}{subsection.3.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Perforamce-Analyse und -Optimierung}{3}{section.3.6}
+\contentsline {subsection}{\numberline {3.3.5}Dependency Inversion}{3}{subsection.3.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Fazit}{4}{chapter.4}
+\contentsline {section}{\numberline {3.4}Ausgew\IeC {\"a}hlte Algorithmen}{3}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Literaturverzeichnis}{5}{section*.11}
+\contentsline {section}{\numberline {3.5}Sensitivit\IeC {\"a}tsanalyse}{3}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Implementierung}{4}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Klassendiagramm}{4}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Beschreibung der Implementierung}{4}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}ER-Diagramm}{4}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Komponenten-Diagramm}{4}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Paket-Diagramm}{4}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}Perforamce-Analyse und -Optimierung}{4}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Fazit}{5}{chapter.5}
