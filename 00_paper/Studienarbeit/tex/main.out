@@ -7,21 +7,29 @@
 \BOOKMARK [1][-]{section.2.2}{Ant Colony Optimization}{chapter.2}% 7
 \BOOKMARK [0][-]{chapter.3}{Konzeptionierung}{}% 8
 \BOOKMARK [1][-]{section.3.1}{Architektur}{chapter.3}% 9
-\BOOKMARK [1][-]{section.3.2}{UML-Diagramm}{chapter.3}% 10
-\BOOKMARK [1][-]{section.3.3}{Umsetzung der SOLID-Prinzipien}{chapter.3}% 11
-\BOOKMARK [2][-]{subsection.3.3.1}{Single Responsibility}{section.3.3}% 12
-\BOOKMARK [2][-]{subsection.3.3.2}{Open / Closed}{section.3.3}% 13
-\BOOKMARK [2][-]{subsection.3.3.3}{Liskov Substitution}{section.3.3}% 14
-\BOOKMARK [2][-]{subsection.3.3.4}{Interface Segregation}{section.3.3}% 15
-\BOOKMARK [2][-]{subsection.3.3.5}{Dependency Inversion}{section.3.3}% 16
-\BOOKMARK [1][-]{section.3.4}{Ausgew\344hlte Algorithmen}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.5}{Parameteranalyse}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.6}{Sensitivit\344tsanalyse}{chapter.3}% 19
-\BOOKMARK [0][-]{chapter.4}{Implementierung}{}% 20
-\BOOKMARK [1][-]{section.4.1}{Klassendiagramm}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.2}{Beschreibung der Implementierung}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.3}{ER-Diagramm}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.4}{Komponenten-Diagramm}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.5}{Paket-Diagramm}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.6}{Perforamce-Analyse und -Optimierung}{chapter.4}% 26
-\BOOKMARK [0][-]{chapter.5}{Fazit}{}% 27
+\BOOKMARK [2][-]{subsection.3.1.1}{Persistenz}{section.3.1}% 10
+\BOOKMARK [2][-]{subsection.3.1.2}{Applikation}{section.3.1}% 11
+\BOOKMARK [2][-]{subsection.3.1.3}{TSP}{section.3.1}% 12
+\BOOKMARK [2][-]{subsection.3.1.4}{ACO}{section.3.1}% 13
+\BOOKMARK [1][-]{section.3.2}{UML-Diagramm}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.3}{Ausgew\344hlte Algorithmen}{chapter.3}% 15
+\BOOKMARK [2][-]{subsection.3.3.1}{Ant - iteration\(\)}{section.3.3}% 16
+\BOOKMARK [2][-]{subsection.3.3.2}{Colony - killAnt\(\)}{section.3.3}% 17
+\BOOKMARK [2][-]{subsection.3.3.3}{Colony - updatePheromone\(\)}{section.3.3}% 18
+\BOOKMARK [1][-]{section.3.4}{Parameteranalyse}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.5}{Umsetzung der SOLID-Prinzipien}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.5.1}{Single Responsibility}{section.3.5}% 21
+\BOOKMARK [2][-]{subsection.3.5.2}{Open / Closed}{section.3.5}% 22
+\BOOKMARK [2][-]{subsection.3.5.3}{Liskov Substitution}{section.3.5}% 23
+\BOOKMARK [2][-]{subsection.3.5.4}{Interface Segregation}{section.3.5}% 24
+\BOOKMARK [2][-]{subsection.3.5.5}{Dependency Inversion}{section.3.5}% 25
+\BOOKMARK [1][-]{section.3.6}{Sensitivit\344tsanalyse}{chapter.3}% 26
+\BOOKMARK [0][-]{chapter.4}{Implementierung}{}% 27
+\BOOKMARK [1][-]{section.4.1}{Klassendiagramm}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.2}{Beschreibung der Implementierung}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.3}{ER-Diagramm}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.4}{Komponenten-Diagramm}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.5}{Paket-Diagramm}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.6}{Perforamce-Analyse und -Optimierung}{chapter.4}% 33
+\BOOKMARK [0][-]{chapter.5}{Fazit}{}% 34
+\BOOKMARK [0][-]{section*.13}{Literaturverzeichnis}{}% 35

@@ -2,7 +2,7 @@
 \providecommand\hyper@newdestlabel[2]{}
 \providecommand*\new@tpo@label[2]{}
 \bibstyle{biblatex}
-\bibdata{main-blx,bibliography}
+\bibdata{main-blx,bib/bibliography}
 \citation{biblatex-control}
 \abx@aux@sortscheme{nty}
 \abx@aux@refcontext{nty/global/}
@@ -31,9 +31,13 @@
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\select@language{ngerman}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\select@language{ngerman}}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\select@language{ngerman}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{v}{chapter*.6}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{Abbildungsverzeichnis}{vi}{section*.7}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{Tabellenverzeichnis}{vii}{section*.9}}
+\newacro{ACO}[\AC@hyperlink{ACO}{ACO}]{Ant Colony Optimization oder Ameisenalgorithmus}
+\newacro{TSP}[\AC@hyperlink{TSP}{TSP}]{Traveling Salesman Problem}
+\newacro{UML}[\AC@hyperlink{UML}{UML}]{Unified Modeling Language}
+\newacro{ER}[\AC@hyperlink{ER}{ER}]{Entity Relationship}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{vi}{chapter*.6}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{Abbildungsverzeichnis}{vii}{section*.7}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{Tabellenverzeichnis}{viii}{section*.9}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10\p@ }}
@@ -46,30 +50,47 @@
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {3.1}Architektur}{3}{section.3.1}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {3.2}UML-Diagramm}{3}{section.3.2}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {3.3}Umsetzung der SOLID-Prinzipien}{3}{section.3.3}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Single Responsibility}{3}{subsection.3.3.1}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Open / Closed}{3}{subsection.3.3.2}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Liskov Substitution}{3}{subsection.3.3.3}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Interface Segregation}{3}{subsection.3.3.4}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.5}Dependency Inversion}{3}{subsection.3.3.5}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {3.4}Ausgew\IeC {\"a}hlte Algorithmen}{3}{section.3.4}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {3.5}Parameteranalyse}{3}{section.3.5}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {3.6}Sensitivit\IeC {\"a}tsanalyse}{3}{section.3.6}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {4}Implementierung}{4}{chapter.4}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Persistenz}{3}{subsection.3.1.1}}
+\citation{bibid}
+\abx@aux@cite{bibid}
+\abx@aux@segm{0}{0}{bibid}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Applikation}{4}{subsection.3.1.2}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}TSP}{4}{subsection.3.1.3}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}ACO}{4}{subsection.3.1.4}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {3.2}UML-Diagramm}{4}{section.3.2}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces UML-Modellierung des Architekturentwurfs\relax }}{5}{figure.caption.11}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{uml_class}{{\relax 3.1}{5}{UML-Modellierung des Architekturentwurfs\relax }{figure.caption.11}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {3.3}Ausgew\IeC {\"a}hlte Algorithmen}{5}{section.3.3}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Ant - iteration()}{5}{subsection.3.3.1}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Colony - killAnt()}{5}{subsection.3.3.2}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Colony - updatePheromone()}{6}{subsection.3.3.3}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {3.4}Parameteranalyse}{6}{section.3.4}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {3.5}Umsetzung der SOLID-Prinzipien}{6}{section.3.5}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Single Responsibility}{6}{subsection.3.5.1}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Open / Closed}{6}{subsection.3.5.2}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Liskov Substitution}{6}{subsection.3.5.3}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}Interface Segregation}{6}{subsection.3.5.4}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.5}Dependency Inversion}{6}{subsection.3.5.5}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {3.6}Sensitivit\IeC {\"a}tsanalyse}{6}{section.3.6}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {4}Implementierung}{7}{chapter.4}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.1}Klassendiagramm}{4}{section.4.1}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.2}Beschreibung der Implementierung}{4}{section.4.2}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.3}ER-Diagramm}{4}{section.4.3}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.4}Komponenten-Diagramm}{4}{section.4.4}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.5}Paket-Diagramm}{4}{section.4.5}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.6}Perforamce-Analyse und -Optimierung}{4}{section.4.6}}
-\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Modellierung der Software-Architektur als Paketdiagramm. Zu sehen ist der logische Aufbau der Software, sowie der Zusammenhang der einzelnen Pakete.\relax }}{5}{figure.caption.11}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.1}Klassendiagramm}{7}{section.4.1}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.2}Beschreibung der Implementierung}{7}{section.4.2}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.3}ER-Diagramm}{7}{section.4.3}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.4}Komponenten-Diagramm}{7}{section.4.4}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.5}Paket-Diagramm}{7}{section.4.5}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {4.6}Perforamce-Analyse und -Optimierung}{7}{section.4.6}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Modellierung der Software-Architektur als Paketdiagramm. Zu sehen ist der logische Aufbau der Software, sowie der Zusammenhang der einzelnen Pakete.\relax }}{8}{figure.caption.12}}
 \citation{*}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {5}Fazit}{6}{chapter.5}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{\numberline {5}Fazit}{9}{chapter.5}}
 \@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\defcounter {refsection}{0}\relax }\@writefile{lot}{\addvspace {10\p@ }}
+\abx@aux@refcontextdefaultsdone
+\abx@aux@defaultrefcontext{0}{B.Booba2014}{nty/global/}
+\abx@aux@defaultrefcontext{0}{Williamson2014}{nty/global/}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {chapter}{Literaturverzeichnis}{10}{section*.13}}
 \global\@namedef{scr@dte@chapter@lastmaxnumwidth}{12.14694pt}
 \global\@namedef{scr@dte@section@lastmaxnumwidth}{19.70898pt}
 \global\@namedef{scr@dte@subsection@lastmaxnumwidth}{28.84563pt}

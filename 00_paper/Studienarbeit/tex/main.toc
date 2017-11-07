@@ -2,11 +2,11 @@
 \defcounter {refsection}{0}\relax 
 \select@language {ngerman}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{v}{chapter*.6}
+\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{vi}{chapter*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Abbildungsverzeichnis}{vi}{section*.7}
+\contentsline {chapter}{Abbildungsverzeichnis}{vii}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Tabellenverzeichnis}{vii}{section*.9}
+\contentsline {chapter}{Tabellenverzeichnis}{viii}{section*.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -20,38 +20,54 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Architektur}{3}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}UML-Diagramm}{3}{section.3.2}
+\contentsline {subsection}{\numberline {3.1.1}Persistenz}{3}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Umsetzung der SOLID-Prinzipien}{3}{section.3.3}
+\contentsline {subsection}{\numberline {3.1.2}Applikation}{4}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Single Responsibility}{3}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.1.3}TSP}{4}{subsection.3.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Open / Closed}{3}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.1.4}ACO}{4}{subsection.3.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}Liskov Substitution}{3}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.2}UML-Diagramm}{4}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.4}Interface Segregation}{3}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.3}Ausgew\IeC {\"a}hlte Algorithmen}{5}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.5}Dependency Inversion}{3}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.1}Ant - iteration()}{5}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Ausgew\IeC {\"a}hlte Algorithmen}{3}{section.3.4}
+\contentsline {subsection}{\numberline {3.3.2}Colony - killAnt()}{5}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Parameteranalyse}{3}{section.3.5}
+\contentsline {subsection}{\numberline {3.3.3}Colony - updatePheromone()}{6}{subsection.3.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Sensitivit\IeC {\"a}tsanalyse}{3}{section.3.6}
+\contentsline {section}{\numberline {3.4}Parameteranalyse}{6}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Implementierung}{4}{chapter.4}
+\contentsline {section}{\numberline {3.5}Umsetzung der SOLID-Prinzipien}{6}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Klassendiagramm}{4}{section.4.1}
+\contentsline {subsection}{\numberline {3.5.1}Single Responsibility}{6}{subsection.3.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Beschreibung der Implementierung}{4}{section.4.2}
+\contentsline {subsection}{\numberline {3.5.2}Open / Closed}{6}{subsection.3.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}ER-Diagramm}{4}{section.4.3}
+\contentsline {subsection}{\numberline {3.5.3}Liskov Substitution}{6}{subsection.3.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Komponenten-Diagramm}{4}{section.4.4}
+\contentsline {subsection}{\numberline {3.5.4}Interface Segregation}{6}{subsection.3.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Paket-Diagramm}{4}{section.4.5}
+\contentsline {subsection}{\numberline {3.5.5}Dependency Inversion}{6}{subsection.3.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Perforamce-Analyse und -Optimierung}{4}{section.4.6}
+\contentsline {section}{\numberline {3.6}Sensitivit\IeC {\"a}tsanalyse}{6}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Fazit}{6}{chapter.5}
+\contentsline {chapter}{\numberline {4}Implementierung}{7}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Klassendiagramm}{7}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Beschreibung der Implementierung}{7}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}ER-Diagramm}{7}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Komponenten-Diagramm}{7}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Paket-Diagramm}{7}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}Perforamce-Analyse und -Optimierung}{7}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Fazit}{9}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Literaturverzeichnis}{10}{section*.13}

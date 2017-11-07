@@ -1,3 +1,23 @@
 % Encoding: UTF-8
 
+@Misc{Williamson2014,
+  author       = {David P. Williamson},
+  title        = {The Traveling Salesman Problem: An Overview},
+  year         = {2014},
+  date         = {2014-01-21},
+  language     = {English},
+  howpublished = {Presentation},
+  organization = {Cornell University Ebay Research},
+}
+
+@Article{B.Booba2014,
+  author   = {B.Booba; Dr.T.V.Gopal},
+  title    = {Comparison of Ant Colony Optimization \& Particle Swarm Optimization In Grid Scheduling},
+  journal  = {Australian Journal of Basic and Applied Sciences},
+  year     = {2014},
+  date     = {2014-06-08},
+  language = {English},
+  pages    = {1-6},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}

@@ -16,5 +16,63 @@
   {}
 \endgroup
 
-\sortlist[entry]{nty/global/}\endsortlist
+\sortlist[entry]{nty/global/}
+  \entry{B.Booba2014}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GBBDTV}{%
+         family={Gopal},
+         familyi={G\bibinitperiod},
+         given={B.\bibnamedelima Booba; Dr. T.\bibnamedelima V.},
+         giveni={B\bibinitperiod\bibinitdelim B\bibinitperiod D\bibinitperiod
+  T\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {English}%
+    }
+    \strng{namehash}{GBBDTV1}
+    \strng{fullhash}{GBBDTV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{Comparison of Ant Colony Optimization \& Particle Swarm
+  Optimization In Grid Scheduling}
+    \field{journaltitle}{Australian Journal of Basic and Applied Sciences}
+    \field{day}{08}
+    \field{month}{06}
+    \field{year}{2014}
+    \warn{\item Can't use 'date' + 'year'}
+  \endentry
+
+  \entry{Williamson2014}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=WDP}{%
+         family={Williamson},
+         familyi={W\bibinitperiod},
+         given={David\bibnamedelima P.},
+         giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {English}%
+    }
+    \list{organization}{1}{%
+      {Cornell University Ebay Research}%
+    }
+    \strng{namehash}{WDP1}
+    \strng{fullhash}{WDP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{howpublished}{Presentation}
+    \field{title}{The Traveling Salesman Problem: An Overview}
+    \field{day}{21}
+    \field{month}{01}
+    \field{year}{2014}
+    \warn{\item Can't use 'date' + 'year'}
+  \endentry
+\endsortlist
 \endinput
