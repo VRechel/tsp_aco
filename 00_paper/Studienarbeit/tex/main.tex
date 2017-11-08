@@ -7,15 +7,12 @@
 \addbibresource{bib/bibliography.bib}
 
 \begin{document}
-\pagestyle{fancy}
-
 \frontmatter
 \input{prefix/title.tex}
 \input{prefix/abstract.tex}
 \input{prefix/abstractDE.tex}
 
 \tableofcontents
-\input{header_footer.tex}
 
 \input{prefix/abbreviation.tex}
 \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
@@ -24,16 +21,13 @@
 \phantomsection
 \addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
 \listoffigures
-\input{header_footer.tex}
 
 \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{Tabellenverzeichnis}
 \listoftables
-\input{header_footer.tex}
 
 \mainmatter
-
 \input{content/00_einleitung.tex}
 \input{content/01_allgemeines.tex}
 \input{content/02_konzeptionierung.tex}

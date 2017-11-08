@@ -1,3 +1,29 @@
-\section{Parameteranalyse}{
-
+\section{Parameterbeschreibung}{
+	Die Berechnung der optimalen Wegstrecke läuft über eine Wahrscheinlichkeitsrechnung, die jeweils von den einzelnen Threads bzw. Ameisen in jeder Stadt aufs neue durchgeführt wird.
+	Dabei werden die Wahrscheinlichkeiten nach folgender Formel berechnet:
+	
+	\begin{center}
+		\begin{equation}
+			p(s_{ij}) = \frac{\tau _{ij}^{\alpha } * \eta _{ij}^{\beta}}{\sum_{x \in  N}^{ } \tau _{ix}^{\alpha }* \eta _{ix}^{\beta}}
+		\end{equation}
+		\captionof{figure}{Formel zur Berechnung der Wahrscheinlichkeit bei der Streckenauswahl.}
+		
+		\begin{conditions*}
+			s & Strecke zwischen zwei Städten\\
+			i & Quellestadt \\
+			j & Zielstadt \\
+			N & Menge der von Stadt i aus erreichbaren Städte j\\
+			$\tau$ & Pheromonwert auf der Strecke i-j\\
+			$\eta$ & Heuristischer Faktor für die Strecke i-j\\
+			$\alpha$, $\beta$ & Innerhalb der Applikation festgelegte Parameter\\
+		\end{conditions*}
+	\end{center}
+	
+	\subsection{Alpha - $\alpha$}
+	
+	\subsection{Beta - $\beta$}
+	
+	\subsection{Tau - $\tau$}
+	
+	\subsection{Eta - $\eta$}
 }
