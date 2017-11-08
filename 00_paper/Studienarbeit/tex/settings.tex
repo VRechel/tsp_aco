@@ -29,3 +29,8 @@
 \renewcommand*\chapterpagestyle{fancy}
 
 \input{header_footer.tex}
+
+\newenvironment{conditions*}
+{\par\vspace{\abovedisplayskip}\noindent
+	\tabularx{\columnwidth}{>{}l<{} @{\ : } >{\raggedright\arraybackslash}X}}
+{\endtabularx\par\vspace{\belowdisplayskip}}

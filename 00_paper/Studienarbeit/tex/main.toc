@@ -6,13 +6,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline Zusammenfassung}{iii}{chapter*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Abk\IeC {\"u}rzungsverzeichnis}{vi}{chapter*.6}
+\contentsline {chapter}{\nonumberline Abk\IeC {\"u}rzungsverzeichnis}{vi}{chapter*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{vi}{chapter*.6}
+\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{vi}{chapter*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Abbildungsverzeichnis}{vii}{section*.7}
+\contentsline {chapter}{Abbildungsverzeichnis}{vii}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Tabellenverzeichnis}{viii}{section*.9}
+\contentsline {chapter}{Tabellenverzeichnis}{viii}{section*.10}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -38,56 +38,56 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.3}TSP}{4}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}ACO}{4}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}ACO}{5}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}UML-Diagramm}{5}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Ausgew\IeC {\"a}hlte Algorithmen}{6}{section.3.4}
+\contentsline {section}{\numberline {3.4}Umsetzung der SOLID-Prinzipien}{6}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.1}Ant - iteration()}{6}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.1}Single Responsibility}{6}{subsection.3.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.2}Colony - killAnt()}{6}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Open / Closed}{6}{subsection.3.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.3}Colony - updatePheromone()}{7}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.3}Liskov Substitution}{7}{subsection.3.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Umsetzung der SOLID-Prinzipien}{7}{section.3.5}
+\contentsline {subsection}{\numberline {3.4.4}Interface Segregation}{7}{subsection.3.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.1}Single Responsibility}{7}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.4.5}Dependency Inversion}{7}{subsection.3.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.2}Open / Closed}{7}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.5}Parameterbeschreibung}{8}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.3}Liskov Substitution}{7}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.1}Alpha - $\alpha $}{8}{subsection.3.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.4}Interface Segregation}{7}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.2}Beta - $\beta $}{8}{subsection.3.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.5}Dependency Inversion}{7}{subsection.3.5.5}
+\contentsline {subsection}{\numberline {3.5.3}Tau - $\tau $}{8}{subsection.3.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Parameterbeschreibung}{7}{section.3.6}
+\contentsline {subsection}{\numberline {3.5.4}Eta - $\eta $}{8}{subsection.3.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.1}Alpha - $\alpha $}{8}{subsection.3.6.1}
+\contentsline {section}{\numberline {3.6}Ausgew\IeC {\"a}hlte Algorithmen}{8}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.2}Beta - $\beta $}{8}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.1}Ant - iteration()}{9}{subsection.3.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.3}Tau - $\tau $}{8}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.2}Colony - killAnt()}{9}{subsection.3.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.4}Eta - $\eta $}{8}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.6.3}Colony - updatePheromone()}{9}{subsection.3.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.7}Sensitivit\IeC {\"a}tsanalyse}{8}{section.3.7}
+\contentsline {section}{\numberline {3.7}Sensitivit\IeC {\"a}tsanalyse}{9}{section.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Implementierung}{9}{chapter.4}
+\contentsline {chapter}{\numberline {4}Implementierung}{10}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Klassendiagramm}{9}{section.4.1}
+\contentsline {section}{\numberline {4.1}Klassendiagramm}{10}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Beschreibung der Implementierung}{9}{section.4.2}
+\contentsline {section}{\numberline {4.2}Beschreibung der Implementierung}{10}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}ER-Diagramm}{9}{section.4.3}
+\contentsline {section}{\numberline {4.3}ER-Diagramm}{10}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Komponenten-Diagramm}{9}{section.4.4}
+\contentsline {section}{\numberline {4.4}Komponenten-Diagramm}{10}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Paket-Diagramm}{9}{section.4.5}
+\contentsline {section}{\numberline {4.5}Paket-Diagramm}{10}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Perforamce-Analyse und -Optimierung}{9}{section.4.6}
+\contentsline {section}{\numberline {4.6}Perforamce-Analyse und -Optimierung}{10}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Fazit}{10}{chapter.5}
+\contentsline {chapter}{\numberline {5}Fazit}{11}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Literaturverzeichnis}{11}{section*.12}
+\contentsline {chapter}{Literaturverzeichnis}{12}{section*.13}
