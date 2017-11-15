@@ -1,9 +1,59 @@
 \section{Software Engineering}{
-Innerhalb einer Software-Entwicklung - wie im vorliegenden Fall - gilt es immer zuerst ein gründliches Requirements Engineering 
+Innerhalb einer Software-Entwicklung - wie im vorliegenden Fall - gilt es immer zuerst eine gründliche Anforderungsanalyse durchzuführen, um sicherzustellen dass alle Anforderungen erfasst und dokumentiert sind. Ebenso müssen eventuelle unbewusste Anforderungen ebenso herausgefunden werden, wie mögliche Begeisterungsfaktoren.
+
+Um eine zeitliche Einschätzung durchführen zu können bietet sich das Constructive Cost Modell an - kurz COCOMO. Hierbei werden der Aufwand der Implementierung geschätzt und eine ungefähre Anzahl der Codezeilen angegeben. Aus dieser Zahl kann dann per Formel eine Implementierungslaufzeit errechnet werden. 
 
 	\subsection{Requirements Engineering}
+	Zu den grundsätzlichen Anforderungen gehören eine performante Umsetzung einer Softwarelösung des TSP, der Verwendung einer effizienten Implementierung des ACO und die Entwicklung einer durchdachten Architektur.
+	Diese generellen Eigenschaften lassen sich aufteilen in genauer spezifizierte Anforderungen, sowohl aus funktionaler Sicht als auch aus nicht-funktionaler Sicht.
 	
+	Die funktionalen Anforderungen wären somit:
+	\begin{itemize}
+		\item Möglichkeit das TSP lösen zu können
+		\item Lösungsweg wird mit ACO berechnet
+	\end{itemize}
+	Diese Arbeit beschränkt sich somit rein mit der Thematik das TSP möglichst effizient und performant zu lösen. Allerdings gibt es hier auch Einschränkungen betreffend auf die Umsetzung in Form der nicht-funktionalen Anforderungen, die wie folgt lauten:		
+	\begin{itemize}
+		\item Beachtung der ökonomischen Aspekte
+		\item Objektorientierte Software
+		\item Schnittstelle zum Erzeugen von Log-Daten
+		\item Schnittstelle zum Einlesen von Problemdaten
+		\item Berücksichtigung der SOLID-Prinzipien
+		\item Auswahl leistungsfähiger Datenstrukturen
+		\item Lesbarer, dokumentierter Sourcecode
+		\item Lösungsqualität von 95%
+		\item Programmiersprache: Java 8
+		\item Zugelassene externe Bibliothek: JUnit
+	\end{itemize}
 	
 	\subsection{COCOMO}
+	Um eine wirtschaftliche Analyse in Bezug auf das vorliegende Softwareprojekt durchführen zu können, wurde das COCOMO angewendet. Hierbei wurde die Funktionspunkt-Methode angewendet, da ein Implizieren der Anzahl der Codezeilen nicht verlässlich möglich ist. Hierbei wurden die verschiedenen Teile der Architektur nach der Komplexität bewertet und aufgeteilt. Daraus ergab sich folgende Liste:
+	\begin{table}[H]
+		\footnotesize
+		\setstretch{0.5}
+	\begin{tabular}{lcc}
+		Komponente & Komplexität & Funktionspunkte \\
+		Externe Eingaben & Niedrig & 3 \\
+		Externe Ausgaben & Niedrig & 4 \\
+		Externe Anfragen & Hoch & 6 \\
+		Externe Schnittstellen & Niedrig & 5\\
+		Interne Logiken & Mittel & 10\\
+	\end{tabular}
+	\caption{Komplexitätseinschätzung des Projekts im Rahmen einer Abschätzung der Funktionspunkte}
+	\end{table}
+	Somit ergeben sich als Summe der Anforderungen an die Software 28 Funktionspunkte. In der verwendeten Programmiersprache Java entspricht ein Funktionspunkt im Durchschnitt ca. 53 Zeilen Code. Somit ergibt sich als Zeilenanzahl eine erwartete Menge von 1484 Zeilen.
 	
+	Mithilfe der "COCOMO II"-Formel lässt sich aus der Anzahl der Zeilen eine Arbeitsaufwand berechnen:
+	\begin{equation}\label{cocomo}
+	Aufwand = C * (Größe)^{Prozessfaktoren} * M
+	\end{equation}
+	\begin{conditions*}
+		C & Konstante\\
+		Größe & Anzahl der Codezeilen\\
+		Prozessfaktoren & Kombinierte Prozessfaktoren\\
+		M & Leistungsfaktoren\\
+	\end{conditions*}
+	\myequations{COCOMO II-Formel zur Berechnung der Arbeitsaufwände bei der Entwicklung \& Implementierung eines Software-Projekts}
+
+	Nach dieser Formel beträgt der zeitliche Aufwand für dieses Projekt ca. 2.5 Monate. Diese Zahl ist entsprechend einer Dauer eines Semesters von drei Monaten nachvollziehbar. Somit lässt sich auch sagen, dass das Projekt durchführbar ist und auch einen ausreichen großen Anspruch besitzt, um eine zu kurze Beschäftigung zu verhindern.
 }

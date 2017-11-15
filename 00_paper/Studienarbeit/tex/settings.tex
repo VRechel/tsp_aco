@@ -18,6 +18,11 @@
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{etoolbox}
+\usepackage{setspace}
+\usepackage{tocloft}
+\renewcommand{\cftaftertoctitle}{\thispagestyle{fancy}}
+\renewcommand{\cftafterloftitle}{\thispagestyle{fancy}}
+\renewcommand{\cftafterlottitle}{\thispagestyle{fancy}}
 
 \renewcommand*{\headfont}{\normalfont}
 \renewcommand*{\multicitedelim}{\addsemicolon\space}
@@ -25,12 +30,26 @@
 \renewcommand{\headsep}{15pt}
 
 \setlength{\parskip}{1.5ex}
+\setlength{\belowdisplayskip}{0.5pt}
+\setlength{\abovedisplayskip}{0.5pt}
 
 \renewcommand*\chapterpagestyle{fancy}
 
 \input{header_footer.tex}
 
 \newenvironment{conditions*}
-{\par\vspace{\abovedisplayskip}\noindent
-	\tabularx{\columnwidth}{>{}l<{} @{\ : } >{\raggedright\arraybackslash}X}}
-{\endtabularx\par\vspace{\belowdisplayskip}}
+{\tabularx{\columnwidth}{>{}l<{} @{\ : } >{\raggedright\arraybackslash}X}}{}
+
+%\newenvironment{conditions*}
+%{\par\vspace{\abovedisplayskip}\noindent
+%	\tabularx{\columnwidth}{>{}l<{} @{\ : } >{\raggedright\arraybackslash}X}}
+%{\endtabularx\par\vspace{\belowdisplayskip}}
+
+\newcommand{\listequationsname}{\Large{List of Equations}}
+\newlistof{myequations}{equ}{\listequationsname}
+\newcommand{\myequations}[1]{
+	\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}
+}
+\setlength{\cftmyequationsnumwidth}{2.3em}
+\setlength{\cftmyequationsindent}{1.5em}
+\renewcommand{\cftafterequtitle}{\thispagestyle{fancy}} 

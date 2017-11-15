@@ -1,45 +1,49 @@
 \BOOKMARK [0][-]{chapter*.3}{Abstract}{}% 1
 \BOOKMARK [0][-]{chapter*.4}{Zusammenfassung}{}% 2
-\BOOKMARK [0][-]{chapter*.7}{Abk\374rzungsverzeichnis}{}% 3
-\BOOKMARK [0][-]{chapter*.7}{Abk\374rzungsverzeichnis}{}% 4
-\BOOKMARK [0][-]{section*.8}{Abbildungsverzeichnis}{}% 5
-\BOOKMARK [0][-]{section*.10}{Tabellenverzeichnis}{}% 6
-\BOOKMARK [0][-]{chapter.1}{Einleitung}{}% 7
-\BOOKMARK [0][-]{chapter.2}{Stand der Technik \046 Forschung}{}% 8
-\BOOKMARK [1][-]{section.2.1}{Traveling Salesman Problem}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.2}{Ant Colony Optimization}{chapter.2}% 10
-\BOOKMARK [0][-]{chapter.3}{Konzeptionierung}{}% 11
-\BOOKMARK [1][-]{section.3.1}{Software Engineering}{chapter.3}% 12
-\BOOKMARK [2][-]{subsection.3.1.1}{Requirements Engineering}{section.3.1}% 13
-\BOOKMARK [2][-]{subsection.3.1.2}{COCOMO}{section.3.1}% 14
-\BOOKMARK [1][-]{section.3.2}{Architektur}{chapter.3}% 15
-\BOOKMARK [2][-]{subsection.3.2.1}{Persistenz}{section.3.2}% 16
-\BOOKMARK [2][-]{subsection.3.2.2}{Applikation}{section.3.2}% 17
-\BOOKMARK [2][-]{subsection.3.2.3}{TSP}{section.3.2}% 18
-\BOOKMARK [2][-]{subsection.3.2.4}{ACO}{section.3.2}% 19
-\BOOKMARK [1][-]{section.3.3}{UML-Diagramm}{chapter.3}% 20
-\BOOKMARK [1][-]{section.3.4}{Umsetzung der SOLID-Prinzipien}{chapter.3}% 21
-\BOOKMARK [2][-]{subsection.3.4.1}{Single Responsibility}{section.3.4}% 22
-\BOOKMARK [2][-]{subsection.3.4.2}{Open / Closed}{section.3.4}% 23
-\BOOKMARK [2][-]{subsection.3.4.3}{Liskov Substitution}{section.3.4}% 24
-\BOOKMARK [2][-]{subsection.3.4.4}{Interface Segregation}{section.3.4}% 25
-\BOOKMARK [2][-]{subsection.3.4.5}{Dependency Inversion}{section.3.4}% 26
-\BOOKMARK [1][-]{section.3.5}{Parameterbeschreibung}{chapter.3}% 27
-\BOOKMARK [2][-]{subsection.3.5.1}{Alpha - }{section.3.5}% 28
-\BOOKMARK [2][-]{subsection.3.5.2}{Beta - }{section.3.5}% 29
-\BOOKMARK [2][-]{subsection.3.5.3}{Tau - }{section.3.5}% 30
-\BOOKMARK [2][-]{subsection.3.5.4}{Eta - }{section.3.5}% 31
-\BOOKMARK [1][-]{section.3.6}{Ausgew\344hlte Algorithmen}{chapter.3}% 32
-\BOOKMARK [2][-]{subsection.3.6.1}{Ant - iteration\(\)}{section.3.6}% 33
-\BOOKMARK [2][-]{subsection.3.6.2}{Colony - killAnt\(\)}{section.3.6}% 34
-\BOOKMARK [2][-]{subsection.3.6.3}{Colony - updatePheromone\(\)}{section.3.6}% 35
-\BOOKMARK [1][-]{section.3.7}{Sensitivit\344tsanalyse}{chapter.3}% 36
-\BOOKMARK [0][-]{chapter.4}{Implementierung}{}% 37
-\BOOKMARK [1][-]{section.4.1}{Klassendiagramm}{chapter.4}% 38
-\BOOKMARK [1][-]{section.4.2}{Beschreibung der Implementierung}{chapter.4}% 39
-\BOOKMARK [1][-]{section.4.3}{ER-Diagramm}{chapter.4}% 40
-\BOOKMARK [1][-]{section.4.4}{Komponenten-Diagramm}{chapter.4}% 41
-\BOOKMARK [1][-]{section.4.5}{Paket-Diagramm}{chapter.4}% 42
-\BOOKMARK [1][-]{section.4.6}{Perforamce-Analyse und -Optimierung}{chapter.4}% 43
-\BOOKMARK [0][-]{chapter.5}{Fazit}{}% 44
-\BOOKMARK [0][-]{section*.13}{Literaturverzeichnis}{}% 45
+\BOOKMARK [0][-]{chapter*.6}{Abk\374rzungsverzeichnis}{}% 3
+\BOOKMARK [0][-]{chapter*.6}{Abk\374rzungsverzeichnis}{}% 4
+\BOOKMARK [0][-]{section*.7}{Abbildungsverzeichnis}{}% 5
+\BOOKMARK [0][-]{section*.8}{Tabellenverzeichnis}{}% 6
+\BOOKMARK [0][-]{section*.9}{Formelverzeichnis}{}% 7
+\BOOKMARK [0][-]{chapter.1}{Einleitung}{}% 8
+\BOOKMARK [0][-]{chapter.2}{Stand der Technik \046 Forschung}{}% 9
+\BOOKMARK [1][-]{section.2.1}{Traveling Salesman Problem}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{Ant Colony Optimization}{chapter.2}% 11
+\BOOKMARK [0][-]{chapter.3}{Konzeptionierung}{}% 12
+\BOOKMARK [1][-]{section.3.1}{Software Engineering}{chapter.3}% 13
+\BOOKMARK [2][-]{subsection.3.1.1}{Requirements Engineering}{section.3.1}% 14
+\BOOKMARK [2][-]{subsection.3.1.2}{COCOMO}{section.3.1}% 15
+\BOOKMARK [1][-]{section.3.2}{Architektur}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.2.1}{Persistenz}{section.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.2.2}{Applikation}{section.3.2}% 18
+\BOOKMARK [2][-]{subsection.3.2.3}{TSP}{section.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.2.4}{ACO}{section.3.2}% 20
+\BOOKMARK [2][-]{subsection.3.2.5}{Arbeitsweise der Architektur}{section.3.2}% 21
+\BOOKMARK [1][-]{section.3.3}{UML-Diagramm}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.4}{Umsetzung der SOLID-Prinzipien}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.4.1}{Single Responsibility}{section.3.4}% 24
+\BOOKMARK [2][-]{subsection.3.4.2}{Open / Closed}{section.3.4}% 25
+\BOOKMARK [2][-]{subsection.3.4.3}{Liskov Substitution}{section.3.4}% 26
+\BOOKMARK [2][-]{subsection.3.4.4}{Interface Segregation}{section.3.4}% 27
+\BOOKMARK [2][-]{subsection.3.4.5}{Dependency Inversion}{section.3.4}% 28
+\BOOKMARK [1][-]{section.3.5}{Parameterbeschreibung}{chapter.3}% 29
+\BOOKMARK [2][-]{subsection.3.5.1}{Tau - }{section.3.5}% 30
+\BOOKMARK [2][-]{subsection.3.5.2}{Eta - }{section.3.5}% 31
+\BOOKMARK [2][-]{subsection.3.5.3}{Alpha - \040und Beta - }{section.3.5}% 32
+\BOOKMARK [1][-]{section.3.6}{Sensitivit\344tsanalyse}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.6.1}{ hoch - \040niedrig}{section.3.6}% 34
+\BOOKMARK [2][-]{subsection.3.6.2}{ mittel - \040mittel}{section.3.6}% 35
+\BOOKMARK [2][-]{subsection.3.6.3}{ niedrig - \040hoch}{section.3.6}% 36
+\BOOKMARK [1][-]{section.3.7}{Ausgew\344hlte Algorithmen}{chapter.3}% 37
+\BOOKMARK [2][-]{subsection.3.7.1}{Ant - iteration\(\)}{section.3.7}% 38
+\BOOKMARK [2][-]{subsection.3.7.2}{Colony - killAnt\(\)}{section.3.7}% 39
+\BOOKMARK [2][-]{subsection.3.7.3}{Colony - updatePheromone\(\)}{section.3.7}% 40
+\BOOKMARK [0][-]{chapter.4}{Implementierung}{}% 41
+\BOOKMARK [1][-]{section.4.1}{Klassendiagramm}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.2}{Beschreibung der Implementierung}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.3}{ER-Diagramm}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.4}{Komponenten-Diagramm}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.5}{Paket-Diagramm}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.6}{Perforamce-Analyse und -Optimierung}{chapter.4}% 47
+\BOOKMARK [0][-]{chapter.5}{Fazit}{}% 48
+\BOOKMARK [0][-]{section*.17}{Literaturverzeichnis}{}% 49
