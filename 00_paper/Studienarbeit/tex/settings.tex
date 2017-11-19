@@ -38,12 +38,8 @@
 \input{header_footer.tex}
 
 \newenvironment{conditions*}
-{\tabularx{\columnwidth}{>{}l<{} @{\ : } >{\raggedright\arraybackslash}X}}{}
-
-%\newenvironment{conditions*}
-%{\par\vspace{\abovedisplayskip}\noindent
-%	\tabularx{\columnwidth}{>{}l<{} @{\ : } >{\raggedright\arraybackslash}X}}
-%{\endtabularx\par\vspace{\belowdisplayskip}}
+{\par\vspace{\abovedisplayskip}\noindent\setstretch{0.5}\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+	{\end{tabular}\par\vspace{\belowdisplayskip}}
 
 \newcommand{\listequationsname}{\Large{List of Equations}}
 \newlistof{myequations}{equ}{\listequationsname}

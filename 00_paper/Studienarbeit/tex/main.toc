@@ -34,7 +34,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}Architektur}{5}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Persistenz}{6}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}Persistenz}{5}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}Applikation}{6}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
@@ -42,60 +42,60 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.4}ACO}{6}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}Arbeitsweise der Architektur}{7}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.5}Arbeitsweise der Architektur}{6}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}UML-Diagramm}{7}{section.3.3}
+\contentsline {section}{\numberline {3.3}UML-Diagramm}{12}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Umsetzung der SOLID-Prinzipien}{7}{section.3.4}
+\contentsline {section}{\numberline {3.4}Umsetzung der SOLID-Prinzipien}{13}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.1}Single Responsibility}{8}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.1}Single Responsibility}{13}{subsection.3.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.2}Open / Closed}{9}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Open / Closed}{13}{subsection.3.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.3}Liskov Substitution}{9}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.3}Liskov Substitution}{14}{subsection.3.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.4}Interface Segregation}{9}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.4}Interface Segregation}{14}{subsection.3.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.5}Dependency Inversion}{10}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.5}Dependency Inversion}{14}{subsection.3.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Parameterbeschreibung}{10}{section.3.5}
+\contentsline {section}{\numberline {3.5}Parameterbeschreibung}{15}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.1}Tau - $\tau $}{11}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.1}Tau - $\tau $}{15}{subsection.3.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.2}Eta - $\eta $}{11}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.2}Eta - $\eta $}{16}{subsection.3.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.3}Alpha - $\alpha $ und Beta - $\beta $}{11}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.3}Alpha - $\alpha $ und Beta - $\beta $}{16}{subsection.3.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Sensitivit\IeC {\"a}tsanalyse}{11}{section.3.6}
+\contentsline {section}{\numberline {3.6}Sensitivit\IeC {\"a}tsanalyse}{16}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.1}$\alpha $ hoch - $\beta $ niedrig}{12}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.1}$\alpha $ hoch - $\beta $ niedrig}{16}{subsection.3.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.2}$\alpha $ mittel - $\beta $ mittel}{13}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.2}$\alpha $ mittel - $\beta $ mittel}{17}{subsection.3.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.3}$\alpha $ niedrig - $\beta $ hoch}{14}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.3}$\alpha $ niedrig - $\beta $ hoch}{17}{subsection.3.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.7}Ausgew\IeC {\"a}hlte Algorithmen}{14}{section.3.7}
+\contentsline {section}{\numberline {3.7}Ausgew\IeC {\"a}hlte Algorithmen}{18}{section.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.7.1}Ant - iteration()}{15}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.1}Ant - iteration()}{18}{subsection.3.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.7.2}Colony - killAnt()}{15}{subsection.3.7.2}
+\contentsline {subsection}{\numberline {3.7.2}Colony - killAnt()}{19}{subsection.3.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.7.3}Colony - updatePheromone()}{15}{subsection.3.7.3}
+\contentsline {subsection}{\numberline {3.7.3}Colony - updatePheromone()}{20}{subsection.3.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Implementierung}{17}{chapter.4}
+\contentsline {chapter}{\numberline {4}Implementierung}{21}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Klassendiagramm}{17}{section.4.1}
+\contentsline {section}{\numberline {4.1}Klassendiagramm}{21}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Beschreibung der Implementierung}{17}{section.4.2}
+\contentsline {section}{\numberline {4.2}Beschreibung der Implementierung}{21}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}ER-Diagramm}{17}{section.4.3}
+\contentsline {section}{\numberline {4.3}ER-Diagramm}{21}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Komponenten-Diagramm}{17}{section.4.4}
+\contentsline {section}{\numberline {4.4}Komponenten-Diagramm}{21}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Paket-Diagramm}{17}{section.4.5}
+\contentsline {section}{\numberline {4.5}Paket-Diagramm}{21}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Perforamce-Analyse und -Optimierung}{17}{section.4.6}
+\contentsline {section}{\numberline {4.6}Perforamce-Analyse und -Optimierung}{21}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Fazit}{18}{chapter.5}
+\contentsline {chapter}{\numberline {5}Fazit}{22}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Literaturverzeichnis}{19}{section*.17}
+\contentsline {chapter}{Literaturverzeichnis}{23}{section*.25}

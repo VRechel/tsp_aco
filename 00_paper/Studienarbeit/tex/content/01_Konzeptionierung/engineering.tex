@@ -29,14 +29,15 @@ Um eine zeitliche Einschätzung durchführen zu können bietet sich das Construc
 	\subsection{COCOMO}
 	Um eine wirtschaftliche Analyse in Bezug auf das vorliegende Softwareprojekt durchführen zu können, wurde das COCOMO angewendet. Hierbei wurde die Funktionspunkt-Methode angewendet, da ein Implizieren der Anzahl der Codezeilen nicht verlässlich möglich ist. Hierbei wurden die verschiedenen Teile der Architektur nach der Komplexität bewertet und aufgeteilt. Daraus ergab sich folgende Liste:
 	\begin{table}[H]
+		\centering
 		\footnotesize
-		\setstretch{0.5}
-	\begin{tabular}{lcc}
-		Komponente & Komplexität & Funktionspunkte \\
-		Externe Eingaben & Niedrig & 3 \\
-		Externe Ausgaben & Niedrig & 4 \\
-		Externe Anfragen & Hoch & 6 \\
-		Externe Schnittstellen & Niedrig & 5\\
+		\setstretch{0.75}
+	\begin{tabular}{l | c | c}
+		\textbf{Komponente} & \textbf{Komplexität} & \textbf{Funktionspunkte} \\ \hline
+		Externe Eingaben & Niedrig & 3 \\ \hline
+		Externe Ausgaben & Niedrig & 4 \\ \hline
+		Externe Anfragen & Hoch & 6 \\ \hline
+		Externe Schnittstellen & Niedrig & 5\\ \hline
 		Interne Logiken & Mittel & 10\\
 	\end{tabular}
 	\caption{Komplexitätseinschätzung des Projekts im Rahmen einer Abschätzung der Funktionspunkte}
@@ -45,11 +46,11 @@ Um eine zeitliche Einschätzung durchführen zu können bietet sich das Construc
 	
 	Mithilfe der "COCOMO II"-Formel lässt sich aus der Anzahl der Zeilen eine Arbeitsaufwand berechnen:
 	\begin{equation}\label{cocomo}
-	Aufwand = C * (Größe)^{Prozessfaktoren} * M
+	Aufwand = C * (Size)^{Prozessfaktoren} * M
 	\end{equation}
 	\begin{conditions*}
 		C & Konstante\\
-		Größe & Anzahl der Codezeilen\\
+		Size & Anzahl der Codezeilen\\
 		Prozessfaktoren & Kombinierte Prozessfaktoren\\
 		M & Leistungsfaktoren\\
 	\end{conditions*}
