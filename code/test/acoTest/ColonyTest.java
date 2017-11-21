@@ -1,7 +1,10 @@
 package acoTest;
 
+import aco.Ant;
 import aco.Colony;
 import aco.PheromoneInitializationException;
+import jdk.nashorn.internal.runtime.regexp.joni.Config;
+import main.Configuration;
 import org.junit.Assert;
 import org.junit.Test;
 import tsp.City;
@@ -49,5 +52,19 @@ public class ColonyTest {
             pe.printStackTrace();
         }
         Assert.assertTrue(colony.getInitialized());
+    }
+    
+    @Test
+    public void initAnts(){
+        Colony colony = new Colony();
+        for(int i = 0; i < colony.getAnts().size(); i++){
+            colony.getAnts().remove(i);
+            i--;
+        }
+        if(colony.getAnts().size()!=0)
+            Assert.fail();
+        else
+            colony.initAnts();
+        Assert.assertEquals(Configuration.numberAnts, colony.getAnts().size());
     }
 }
