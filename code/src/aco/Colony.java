@@ -1,10 +1,9 @@
 package aco;
 
 import javafx.util.Pair;
-import main.Configuration;
+import mainTest.Configuration;
 import tsp.City;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,13 +14,21 @@ public class Colony {
     private Map<Pair<City,City>, Integer> pheromone = new HashMap<>();
     private ArrayList<Ant> ants = new ArrayList<>();
     private final CyclicBarrier barrier;
+    private static ArrayList<City> bestRoute;
+    private static int bestDistance;
+    private static final double alpha = 2;  //Pheromongewichtung
+    private static final double beta = 1;   //Distanzgewichtung
 
     public Colony(){
         initAnts();
         barrier = new CyclicBarrier(ants.size(), this::notifyColony);
     }
 
-    private void notifyColony() {
+    double getBeta() {
+        return beta;
+    }
+
+    public void notifyColony() {
         for (Ant a:
              getAnts()) {
             a.updatePheromones();
@@ -34,7 +41,7 @@ public class Colony {
 
     public void initPheromone() throws PheromoneInitializationException {
         if(initialized){
-            throw new PheromoneInitializationException("Colony already initialized!");
+            throw new PheromoneInitializationException();
         }
         else{
             initialized = true;
@@ -55,11 +62,43 @@ public class Colony {
 
     public void initAnts() {
         for(int i = 0; i < Configuration.numberAnts; i++)
-            ants.add(new Ant());
+            ants.add(new Ant(i, new City("A"),this));
     }
 
     public void killAnt(Ant a) {
         ants.remove(a);
         System.out.println("ERROR: Ant " + a.id + " was killed!");
+    }
+
+    public void iteration() {
+        for (Ant a:
+             ants) {
+            a.iteration();
+        }
+    }
+
+    public Result solve() {
+        return new Result(bestRoute,bestDistance);
+    }
+
+    double getAlpha() {
+        return alpha;
+    }
+
+    public class Result{
+        private final ArrayList<City> bestRoute;
+        private final int bestDistance;
+
+        Result(ArrayList<City> route, int distance){
+            this.bestRoute = route;
+            this.bestDistance = distance;
+        }
+
+        public ArrayList<City> getBestRoute() {
+            return bestRoute;
+        }
+        public int getBestDistance() {
+            return bestDistance;
+        }
     }
 }

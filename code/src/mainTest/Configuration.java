@@ -1,4 +1,4 @@
-package main;
+package mainTest;
 
 import util.HSQLDBManager;
 import util.MersenneTwisterFast;
@@ -17,10 +17,10 @@ public enum Configuration {
     public static final int numberAnts = 8;
 
     //DB parameters
-    public final String fileSeparator = System.getProperty("file.separator");
-    public final String userDirectory = System.getProperty("user.dir");
+    private final String fileSeparator = System.getProperty("file.separator");
+    private final String userDirectory = System.getProperty("user.dir");
 
-    public final String dataDirectory = userDirectory + fileSeparator + "data" + fileSeparator;
+    private final String dataDirectory = userDirectory + fileSeparator + "data" + fileSeparator;
     public final String dataFilePath = dataDirectory + "tsp_antColony.csv";
 
     public final String dataRDirectory = userDirectory;

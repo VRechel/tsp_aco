@@ -1,6 +1,6 @@
 package tspTest;
 
-import main.Configuration;
+import mainTest.Configuration;
 import org.junit.Assert;
 import org.junit.Test;
 import tsp.City;

@@ -1,7 +1,7 @@
 package tsp;
 
 public class VisitationException extends Exception {
-    VisitationException(String message) {
-        super(message);
+    VisitationException() {
+        super("City already visited");
     }
 }

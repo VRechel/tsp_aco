@@ -1,6 +1,6 @@
 package util;
 
-import main.Configuration;
+import mainTest.Configuration;
 
 import java.sql.*;
 
@@ -11,18 +11,22 @@ public enum HSQLDBManager {
     private String driverName = "jdbc:hsqldb:";
     private String username = "sa";
     private String password = "";
+    private boolean initialized = false;
 
-    public void startup() {
+    public void startup() throws DBInitializationException {
+        if(initialized) throw new DBInitializationException();
         try {
             Class.forName("org.hsqldb.jdbcDriver");
             String databaseURL = driverName + Configuration.instance.databaseFile;
             connection = DriverManager.getConnection(databaseURL, username, password);
+            initialized = true;
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public void init() {
+    public void init() throws DBInitializationException {
+        if(initialized) throw new DBInitializationException();
         dropTable();
         createTable();
     }
@@ -110,6 +114,7 @@ public enum HSQLDBManager {
             Statement statement = connection.createStatement();
             statement.execute("SHUTDOWN");
             connection.close();
+            initialized = false;
         } catch (SQLException sqle) {
             System.out.println(sqle.getMessage());
         }

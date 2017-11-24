@@ -2,6 +2,8 @@ package tsp;
 
 import javafx.util.Pair;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 

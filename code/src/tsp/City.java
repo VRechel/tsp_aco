@@ -13,7 +13,7 @@ public class City {
 
     public void visit() throws VisitationException {
         if(visited)
-            throw new VisitationException("City already visited");
+            throw new VisitationException();
         else
             visited = true;
     }
