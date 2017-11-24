@@ -4,7 +4,7 @@
 
 \input{variables.tex}
 
-\addbibresource{bib/bibliography.bib}
+\bibliography{bibliography}
 
 \begin{document}
 \frontmatter
@@ -17,7 +17,7 @@
 \tableofcontents
 
 \input{prefix/abbreviation.tex}
-\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+%\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
 
 \cleardoublepage
 \phantomsection
@@ -41,8 +41,6 @@
 \input{content/02_konzeptionierung.tex}
 \input{content/03_implementierung.tex}
 \input{content/99_fazit.tex}
-
-\nocite{*}
 
 \backmatter
 

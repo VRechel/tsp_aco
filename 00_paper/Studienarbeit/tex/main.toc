@@ -8,8 +8,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\nonumberline Abk\IeC {\"u}rzungsverzeichnis}{vi}{chapter*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{vi}{chapter*.6}
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Abbildungsverzeichnis}{vii}{section*.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Tabellenverzeichnis}{viii}{section*.8}
@@ -97,5 +95,3 @@
 \contentsline {section}{\numberline {4.6}Perforamce-Analyse und -Optimierung}{21}{section.4.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Fazit}{22}{chapter.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Literaturverzeichnis}{23}{section*.25}
