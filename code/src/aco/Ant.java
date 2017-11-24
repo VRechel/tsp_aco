@@ -1,9 +1,12 @@
 package aco;
 
+import javafx.util.Pair;
 import mainTest.Configuration;
 import tsp.City;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Viktor
@@ -45,8 +48,9 @@ public class Ant extends Thread {
         return route;
     }
 
-    public ArrayList<Float> calculateProbabilities() {
-        return null;
+    public Map<Pair<City, City>, Float> calculateProbabilities() {
+        Map<Pair<City, City>, Float> probabilites = new HashMap<>();
+        return probabilites;
     }
 
     public float calculateProbability(City b, int pheromone) {

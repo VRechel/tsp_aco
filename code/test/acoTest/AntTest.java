@@ -2,11 +2,13 @@ package acoTest;
 
 import aco.Ant;
 import aco.Colony;
+import javafx.util.Pair;
 import org.junit.Assert;
 import org.junit.Test;
 import tsp.City;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * @author Viktor
@@ -16,15 +18,17 @@ public class AntTest {
     public void calculateProbabilities() throws Exception {
         Colony colony = new Colony();
         Ant a = new Ant(1, new City("A"), colony);
-        ArrayList<Float> probabilites = a.calculateProbabilities();
-        Assert.fail();
+        Map<Pair<City, City>, Float> probabilites = a.calculateProbabilities();
+        Assert.assertTrue(probabilites.size() != 0);
     }
 
     @Test
-    public void calculateProbability() throws Exception {
+    public void calculateProbabilityTest(){
         Colony colony = new Colony();
         Ant a = new Ant(1, new City("A"), colony);
-        //a.calculateProbability();
+        City target = new City("B");
+        float p = a.calculateProbability(target, 1);
+        Assert.assertEquals(2, p,0.0);
         Assert.fail();
     }
 
@@ -78,15 +82,5 @@ public class AntTest {
         if (a.getRoute().get(a.getRoute().size()-1) != target)
             Assert.fail();
         Assert.assertTrue(a.getCurrentCity()==target);
-    }
-
-    @Test
-    public void calculateProbabilityTest(){
-        Colony colony = new Colony();
-        Ant a = new Ant(1, new City("A"), colony);
-        City target = new City("B");
-        float p = a.calculateProbability(target, a.getColony().getPheromones(a.getCurrentCity(),target));
-        Assert.assertEquals(2, p);
-        Assert.fail();
     }
 }
