@@ -53,18 +53,17 @@ public class Ant extends Thread {
         return probabilites;
     }
 
-    public float calculateProbability(City b, int pheromone) {
+    public double calculateProbability(City b, int pheromone) {
         return 0f;
     }
 
-    public float calculateLambdas() {
+    public double calculateLambdas(ArrayList<City> cities) {
         return 0f;
     }
 
-    public float calculateLambda(City b, int pheromone) {
-        int distance = Configuration.instance.landscape.getDistance(currentCity,b);
-        float tau = (float)((Math.pow(pheromone, colony.getAlpha())));
-        float eta = (float)((Math.pow((1/distance), colony.getBeta())));
+    public double calculateLambda(double distance, int pheromone) {
+        double tau = Math.pow(pheromone, colony.getAlpha());
+        double eta = Math.pow((1/distance), colony.getBeta());
         return tau * eta;
     }
 

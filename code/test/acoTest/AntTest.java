@@ -15,11 +15,20 @@ import java.util.Map;
  */
 public class AntTest {
     @Test
-    public void calculateProbabilities() throws Exception {
+    public void calculateLambda() throws Exception {
         Colony colony = new Colony();
         Ant a = new Ant(1, new City("A"), colony);
-        Map<Pair<City, City>, Float> probabilites = a.calculateProbabilities();
-        Assert.assertTrue(probabilites.size() != 0);
+        double expected = ((double) 1) / ((double)3);
+        Assert.assertEquals(expected,a.calculateLambda(3,1),0.0);
+    }
+
+    @Test
+    public void calculateLambdas() throws Exception {
+        Colony colony = new Colony();
+        Ant a = new Ant(1, new City("A"), colony);
+        ArrayList<City> cities = new ArrayList<>();
+        a.calculateLambdas(cities);
+        Assert.fail();
     }
 
     @Test
@@ -27,25 +36,17 @@ public class AntTest {
         Colony colony = new Colony();
         Ant a = new Ant(1, new City("A"), colony);
         City target = new City("B");
-        float p = a.calculateProbability(target, 1);
+        double p = a.calculateProbability(target, 1);
         Assert.assertEquals(2, p,0.0);
         Assert.fail();
     }
 
     @Test
-    public void calculateLambdas() throws Exception {
+    public void calculateProbabilities() throws Exception {
         Colony colony = new Colony();
         Ant a = new Ant(1, new City("A"), colony);
-        a.calculateLambdas();
-        Assert.fail();
-    }
-
-    @Test
-    public void calculateLambda() throws Exception {
-        Colony colony = new Colony();
-        Ant a = new Ant(1, new City("A"), colony);
-        //a.calculateLambda();
-        Assert.fail();
+        Map<Pair<City, City>, Float> probabilites = a.calculateProbabilities();
+        Assert.assertTrue(probabilites.size() != 0);
     }
 
     @Test
