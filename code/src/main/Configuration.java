@@ -1,4 +1,4 @@
-package mainTest;
+package main;
 
 import util.HSQLDBManager;
 import util.MersenneTwisterFast;
@@ -15,6 +15,7 @@ public enum Configuration {
     public static final double quality = 0.95;
     public static final int maxDistance = 2708;
     public static final int numberAnts = 8;
+    public static int maxIterations;
 
     //DB parameters
     private final String fileSeparator = System.getProperty("file.separator");
@@ -26,4 +27,8 @@ public enum Configuration {
     public final String dataRDirectory = userDirectory;
 
     public final String databaseFile = dataDirectory + "datastore.db";
+
+    public void setMaxIterations(int maxIterations) {
+        this.maxIterations = maxIterations;
+    }
 }

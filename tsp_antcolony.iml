@@ -8,6 +8,10 @@
       <sourceFolder url="file://$MODULE_DIR$/lib" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/code/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/code/test" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/00_paper" />
+      <excludeFolder url="file://$MODULE_DIR$/01_uml" />
+      <excludeFolder url="file://$MODULE_DIR$/tspProblems" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

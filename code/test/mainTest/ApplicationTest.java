@@ -1,5 +1,6 @@
 package mainTest;
 
+import main.Application;
 import org.junit.Assert;
 import org.junit.Test;
 import util.DBInitializationException;

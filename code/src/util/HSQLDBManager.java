@@ -1,6 +1,6 @@
 package util;
 
-import mainTest.Configuration;
+import main.Configuration;
 
 import java.sql.*;
 
@@ -8,16 +8,16 @@ public enum HSQLDBManager {
     instance;
 
     private Connection connection;
-    private String driverName = "jdbc:hsqldb:";
-    private String username = "sa";
-    private String password = "";
     private boolean initialized = false;
 
     public void startup() throws DBInitializationException {
         if(initialized) throw new DBInitializationException();
         try {
             Class.forName("org.hsqldb.jdbcDriver");
+            String driverName = "jdbc:hsqldb:";
             String databaseURL = driverName + Configuration.instance.databaseFile;
+            String username = "sa";
+            String password = "";
             connection = DriverManager.getConnection(databaseURL, username, password);
             initialized = true;
         } catch (Exception e) {

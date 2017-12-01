@@ -3,12 +3,15 @@ package acoTest;
 import aco.Ant;
 import aco.Colony;
 import aco.PheromoneInitializationException;
-import mainTest.Configuration;
+import main.Configuration;
 import org.junit.Assert;
 import org.junit.Test;
 import tsp.City;
+import util.CityPair;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Viktor
@@ -22,8 +25,8 @@ public class ColonyTest {
         } catch (PheromoneInitializationException pe) {
             pe.printStackTrace();
         }
-        colony.updatePheromone(new City("A"), new City("B"), 5);
-        Assert.assertEquals(5, colony.getPheromones(new City("A"), new City("B")));
+        colony.updatePheromones(new CityPair(new City("A"), new City("B")), 5);
+        Assert.assertEquals(5, colony.getPheromone(new CityPair(new City("A"), new City("B"))),0.);
     }
 
     @Test
@@ -80,23 +83,6 @@ public class ColonyTest {
     }
 
     @Test
-    public void iterationTest(){
-        Colony colony = new Colony();
-        ArrayList<Ant> ants = colony.getAnts();
-        ArrayList<City> cities = new ArrayList<>();
-        for (Ant a :
-             ants) {
-            cities.add(a.getCurrentCity());
-        }
-        colony.iteration();
-        for (Ant a :
-                ants) {
-            if(cities.get(ants.indexOf(a))==a.getCurrentCity())
-                Assert.fail();
-        }
-    }
-
-    @Test
     public void solveTest(){
         Colony colony = new Colony();
         Colony.Result result = colony.solve();
@@ -106,7 +92,29 @@ public class ColonyTest {
     @Test
     public void notifyColonyTest(){
         Colony colony = new Colony();
+        Configuration.instance.landscape.addNeighbour(new CityPair(new City("A"), new City("B")), 3);
+        colony.updatePheromones(new CityPair(new City("A"), new City("B")), 1);
+        Map<CityPair, Double> pheromones = new HashMap<>();
+        for (Map.Entry<CityPair, Double> entry:
+             colony.getPheromones().entrySet()) {
+            pheromones.put(entry.getKey(),entry.getValue());
+        }
+
+        colony.getAnts().add(new Ant(1,new City("A"),colony));
+        colony.getAnts().add(new Ant(2,new City("A"),colony));
+        ArrayList<City> route = new ArrayList<>();
+        route.add(new City("A"));
+        route.add(new City("B"));
+        for (Ant a:
+             colony.getAnts()) {
+            a.setRoute(route);
+        }
+
         colony.notifyColony();
-        Assert.fail();
+
+        for (Map.Entry<CityPair, Double> entry:
+                pheromones.entrySet()) {
+            Assert.assertTrue(!entry.getValue().equals(colony.getPheromone(entry.getKey())));
+        }
     }
 }

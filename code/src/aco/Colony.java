@@ -1,8 +1,8 @@
 package aco;
 
-import javafx.util.Pair;
-import mainTest.Configuration;
+import main.Configuration;
 import tsp.City;
+import util.CityPair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,9 +11,8 @@ import java.util.concurrent.CyclicBarrier;
 
 public class Colony {
     private boolean initialized;
-    private Map<Pair<City,City>, Integer> pheromone = new HashMap<>();
-    private ArrayList<Ant> ants = new ArrayList<>();
-    private final CyclicBarrier barrier;
+    private final Map<CityPair, Double> pheromones = new HashMap<>();
+    private final ArrayList<Ant> ants = new ArrayList<>();
     private static ArrayList<City> bestRoute;
     private static int bestDistance;
     private static final double alpha = 2;  //Pheromongewichtung
@@ -21,7 +20,7 @@ public class Colony {
 
     public Colony(){
         initAnts();
-        barrier = new CyclicBarrier(ants.size(), this::notifyColony);
+        CyclicBarrier barrier = new CyclicBarrier(ants.size(), this::notifyColony);
     }
 
     double getBeta() {
@@ -48,12 +47,16 @@ public class Colony {
         }
     }
 
-    public void updatePheromone(City city, City target, int plevel) {
-        pheromone.put(new Pair<>(city, target), plevel);
+    public void updatePheromones(CityPair cities, double plevel) {
+        pheromones.put(cities, plevel);
     }
 
-    public int getPheromones(City a, City b) {
-        return pheromone.get(new Pair<>(a, b));
+    public Map<CityPair, Double> getPheromones(){
+        return pheromones;
+    }
+
+    public double getPheromone(CityPair c) {
+        return pheromones.get(c);
     }
 
     public ArrayList<Ant> getAnts() {
@@ -68,13 +71,6 @@ public class Colony {
     public void killAnt(Ant a) {
         ants.remove(a);
         System.out.println("ERROR: Ant " + a.id + " was killed!");
-    }
-
-    public void iteration() {
-        for (Ant a:
-             ants) {
-            a.iteration();
-        }
     }
 
     public Result solve() {
