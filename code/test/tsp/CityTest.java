@@ -1,9 +1,7 @@
-package tspTest;
+package tsp;
 
 import org.junit.Assert;
 import org.junit.Test;
-import tsp.City;
-import tsp.VisitationException;
 
 /**
  * @author Viktor

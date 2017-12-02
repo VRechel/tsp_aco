@@ -1,9 +1,7 @@
-package util;
-
-import tsp.City;
+package tsp;
 
 /**
- * Created by Viktor on 01.12.2017.
+ * @author Viktor
  */
 public class CityPair {
     private final City a;

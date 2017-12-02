@@ -1,21 +1,28 @@
 package main;
 
+import tsp.Landscape;
 import util.HSQLDBManager;
 import util.MersenneTwisterFast;
-import tsp.Landscape;
 
+import java.util.logging.Logger;
+
+/**
+ * @author Viktor
+ */
 public enum Configuration {
     instance;
     //Init
     public final MersenneTwisterFast randomNumberGenerator = new MersenneTwisterFast(System.currentTimeMillis());
     public final HSQLDBManager dbManager = HSQLDBManager.instance;
     public final Landscape landscape = new Landscape();
+    public final Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     //Parameters
-    public static final double quality = 0.95;
-    public static final int maxDistance = 2708;
-    public static final int numberAnts = 8;
-    public static int maxIterations;
+    final String filePath = "tspProblems/tspProblem.xml";
+    private static final double quality = 0.95;
+    //public static final int maxDistance = 2708;
+    public static final int numberAnts = 4;
+    public static int maxIterations = 100;
 
     //DB parameters
     private final String fileSeparator = System.getProperty("file.separator");
@@ -28,7 +35,15 @@ public enum Configuration {
 
     public final String databaseFile = dataDirectory + "datastore.db";
 
+    public double getQuality() {
+        return quality;
+    }
+
     public void setMaxIterations(int maxIterations) {
-        this.maxIterations = maxIterations;
+        Configuration.maxIterations = maxIterations;
+    }
+
+    public String getFilePath() {
+        return filePath;
     }
 }

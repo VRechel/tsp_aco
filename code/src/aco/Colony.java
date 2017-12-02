@@ -2,7 +2,7 @@ package aco;
 
 import main.Configuration;
 import tsp.City;
-import util.CityPair;
+import tsp.CityPair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,16 +11,32 @@ import java.util.concurrent.CyclicBarrier;
 
 public class Colony {
     private boolean initialized;
+    private boolean started;
+    private double solutionQuality;
+    private int currentGeneration = 1;
+
     private final Map<CityPair, Double> pheromones = new HashMap<>();
     private final ArrayList<Ant> ants = new ArrayList<>();
     private static ArrayList<City> bestRoute;
-    private static int bestDistance;
+    private static double bestDistance;
     private static final double alpha = 2;  //Pheromongewichtung
     private static final double beta = 1;   //Distanzgewichtung
 
     public Colony(){
         initAnts();
-        CyclicBarrier barrier = new CyclicBarrier(ants.size(), this::notifyColony);
+    }
+
+    public void start(){
+        if(!started){
+            started = true;
+            for (Ant a:
+                 ants) {
+                a.start();
+            }
+        }
+        else{
+            System.out.println("Colony already started!");
+        }
     }
 
     double getBeta() {
@@ -28,14 +44,18 @@ public class Colony {
     }
 
     public void notifyColony() {
-        for (Ant a:
-             getAnts()) {
-            a.updatePheromones();
-        }
+        System.out.println("Generation " + currentGeneration + " finished!");
+        newGeneration();
     }
 
-    public boolean getInitialized() {
-        return initialized;
+    private void newGeneration() {
+        System.out.println("Initializing new generation!");
+        started = false;
+        ants.clear();
+        initAnts();
+        start();
+        currentGeneration++;
+        System.out.println("New generation started!");
     }
 
     public void initPheromone() throws PheromoneInitializationException {
@@ -43,11 +63,14 @@ public class Colony {
             throw new PheromoneInitializationException();
         }
         else{
+            for(Map.Entry<CityPair, Double> entry : Configuration.instance.landscape.getNeighbours().entrySet()){
+                pheromones.put(entry.getKey(),1.);
+            }
             initialized = true;
         }
     }
 
-    public void updatePheromones(CityPair cities, double plevel) {
+    public synchronized void updatePheromones(CityPair cities, double plevel) {
         pheromones.put(cities, plevel);
     }
 
@@ -64,8 +87,9 @@ public class Colony {
     }
 
     public void initAnts() {
-        for(int i = 0; i < Configuration.numberAnts; i++)
-            ants.add(new Ant(i, new City("A"),this));
+        CyclicBarrier barrier = new CyclicBarrier(Configuration.numberAnts, this::notifyColony);
+        for(int i = 1; i < Configuration.numberAnts+1; i++)
+            ants.add(new Ant(i, new City("A"),this, barrier));
     }
 
     public void killAnt(Ant a) {
@@ -81,11 +105,35 @@ public class Colony {
         return alpha;
     }
 
+    public double getSolutionQuality() {
+        return solutionQuality;
+    }
+
+    public synchronized void updateRoute(ArrayList<City> route) {
+        if(bestRoute == null)
+            bestRoute=route;
+        double current = getDistance(bestRoute);
+        double new_ = getDistance(route);
+
+        if(new_ < current){
+            bestRoute = route;
+            bestDistance = new_;
+        }
+    }
+
+    public double getDistance(ArrayList<City> route) {
+        double sum = 0;
+        for (int i = 0; i < route.size()-1; i++) {
+            sum += Configuration.instance.landscape.getDistance(route.get(i), route.get(i+1));
+        }
+        return sum;
+    }
+
     public class Result{
         private final ArrayList<City> bestRoute;
-        private final int bestDistance;
+        private final double bestDistance;
 
-        Result(ArrayList<City> route, int distance){
+        Result(ArrayList<City> route, double distance){
             this.bestRoute = route;
             this.bestDistance = distance;
         }
@@ -93,7 +141,7 @@ public class Colony {
         public ArrayList<City> getBestRoute() {
             return bestRoute;
         }
-        public int getBestDistance() {
+        public double getBestDistance() {
             return bestDistance;
         }
     }

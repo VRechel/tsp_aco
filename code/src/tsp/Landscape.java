@@ -1,7 +1,5 @@
 package tsp;
 
-import util.CityPair;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +7,7 @@ import java.util.Map;
  * @author Viktor
  */
 public class Landscape {
-    private Map<CityPair, Double> neighbours = new HashMap<>();
+    private final Map<CityPair, Double> neighbours = new HashMap<>();
 
     public void addNeighbour(CityPair cities, double distance){
         neighbours.put(cities,distance);
@@ -21,7 +19,7 @@ public class Landscape {
 
     public double getNeighboursSize(){ return neighbours.size();}
     public void reset() {
-        neighbours = new HashMap<>();
+        neighbours.clear();
     }
 
     public Map<CityPair,Double> getNeighbours() {
@@ -30,11 +28,27 @@ public class Landscape {
 
     public Map<CityPair,Double> getSpecifiedNeighbours(City currentCity) {
         Map<CityPair, Double> temp = new HashMap<>();
-        for (Map.Entry<CityPair, Double> entry:
-             neighbours.entrySet()) {
-            if(entry.getKey().getCityA() == currentCity)
+        for (Map.Entry<CityPair, Double> entry : neighbours.entrySet()) {
+            if(entry.getKey().getCityA().equals(currentCity)){
+//                System.out.println(entry.getKey().getCityA());
+//                System.out.println(entry.getKey().getCityB());
+//                System.out.println(currentCity);
                 temp.put(entry.getKey(),entry.getValue());
+            }
         }
         return temp;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Landscape: \n");
+        for (Map.Entry<CityPair, Double> neighbour:
+             neighbours.entrySet()) {
+            sb.append(neighbour.getKey().getCityA()).append(" ");
+            sb.append(neighbour.getKey().getCityB()).append(" ");
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }

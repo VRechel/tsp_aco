@@ -1,7 +1,7 @@
-package tsp;
+package aco;
 
 class VisitationException extends Exception {
     VisitationException() {
-        super("City already visited");
+        super("City was already visited!");
     }
 }

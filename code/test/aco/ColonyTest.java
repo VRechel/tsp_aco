@@ -1,13 +1,10 @@
-package acoTest;
+package aco;
 
-import aco.Ant;
-import aco.Colony;
-import aco.PheromoneInitializationException;
 import main.Configuration;
 import org.junit.Assert;
 import org.junit.Test;
 import tsp.City;
-import util.CityPair;
+import tsp.CityPair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,13 +46,17 @@ public class ColonyTest {
 
     @Test
     public void initPheromonesTest(){
+        final City a = new City("A");
+        final City b = new City("B");
         Colony colony = new Colony();
+        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),2);
         try {
             colony.initPheromone();
         } catch (PheromoneInitializationException pe) {
             pe.printStackTrace();
         }
-        Assert.assertTrue(colony.getInitialized());
+        Assert.assertEquals(1,colony.getPheromones().size());
+        Assert.assertEquals(1, colony.getPheromones().get(new CityPair(a,b)),0.);
     }
     
     @Test
@@ -91,23 +92,26 @@ public class ColonyTest {
 
     @Test
     public void notifyColonyTest(){
+        final City a = new City("A");
+        final City b = new City("B");
         Colony colony = new Colony();
-        Configuration.instance.landscape.addNeighbour(new CityPair(new City("A"), new City("B")), 3);
-        colony.updatePheromones(new CityPair(new City("A"), new City("B")), 1);
+        Configuration.instance.landscape.addNeighbour(new CityPair(a,b), 3);
+        colony.updatePheromones(new CityPair(a,b), 1);
         Map<CityPair, Double> pheromones = new HashMap<>();
+
         for (Map.Entry<CityPair, Double> entry:
              colony.getPheromones().entrySet()) {
             pheromones.put(entry.getKey(),entry.getValue());
         }
 
-        colony.getAnts().add(new Ant(1,new City("A"),colony));
-        colony.getAnts().add(new Ant(2,new City("A"),colony));
+        colony.getAnts().add(new Ant(1,a,colony));
+        colony.getAnts().add(new Ant(2,a,colony));
         ArrayList<City> route = new ArrayList<>();
-        route.add(new City("A"));
-        route.add(new City("B"));
-        for (Ant a:
+        route.add(a);
+        route.add(b);
+        for (Ant ant:
              colony.getAnts()) {
-            a.setRoute(route);
+            ant.setRoute(route);
         }
 
         colony.notifyColony();

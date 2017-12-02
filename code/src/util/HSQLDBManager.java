@@ -25,13 +25,13 @@ public enum HSQLDBManager {
         }
     }
 
-    public void init() throws DBInitializationException {
+    public void init(double cities) throws DBInitializationException {
         if(initialized) throw new DBInitializationException();
         dropTable();
-        createTable();
+        createTable(cities);
     }
 
-    public synchronized void update(String sqlStatement) {
+    private synchronized void update(String sqlStatement) {
         try {
             Statement statement = connection.createStatement();
             int result = statement.executeUpdate(sqlStatement);
@@ -43,70 +43,68 @@ public enum HSQLDBManager {
         }
     }
 
-    public synchronized ResultSet query(String sqlStatement) {
-        Statement st;
-        ResultSet rs = null;
-
-        try {
-            st = connection.createStatement();
-            rs = st.executeQuery(sqlStatement);
-            st.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return rs;
-    }
-
     public void dropTable() {
-        System.out.println("--- dropTable");
-
         StringBuilder sqlStringBuilder = new StringBuilder();
-        sqlStringBuilder.append("DROP TABLE s01");
+        sqlStringBuilder.append("DROP TABLE HISTORY");
         System.out.println("sqlStringBuilder : " + sqlStringBuilder.toString());
-
-        update(sqlStringBuilder.toString());
-        sqlStringBuilder = new StringBuilder();
-        sqlStringBuilder.append("DROP TABLE s02");
-        System.out.println("sqlStringBuilder : " + sqlStringBuilder.toString());
-
-        update(sqlStringBuilder.toString());
-    }
-
-    public void createTable() {
-        StringBuilder sqlStringBuilder = new StringBuilder();
-        sqlStringBuilder.append("CREATE TABLE s01 ").append(" ( ");
-        sqlStringBuilder.append("id BIGINT NOT NULL").append(",");
-        sqlStringBuilder.append("test VARCHAR(20) NOT NULL").append(",");
-        sqlStringBuilder.append("PRIMARY KEY (id)");
-        sqlStringBuilder.append(" )");
         update(sqlStringBuilder.toString());
 
         sqlStringBuilder = new StringBuilder();
-        sqlStringBuilder.append("CREATE TABLE s02 ").append(" ( ");
-        sqlStringBuilder.append("id BIGINT NOT NULL").append(",");
-        sqlStringBuilder.append("test VARCHAR(20) NOT NULL").append(",");
-        sqlStringBuilder.append("PRIMARY KEY (id)");
-        sqlStringBuilder.append(" )");
+        sqlStringBuilder.append("DROP TABLE GENERATIONS");
+        System.out.println("sqlStringBuilder : " + sqlStringBuilder.toString());
         update(sqlStringBuilder.toString());
     }
 
-    public String buildSQLStatement(long id, String test) {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < 20; i++) {
-            stringBuilder.append("INSERT INTO s01 (id,test) VALUES (");
-            stringBuilder.append(i).append(",");
-            stringBuilder.append("'").append((int) (Math.random()*10)).append("'");
-            stringBuilder.append(")");
-            stringBuilder.append("INSERT INTO s02 (id,test) VALUES (");
-            stringBuilder.append(i).append(",");
-            stringBuilder.append("'").append((int) (Math.random()*20)).append("'");
-            stringBuilder.append(")");
-        }
-        return stringBuilder.toString();
+    public void createTable(double cities) {
+        StringBuilder sqlStringBuilder = new StringBuilder();
+        sqlStringBuilder.append("CREATE TABLE HISTORY ")
+                .append(" ( ")
+                .append("id BIGINT NOT NULL")
+                .append(",")
+                .append("route VARCHAR(")
+                .append((int) cities)
+                .append(") NOT NULL")
+                .append(",")
+                .append("distance BIGINT NOT NULL")
+                .append(",")
+                .append("PRIMARY KEY (id)")
+                .append(" )");
+        update(sqlStringBuilder.toString());
+
+        sqlStringBuilder = new StringBuilder();
+        sqlStringBuilder.append("CREATE TABLE GENERATIONS ")
+                .append(" ( ")
+                .append("id BIGINT NOT NULL")
+                .append(",")
+                .append("route VARCHAR(")
+                .append((int) cities)
+                .append(") NOT NULL")
+                .append(",")
+                .append("distance BIGINT NOT NULL")
+                .append(",")
+                .append("PRIMARY KEY (id)")
+                .append(" )");
+        update(sqlStringBuilder.toString());
     }
 
-    public void insert(String test) {
-        update(buildSQLStatement(System.nanoTime(), test));
+    public void updateTable(String table, String route, int distance){
+        String sqlStringBuilder = "INSERT INTO " +
+                table +
+                " ( " +
+                "id " +
+                "," +
+                "route" +
+                "," +
+                "distance" +
+                " ) " +
+                " VALUES " +
+                " ( " +
+                Configuration.instance.randomNumberGenerator.nextInt() +
+                "," +
+                route +
+                "," +
+                distance;
+        update(sqlStringBuilder);
     }
 
     public void shutdown() {

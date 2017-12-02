@@ -1,14 +1,19 @@
 package main;
 
+import aco.Colony;
+import aco.PheromoneInitializationException;
 import parser.Parser;
 import parser.XMLParser;
 import util.DBInitializationException;
 
+import java.io.File;
+
 /**
  * @author Viktor
  */
-public class Application {
-    public Application(){
+class Application {
+    public static void main(String args[]){
+        initTSP();
         try {
             initDB();
         } catch (DBInitializationException e) {
@@ -16,17 +21,42 @@ public class Application {
             Configuration.instance.dbManager.dropTable();
         }
 
-        Parser parser = new XMLParser();
+        initColony();
+
+        //At the end of the program the db has to be shutdown!
+        Configuration.instance.dbManager.shutdown();
     }
 
-    public void initDB() throws DBInitializationException {
+    private static void initColony() {
+        Colony colony = new Colony();
+        try {
+            colony.initPheromone();
+        } catch (PheromoneInitializationException e) {
+            e.printStackTrace();
+        }
+        colony.start();
+    }
+
+    private static void initTSP() {
+        Parser parser;
+        String path = Configuration.instance.getFilePath();
+        if(path.substring(path.lastIndexOf(".")).equals(".xml")){
+            parser = new XMLParser();
+            parser.parse(new File(path));
+        }else{
+            System.out.println("File format not supported by now! Please use XML!");
+        }
+        System.out.println("Paths: " + Configuration.instance.landscape.getNeighbours().size());
+    }
+
+    private static void initDB() throws DBInitializationException {
         try {
             Configuration.instance.dbManager.startup();
         } catch (DBInitializationException e) {
             throw new DBInitializationException();
         }
         try {
-            Configuration.instance.dbManager.init();
+            Configuration.instance.dbManager.init(Configuration.instance.landscape.getNeighboursSize());
         } catch (DBInitializationException e) {
             throw new DBInitializationException();
         }
