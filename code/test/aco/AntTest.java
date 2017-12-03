@@ -104,19 +104,26 @@ public class AntTest {
         final City b = new City("B");
         final City c = new City("C");
 
-        Configuration.instance.setMaxIterations(1);
+        Configuration.instance.setMaxIterations(10);
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
         Configuration.instance.landscape.addNeighbour(new CityPair(a,b), 2);
         Configuration.instance.landscape.addNeighbour(new CityPair(a,c), 2);
         Configuration.instance.landscape.addNeighbour(new CityPair(b,a), 2);
+        Configuration.instance.landscape.addNeighbour(new CityPair(b,c), 2);
+        Configuration.instance.landscape.addNeighbour(new CityPair(c,a), 2);
+        Configuration.instance.landscape.addNeighbour(new CityPair(c,b), 2);
 
         ant.getColony().updatePheromones(new CityPair(a,b),1.5);
         ant.getColony().updatePheromones(new CityPair(a,c),1.5);
+        ant.getColony().updatePheromones(new CityPair(b,a),1.5);
+        ant.getColony().updatePheromones(new CityPair(b,c),1.5);
+        ant.getColony().updatePheromones(new CityPair(c,a),1.5);
+        ant.getColony().updatePheromones(new CityPair(c,b),1.5);
 
         ant.run();
         Assert.assertTrue(ant.getRoute().size()!=1);
-        Assert.assertTrue(ant.getCurrentCity()!=a);
+        Assert.assertTrue(ant.getCurrentCity()==a);
     }
 
     @Test
@@ -155,6 +162,7 @@ public class AntTest {
     public void visitCityTest(){
         final City a = new City("A");
         final City b = new City("B");
+        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),2);
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
         ArrayList<City> temp = new ArrayList<>();
@@ -172,6 +180,12 @@ public class AntTest {
         final City a = new City("A");
         final City b = new City("B");
         final City c = new City("C");
+        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),2);
+        Configuration.instance.landscape.addNeighbour(new CityPair(a,c),2);
+        Configuration.instance.landscape.addNeighbour(new CityPair(b,a),2);
+        Configuration.instance.landscape.addNeighbour(new CityPair(b,c),2);
+        Configuration.instance.landscape.addNeighbour(new CityPair(c,a),2);
+        Configuration.instance.landscape.addNeighbour(new CityPair(c,b),2);
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
 

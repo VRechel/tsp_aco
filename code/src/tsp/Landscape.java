@@ -8,9 +8,15 @@ import java.util.Map;
  */
 public class Landscape {
     private final Map<CityPair, Double> neighbours = new HashMap<>();
+    private City startingCity;
 
-    public void addNeighbour(CityPair cities, double distance){
+    public int addNeighbour(CityPair cities, double distance){
+        if(startingCity == null)
+            startingCity = cities.getCityA();
+        if(neighbours.containsKey(cities))
+            return -1;
         neighbours.put(cities,distance);
+        return 1;
     }
 
     public double getDistance(City city, City neighbour){
@@ -50,5 +56,9 @@ public class Landscape {
             sb.append("\n");
         }
         return sb.toString();
+    }
+
+    public City getStartingCity() {
+        return startingCity;
     }
 }

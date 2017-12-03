@@ -74,10 +74,23 @@ public class LandscapeTest {
         final City b = new City("B");
 
         if(Configuration.instance.landscape.getNeighbours().size()!=0){
-            System.out.println(Configuration.instance.landscape);
             Assert.fail();
         }
         Configuration.instance.landscape.addNeighbour(new CityPair(a,b),1);
+        Assert.assertEquals(1, Configuration.instance.landscape.getNeighbours().size());
+    }
+
+    @Test
+    public void addExistingNeighbourTest() {
+        final City a = new City("A");
+        final City b = new City("B");
+
+        if(Configuration.instance.landscape.getNeighbours().size()!=0){
+            Assert.fail();
+        }
+
+        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),1);
+        Assert.assertEquals(-1,Configuration.instance.landscape.addNeighbour(new CityPair(a,b),1));
         Assert.assertEquals(1, Configuration.instance.landscape.getNeighbours().size());
     }
 

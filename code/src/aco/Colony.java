@@ -11,16 +11,18 @@ import java.util.concurrent.CyclicBarrier;
 
 public class Colony {
     private boolean initialized;
-    private boolean started;
+    boolean started;
     private double solutionQuality;
-    private int currentGeneration = 1;
+    int currentGeneration = 1;
 
+    private final City start = Configuration.instance.landscape.getStartingCity();
     private final Map<CityPair, Double> pheromones = new HashMap<>();
     private final ArrayList<Ant> ants = new ArrayList<>();
     private static ArrayList<City> bestRoute;
     private static double bestDistance;
     private static final double alpha = 2;  //Pheromongewichtung
     private static final double beta = 1;   //Distanzgewichtung
+    boolean debug = false;
 
     public Colony(){
         initAnts();
@@ -49,13 +51,14 @@ public class Colony {
     }
 
     private void newGeneration() {
-        System.out.println("Initializing new generation!");
+//        System.out.println("Initializing new generation!");
         started = false;
         ants.clear();
         initAnts();
-        start();
+        if(!debug)
+            start();
         currentGeneration++;
-        System.out.println("New generation started!");
+//        System.out.println("New generation started!");
     }
 
     public void initPheromone() throws PheromoneInitializationException {
@@ -89,7 +92,7 @@ public class Colony {
     public void initAnts() {
         CyclicBarrier barrier = new CyclicBarrier(Configuration.numberAnts, this::notifyColony);
         for(int i = 1; i < Configuration.numberAnts+1; i++)
-            ants.add(new Ant(i, new City("A"),this, barrier));
+            ants.add(new Ant(i, start,this, barrier));
     }
 
     public void killAnt(Ant a) {

@@ -65,12 +65,6 @@ class Ant extends Thread {
                 if(this.route.contains(cities.get(i).getCityB()))
                     cities.remove(i--);
             }
-            for (CityPair pair: cities) {
-                if(this.route.contains(pair.getCityB())){
-                    cities.remove(pair);
-                    System.out.println("City: " + pair.getCityB() + " removed!");
-                }
-            }
 
             //Adds all reachable neighbours to a local list for easier comparison
             this.availableCities.clear();
@@ -85,7 +79,6 @@ class Ant extends Thread {
                 availableCities.add(start);
                 visitCity(start);
             } else {
-
                 Map<CityPair, Double> lambdas = calculateLambdas(cities);
                 Map<CityPair, Double> probabilities = calculateProbabilities(cities, lambdas);
 
@@ -105,28 +98,31 @@ class Ant extends Thread {
                 }
                 if (!trip) {
                     double sum = 0;
-                    for (Map.Entry<CityPair, Double> possibility :
+                    for (Map.Entry<CityPair, Double> probability :
                             probabilities.entrySet()) {
-                        sum += possibility.getValue();
+                        sum += probability.getValue();
                         if (sum > rand) {
-                            this.visitCity(possibility.getKey().getCityB());
+                            this.visitCity(probability.getKey().getCityB());
 //                        System.out.println("Ant " + this.id  + " went from " + temp + " to " + currentCity);
                             runs++;
                             trip = true;
                         }
                     }
                 }
-                if (!trip)
+                if (!trip){
                     this.colony.killAnt(this);
+                    return;
+                }
             }
         }
         try {
             this.printRoute();
-            System.out.println("Waiting");
             this.updateColony();
             barrier.await();
         } catch (InterruptedException | BrokenBarrierException ex) {
             System.out.println("Ant " + this.id + " has encountered a problem with the barrier!");
+        }   catch (NullPointerException ex) {
+            System.out.println("Barrier is not existing! If this was not a test, check barrier initialization in Colony!");
         }
     }
 
@@ -165,7 +161,7 @@ class Ant extends Thread {
             return;
         this.currentCity = b;
         this.route.add(b);
-        printRoute();
+//        printRoute();
     }
 
     public ArrayList<City> getRoute() {

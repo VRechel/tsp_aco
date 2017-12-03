@@ -4,7 +4,12 @@ import tsp.Landscape;
 import util.HSQLDBManager;
 import util.MersenneTwisterFast;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 /**
  * @author Viktor
@@ -16,12 +21,13 @@ public enum Configuration {
     public final HSQLDBManager dbManager = HSQLDBManager.instance;
     public final Landscape landscape = new Landscape();
     public final Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private final Level loggingLevel = Level.CONFIG;
 
     //Parameters
-    final String filePath = "tspProblems/tspProblem.xml";
+    final String filePath = "tspProblems/tspTest.tsp";
     private static final double quality = 0.95;
     //public static final int maxDistance = 2708;
-    public static final int numberAnts = 4;
+    public static final int numberAnts = 1;
     public static int maxIterations = 100;
 
     //DB parameters
@@ -34,6 +40,17 @@ public enum Configuration {
     public final String dataRDirectory = userDirectory;
 
     public final String databaseFile = dataDirectory + "datastore.db";
+
+    {
+        try {
+            FileHandler fh = new FileHandler("Logging.txt");
+            fh.setFormatter(new SimpleFormatter());
+            logger.addHandler(fh);
+            logger.setLevel(loggingLevel);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public double getQuality() {
         return quality;

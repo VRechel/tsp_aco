@@ -3,6 +3,7 @@ package main;
 import aco.Colony;
 import aco.PheromoneInitializationException;
 import parser.Parser;
+import parser.TSPParser;
 import parser.XMLParser;
 import util.DBInitializationException;
 
@@ -43,7 +44,11 @@ class Application {
         if(path.substring(path.lastIndexOf(".")).equals(".xml")){
             parser = new XMLParser();
             parser.parse(new File(path));
-        }else{
+        }
+        else if(path.substring(path.lastIndexOf(".")).equals(".tsp")){
+            parser = new TSPParser();
+            parser.parse(new File(path));
+        } else{
             System.out.println("File format not supported by now! Please use XML!");
         }
         System.out.println("Paths: " + Configuration.instance.landscape.getNeighbours().size());

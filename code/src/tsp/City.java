@@ -11,6 +11,10 @@ public class City {
         this.name = a;
     }
 
+    public City(int id) {
+        this.name= String.valueOf(id);
+    }
+
     public void visit() throws VisitationException {
         if(visited)
             throw new VisitationException();
