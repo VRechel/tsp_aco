@@ -1,33 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <distanceMatrix>
     <entry>
-        <cityA>A</cityA>
-        <cityB>B</cityB>
+        <cityA>1</cityA>
+        <cityB>2</cityB>
         <distance>3</distance>
     </entry>
     <entry>
-        <cityA>A</cityA>
-        <cityB>C</cityB>
-        <distance>2</distance>
-    </entry>
-    <entry>
-        <cityA>B</cityA>
-        <cityB>A</cityB>
+        <cityA>2</cityA>
+        <cityB>1</cityB>
         <distance>3</distance>
-    </entry>
-    <entry>
-        <cityA>B</cityA>
-        <cityB>C</cityB>
-        <distance>4</distance>
-    </entry>
-    <entry>
-        <cityA>C</cityA>
-        <cityB>A</cityB>
-        <distance>2</distance>
-    </entry>
-    <entry>
-        <cityA>C</cityA>
-        <cityB>B</cityB>
-        <distance>4</distance>
     </entry>
 </distanceMatrix>

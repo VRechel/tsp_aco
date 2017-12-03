@@ -3,6 +3,7 @@ package parser;
 import main.Configuration;
 import org.junit.Assert;
 import org.junit.Test;
+import tsp.Landscape;
 
 import java.io.File;
 
@@ -15,12 +16,12 @@ public class TSPParserTest {
         Parser parser = new TSPParser();
 
         double distance = parser.getDistance(10,15,32,35);
-        Assert.assertEquals(Math.sqrt(22^2+20^2),distance,0.);
+        Assert.assertEquals(29.7321,distance,0.00009);
     }
 
     @Test
     public void parserTest(){
-        Configuration.instance.landscape.reset();
+        Configuration.instance.landscape = new Landscape();
 
         File file = new File("tspProblems/tspTest.tsp");
         Parser parser = new TSPParser();

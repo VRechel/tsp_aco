@@ -3,6 +3,7 @@ package parser;
 import main.Configuration;
 import org.junit.Assert;
 import org.junit.Test;
+import tsp.Landscape;
 
 import java.io.File;
 
@@ -12,7 +13,7 @@ import java.io.File;
 public class XMLParserTest {
     @Test
     public void parserTest(){
-        Configuration.instance.landscape.reset();
+        Configuration.instance.landscape = new Landscape();
 
         File file = new File("tspProblems/xmlTest.xml");
         Parser parser = new XMLParser();

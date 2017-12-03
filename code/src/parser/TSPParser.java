@@ -25,14 +25,27 @@ public class TSPParser implements Parser {
         }
 
         try {
-            for (int i = 0; i < 6; i++) {
+            String currentLine;
+            String[] split;
+
+            for (int i = 0; i < 3; i++) {
                 br.readLine();
             }
-            String currentLine;
+
+            //Read in the dimension of the problem
+            currentLine = br.readLine();
+            split = currentLine.trim().split("\\s+");
+            int dimension = Integer.parseInt(split[1]);
+            Configuration.instance.landscape.initNeighbours(dimension);
+
+            for (int i = 0; i < 2; i++) {
+                br.readLine();
+            }
+
             while ((currentLine = br.readLine()) != null) {
                 if(currentLine.equals("EOF"))
                     break;
-                String[] split = currentLine.trim().split("\\s+");
+                split = currentLine.trim().split("\\s+");
                 int id = Integer.parseInt(split[0]);
                 int x = Integer.parseInt(split[1]);
                 int y = Integer.parseInt(split[2]);

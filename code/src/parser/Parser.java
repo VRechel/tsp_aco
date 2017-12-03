@@ -17,7 +17,6 @@ public interface Parser {
     }
 
     default void logEntry(City a, City b, double distance){
-
         Configuration.instance.logger.log(Level.CONFIG, "Added new Neighbours: " + " City " + a + " City " + b + " with distance " + distance);
     }
 }

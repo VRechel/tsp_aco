@@ -1,9 +1,14 @@
 package aco;
 
 import main.Configuration;
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import tsp.City;
+import tsp.Landscape;
+
+import java.util.ArrayList;
 
 /**
  * @author Viktor
@@ -20,7 +25,7 @@ public class ColonyTest {
             pe.printStackTrace();
         }
         colony.updatePheromones(a,b, 5);
-        Assert.assertEquals(5, colony.getPheromone(a, b),0.);
+        Assert.assertEquals(6, colony.getPheromone(a, b),0.);
     }
 
     @Test
@@ -52,7 +57,7 @@ public class ColonyTest {
         } catch (PheromoneInitializationException pe) {
             pe.printStackTrace();
         }
-        Assert.assertEquals(1,colony.getPheromones().length);
+        Assert.assertEquals(2,colony.getPheromones().length);
         Assert.assertTrue(colony.getInitialized());
         Assert.assertEquals(1, colony.getPheromones()[a.getId()][b.getId()],0.);
     }
@@ -82,13 +87,6 @@ public class ColonyTest {
     }
 
     @Test
-    public void solveTest(){
-        Colony colony = new Colony();
-        Colony.Result result = colony.solve();
-        Assert.assertTrue(result.getClass()== Colony.Result.class);
-    }
-
-    @Test
     public void printPheromonesTest(){
         final City a = new City(1);
         final City b = new City(2);
@@ -107,49 +105,29 @@ public class ColonyTest {
 
     @Test
     public void notifyColonyTest(){
+        final City a = new City(1);
+        final City b = new City(2);
+
+        Configuration.instance.landscape.addNeighbour(a,b,2);
+        Configuration.instance.landscape.addNeighbour(b,a,2);
+
         Colony colony = new Colony();
         colony.debug = true;
+        ArrayList<City> temp = new ArrayList<>();
+        temp.add(a);
+        temp.add(b);
+        colony.updateRoute(temp);
 
         colony.notifyColony();
 
         Assert.assertTrue(!colony.started);
         Assert.assertTrue(colony.getAnts().size()>0);
         Assert.assertTrue(colony.currentGeneration == 2);
+    }
 
-
-//        final City a = new City("A");
-//        final City b = new City("B");
-//        Colony colony = new Colony();
-//        colony.debug = true;
-//        Configuration.instance.landscape.addNeighbour(new CityPair(a,b), 3);
-//        Configuration.instance.landscape.addNeighbour(new CityPair(b,a), 3);
-//        colony.updatePheromones(new CityPair(a,b), 1);
-//        colony.updatePheromones(new CityPair(b,a), 1);
-//        Map<CityPair, Double> pheromones = new HashMap<>();
-
-//        for (Map.Entry<CityPair, Double> entry:
-//             colony.getPheromones().entrySet()) {
-//            pheromones.put(entry.getKey(),entry.getValue());
-//        }
-//
-//        colony.getAnts().add(new Ant(1,a,colony));
-//        colony.getAnts().add(new Ant(2,a,colony));
-//        ArrayList<City> route = new ArrayList<>();
-//        route.add(a);
-//        route.add(b);
-//        for (Ant ant:
-//             colony.getAnts()) {
-//            ant.setRoute(route);
-//        }
-//
-//        colony.notifyColony();
-//
-//        boolean change = false;
-//        for (Map.Entry<CityPair, Double> entry:
-//                pheromones.entrySet()) {
-//            if(!entry.getValue().equals(colony.getPheromone(entry.getKey())))
-//                change = true;
-//        }
-//        Assert.assertTrue(change);
+    @Before
+    @After
+    public void resetLandscape(){
+        Configuration.instance.landscape = new Landscape();
     }
 }

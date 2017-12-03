@@ -5,7 +5,9 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import tsp.City;
+import tsp.Landscape;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,8 +22,9 @@ public class AntTest {
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
 
-        double expected = ((double) 1) / ((double)3);
-        Assert.assertEquals(expected,ant.calculateLambda(3,1),0.0);
+        BigDecimal expected = BigDecimal.valueOf(1./3.);
+        expected = expected.setScale(2, BigDecimal.ROUND_DOWN);
+        Assert.assertEquals(0,expected.compareTo(ant.calculateLambda(3.,1.).setScale(2, BigDecimal.ROUND_DOWN)));
     }
 
     @Test
@@ -29,25 +32,30 @@ public class AntTest {
         final City a = new City(1);
         final City b = new City(2);
         final City c = new City(3);
+        Configuration.instance.landscape.initNeighbours(3);
+
         Colony colony = new Colony();
+        try {
+            colony.initPheromone();
+        } catch (PheromoneInitializationException e) {
+            e.printStackTrace();
+        }
         Ant ant = new Ant(1, a, colony);
         ArrayList<City> cities = new ArrayList<>();
 
-        double expected = ((double) 1) / ((double)3);
+        BigDecimal expected = BigDecimal.valueOf(1./3.);
+        expected = expected.setScale(2, BigDecimal.ROUND_DOWN);
 
         cities.add(b);
         cities.add(c);
         for (City city: cities) {
             Configuration.instance.landscape.addNeighbour(ant.getCurrentCity() ,city,3);
         }
-        for (City city: cities){
-            ant.getColony().updatePheromones(ant.getCurrentCity(), city, 1);
-        }
-        Map<City, Double> lambdas = ant.calculateLambdas(cities);
+        Map<City, BigDecimal> lambdas = ant.calculateLambdas(cities);
 
         Assert.assertTrue(lambdas.size() > 0);
-        for (Map.Entry<City, Double> entry: lambdas.entrySet()) {
-            Assert.assertEquals(expected, entry.getValue(), 0.);
+        for (Map.Entry<City, BigDecimal> entry: lambdas.entrySet()) {
+            Assert.assertEquals(0, expected.compareTo(entry.getValue().setScale(2, BigDecimal.ROUND_DOWN)));
         }
     }
 
@@ -57,11 +65,11 @@ public class AntTest {
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
 
-        double lambda = 1./3.;
-        double sum = 3.;
+        BigDecimal lambda = BigDecimal.valueOf(1./3.);
+        BigDecimal sum = BigDecimal.valueOf(3.);
 
-        double p = ant.calculateProbability(lambda,sum);
-        Assert.assertEquals((1./3.)/3., p,0.0);
+        BigDecimal p = ant.calculateProbability(lambda,sum);
+        Assert.assertEquals(0, p.compareTo(BigDecimal.valueOf((1./3.)/3.)));
     }
 
     @Test
@@ -69,11 +77,17 @@ public class AntTest {
         final City a = new City(1);
         final City b = new City(2);
         final City c = new City(3);
+        Configuration.instance.landscape.initNeighbours(3);
 
         Colony colony = new Colony();
+        try {
+            colony.initPheromone();
+        } catch (PheromoneInitializationException e) {
+            e.printStackTrace();
+        }
         Ant ant = new Ant(1, a, colony);
-        Map<City, Double> probabilities;
-        Map<City, Double> lambdas = new HashMap<>();
+        Map<City, BigDecimal> probabilities;
+        Map<City, BigDecimal> lambdas = new HashMap<>();
         ArrayList<City> cities = new ArrayList<>();
 
         cities.add(b);
@@ -81,18 +95,15 @@ public class AntTest {
         for (City city: cities) {
             Configuration.instance.landscape.addNeighbour(ant.getCurrentCity(), city,3);
         }
-        for (City city: cities){
-            ant.getColony().updatePheromones(ant.getCurrentCity(), city, 1);
-        }
         for (City city: cities) {
-            lambdas.put(city, 1./3.);
+            lambdas.put(city, BigDecimal.valueOf(1./3.));
         }
 
         probabilities = ant.calculateProbabilities(cities, lambdas);
         Assert.assertTrue(probabilities.size() != 0);
-        for (Map.Entry<City, Double> entry:
+        for (Map.Entry<City, BigDecimal> entry:
              probabilities.entrySet()) {
-            Assert.assertEquals(0.5, entry.getValue(),0.);
+            Assert.assertEquals(0, entry.getValue().compareTo(BigDecimal.valueOf(0.5)));
         }
     }
 
@@ -101,9 +112,11 @@ public class AntTest {
         final City a = new City(1);
         final City b = new City(2);
         final City c = new City(3);
+        Configuration.instance.landscape.initNeighbours(3);
 
         Configuration.instance.setMaxIterations(10);
         Colony colony = new Colony();
+
         Ant ant = new Ant(1, a, colony);
         Configuration.instance.landscape.addNeighbour(a,b, 2);
         Configuration.instance.landscape.addNeighbour(a,c, 2);
@@ -111,6 +124,11 @@ public class AntTest {
         Configuration.instance.landscape.addNeighbour(b,c, 2);
         Configuration.instance.landscape.addNeighbour(c,a, 2);
         Configuration.instance.landscape.addNeighbour(c,b, 2);
+        try {
+            colony.initPheromone();
+        } catch (PheromoneInitializationException e) {
+            e.printStackTrace();
+        }
 
         ant.getColony().updatePheromones(a,b,1.5);
         ant.getColony().updatePheromones(a,c,1.5);
@@ -129,6 +147,7 @@ public class AntTest {
         final City a = new City(1);
         final City b = new City(2);
         final City c = new City(3);
+        Configuration.instance.landscape.initNeighbours(3);
 
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
@@ -174,6 +193,7 @@ public class AntTest {
         final City a = new City(1);
         final City b = new City(2);
         final City c = new City(3);
+        Configuration.instance.landscape.initNeighbours(3);
 
         Configuration.instance.landscape.addNeighbour(a,b, 2);
         Configuration.instance.landscape.addNeighbour(a,c, 2);
@@ -211,6 +231,6 @@ public class AntTest {
 
     @After
     public void reset(){
-        Configuration.instance.landscape.reset();
+        Configuration.instance.landscape = new Landscape();
     }
 }

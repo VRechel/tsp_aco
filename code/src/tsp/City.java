@@ -7,21 +7,13 @@ import java.util.Objects;
  */
 public class City {
     private final int id;
-    private boolean visited = false;
 
+    /*
+        The city will be named by its id. As arrays start at zero and to not waste space all city ids will be
+        decremented before usage.
+     */
     public City(int id) {
         this.id = --id;
-    }
-
-    public void visit() throws VisitationException {
-        if(visited)
-            throw new VisitationException();
-        else
-            visited = true;
-    }
-
-    public boolean getVisited() {
-        return visited;
     }
 
     @Override
@@ -39,7 +31,7 @@ public class City {
 
     @Override
     public String toString() {
-        return "City " + id;
+        return String.valueOf(id);
     }
 
     public int getId() {

@@ -1,10 +1,12 @@
 package parser;
 
+import main.Configuration;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import tsp.City;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -37,10 +39,10 @@ public class XMLParser implements Parser {
 
                 Element element = (Element) node;
 
-//                City a = new City(element.getElementsByTagName("cityA").item(0).getTextContent());
-//                City b = new City(element.getElementsByTagName("cityB").item(0).getTextContent());
-//                Double distance = Double.parseDouble(element.getElementsByTagName("distance").item(0).getTextContent());
-//                Configuration.instance.landscape.addNeighbour(new CityPair(a,b), distance);
+                City a = new City(Integer.valueOf(element.getElementsByTagName("cityA").item(0).getTextContent()));
+                City b = new City(Integer.valueOf(element.getElementsByTagName("cityB").item(0).getTextContent()));
+                Double distance = Double.parseDouble(element.getElementsByTagName("distance").item(0).getTextContent());
+                Configuration.instance.landscape.addNeighbour(a,b, distance);
             }
         }
     }
