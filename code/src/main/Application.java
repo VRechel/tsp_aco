@@ -41,17 +41,20 @@ class Application {
     private static void initTSP() {
         Parser parser;
         String path = Configuration.instance.getFilePath();
-        if(path.substring(path.lastIndexOf(".")).equals(".xml")){
-            parser = new XMLParser();
-            parser.parse(new File(path));
+        switch (path.substring(path.lastIndexOf("."))) {
+            case ".xml":
+                parser = new XMLParser();
+                parser.parse(new File(path));
+                break;
+            case ".tsp":
+                parser = new TSPParser();
+                parser.parse(new File(path));
+                break;
+            default:
+                System.out.println("File format not supported by now! Please use XML!");
+                break;
         }
-        else if(path.substring(path.lastIndexOf(".")).equals(".tsp")){
-            parser = new TSPParser();
-            parser.parse(new File(path));
-        } else{
-            System.out.println("File format not supported by now! Please use XML!");
-        }
-        System.out.println("Paths: " + Configuration.instance.landscape.getNeighbours().size());
+        System.out.println("Paths: " + Configuration.instance.landscape.getNeighbours().length);
     }
 
     private static void initDB() throws DBInitializationException {

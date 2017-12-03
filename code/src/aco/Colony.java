@@ -2,11 +2,8 @@ package aco;
 
 import main.Configuration;
 import tsp.City;
-import tsp.CityPair;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.CyclicBarrier;
 
 public class Colony {
@@ -16,7 +13,7 @@ public class Colony {
     int currentGeneration = 1;
 
     private final City start = Configuration.instance.landscape.getStartingCity();
-    private final Map<CityPair, Double> pheromones = new HashMap<>();
+    private static double[][] pheromones;
     private final ArrayList<Ant> ants = new ArrayList<>();
     private static ArrayList<City> bestRoute;
     private static double bestDistance;
@@ -66,23 +63,28 @@ public class Colony {
             throw new PheromoneInitializationException();
         }
         else{
-            for(Map.Entry<CityPair, Double> entry : Configuration.instance.landscape.getNeighbours().entrySet()){
-                pheromones.put(entry.getKey(),1.);
+            int size = Configuration.instance.landscape.getNeighboursSize();
+            pheromones = new double[size][size];
+
+            for (int x = 0; x < size; x++) {
+                for (int y = 0; y < size; y++) {
+                    pheromones[x][y] = 1;
+                }
             }
             initialized = true;
         }
     }
 
-    public synchronized void updatePheromones(CityPair cities, double plevel) {
-        pheromones.put(cities, plevel);
+    public synchronized void updatePheromones(City a, City b, double plevel) {
+        pheromones[a.getId()][b.getId()] += plevel;
     }
 
-    public Map<CityPair, Double> getPheromones(){
+    public double[][] getPheromones(){
         return pheromones;
     }
 
-    public double getPheromone(CityPair c) {
-        return pheromones.get(c);
+    public double getPheromone(City a, City b) {
+        return pheromones[a.getId()][b.getId()];
     }
 
     public ArrayList<Ant> getAnts() {
@@ -130,6 +132,10 @@ public class Colony {
             sum += Configuration.instance.landscape.getDistance(route.get(i), route.get(i+1));
         }
         return sum;
+    }
+
+    public boolean getInitialized() {
+        return initialized;
     }
 
     public class Result{

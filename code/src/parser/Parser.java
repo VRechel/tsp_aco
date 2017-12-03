@@ -17,10 +17,7 @@ public interface Parser {
     }
 
     default void logEntry(City a, City b, double distance){
-        StringBuilder sb = new StringBuilder();
 
-        sb.append("Added new Neighbours: ").append(" City ").append(a).append(" City ").append(b).append( " with distance ").append(distance);
-
-        Configuration.instance.logger.log(Level.CONFIG, sb.toString());
+        Configuration.instance.logger.log(Level.CONFIG, "Added new Neighbours: " + " City " + a + " City " + b + " with distance " + distance);
     }
 }

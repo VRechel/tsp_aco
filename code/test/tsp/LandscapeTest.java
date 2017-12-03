@@ -12,93 +12,93 @@ import org.junit.Test;
 public class LandscapeTest {
     @Test
     public void getDistancesTest(){
-        final City city = new City("A");
-        final City neighbour = new City("B");
+        final City city = new City(1);
+        final City neighbour = new City(2);
         final int distance = 5;
 
-        Configuration.instance.landscape.addNeighbour(new CityPair(city, neighbour), distance);
+        Configuration.instance.landscape.addNeighbour(city, neighbour, distance);
         Assert.assertEquals(5, Configuration.instance.landscape.getDistance(city, neighbour),0.);
     }
 
     @Test
     public void getNeighboursSizeTest() {
-        final City city = new City("A");
-        final City neighbour = new City("B");
+        final City city = new City(1);
+        final City neighbour = new City(2);
         final int distance = 5;
 
-        Configuration.instance.landscape.addNeighbour(new CityPair(city, neighbour), distance);
+        Configuration.instance.landscape.addNeighbour(city, neighbour, distance);
         Assert.assertEquals(1,Configuration.instance.landscape.getNeighboursSize() ,0.);
     }
 
     @Test
     public void getSpecifiedNeighboursTest() {
-        final City a = new City("A");
-        final City b = new City("B");
-        final City c = new City("C");
+        final City a = new City(1);
+        final City b = new City(2);
+        final City c = new City(3);
 
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),1);
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,c),1);
-        Configuration.instance.landscape.addNeighbour(new CityPair(b,c),1);
+        Configuration.instance.landscape.addNeighbour(a,b,1);
+        Configuration.instance.landscape.addNeighbour(a,c,1);
+        Configuration.instance.landscape.addNeighbour(b,c,1);
 
-        Assert.assertEquals(2, Configuration.instance.landscape.getSpecifiedNeighbours(new City("A")).size());
+        Assert.assertEquals(2, Configuration.instance.landscape.getSpecifiedNeighbours(new City(1)).length);
     }
 
     @Test
     public void resetTest() {
-        final City a = new City("A");
-        final City b = new City("B");
+        final City a = new City(1);
+        final City b = new City(2);
 
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),1);
-        if(Configuration.instance.landscape.getNeighbours().size()==0)
+        Configuration.instance.landscape.addNeighbour(a,b,1);
+        if(Configuration.instance.landscape.getNeighbours().length==0)
             Assert.fail();
         Configuration.instance.landscape.reset();
-        Assert.assertTrue(Configuration.instance.landscape.getNeighbours().size()==0);
+        Assert.assertTrue(Configuration.instance.landscape.getNeighbours().length==0);
     }
 
     @Test
     public void getNeighboursTest() {
-        final City a = new City("A");
-        final City b = new City("B");
-        final City c = new City("C");
+        final City a = new City(1);
+        final City b = new City(2);
+        final City c = new City(3);
 
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),1);
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,c),1);
-        Configuration.instance.landscape.addNeighbour(new CityPair(b,c),1);
+        Configuration.instance.landscape.addNeighbour(a,b,1);
+        Configuration.instance.landscape.addNeighbour(a,c,1);
+        Configuration.instance.landscape.addNeighbour(b,c,1);
 
-        Assert.assertEquals(3, Configuration.instance.landscape.getNeighbours().size());
+        Assert.assertEquals(3, Configuration.instance.landscape.getNeighbours().length);
     }
 
     @Test
     public void addNeighbourTest() {
-        final City a = new City("A");
-        final City b = new City("B");
+        final City a = new City(1);
+        final City b = new City(2);
 
-        if(Configuration.instance.landscape.getNeighbours().size()!=0){
+        if(Configuration.instance.landscape.getNeighbours().length!=0){
             Assert.fail();
         }
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),1);
-        Assert.assertEquals(1, Configuration.instance.landscape.getNeighbours().size());
+        Configuration.instance.landscape.addNeighbour(a,b,1);
+        Assert.assertEquals(1, Configuration.instance.landscape.getNeighbours().length);
     }
 
     @Test
     public void addExistingNeighbourTest() {
-        final City a = new City("A");
-        final City b = new City("B");
+        final City a = new City(1);
+        final City b = new City(2);
 
-        if(Configuration.instance.landscape.getNeighbours().size()!=0){
+        if(Configuration.instance.landscape.getNeighbours().length!=0){
             Assert.fail();
         }
 
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),1);
-        Assert.assertEquals(-1,Configuration.instance.landscape.addNeighbour(new CityPair(a,b),1));
-        Assert.assertEquals(1, Configuration.instance.landscape.getNeighbours().size());
+        Configuration.instance.landscape.addNeighbour(a,b,1);
+        Assert.assertEquals(-1,Configuration.instance.landscape.addNeighbour(a,b,1));
+        Assert.assertEquals(1, Configuration.instance.landscape.getNeighbours().length);
     }
 
     @Test
     public void toStringTest() {
-        final City a = new City("A");
-        final City b = new City("B");
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),1);
+        final City a = new City(1);
+        final City b = new City(2);
+        Configuration.instance.landscape.addNeighbour(a,b,1);
 
         String sb = "Landscape: \n" +
                 a + " " +

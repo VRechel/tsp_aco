@@ -4,11 +4,6 @@ import main.Configuration;
 import org.junit.Assert;
 import org.junit.Test;
 import tsp.City;
-import tsp.CityPair;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author Viktor
@@ -16,14 +11,16 @@ import java.util.Map;
 public class ColonyTest {
     @Test
     public void updatePheromoneTest(){
+        final City a = new City(1);
+        final City b = new City(2);
         Colony colony = new Colony();
         try {
             colony.initPheromone();
         } catch (PheromoneInitializationException pe) {
             pe.printStackTrace();
         }
-        colony.updatePheromones(new CityPair(new City("A"), new City("B")), 5);
-        Assert.assertEquals(5, colony.getPheromone(new CityPair(new City("A"), new City("B"))),0.);
+        colony.updatePheromones(a,b, 5);
+        Assert.assertEquals(5, colony.getPheromone(a, b),0.);
     }
 
     @Test
@@ -46,17 +43,18 @@ public class ColonyTest {
 
     @Test
     public void initPheromonesTest(){
-        final City a = new City("A");
-        final City b = new City("B");
+        final City a = new City(1);
+        final City b = new City(2);
         Colony colony = new Colony();
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),2);
+        Configuration.instance.landscape.addNeighbour(a,b,2);
         try {
             colony.initPheromone();
         } catch (PheromoneInitializationException pe) {
             pe.printStackTrace();
         }
-        Assert.assertEquals(1,colony.getPheromones().size());
-        Assert.assertEquals(1, colony.getPheromones().get(new CityPair(a,b)),0.);
+        Assert.assertEquals(1,colony.getPheromones().length);
+        Assert.assertTrue(colony.getInitialized());
+        Assert.assertEquals(1, colony.getPheromones()[a.getId()][b.getId()],0.);
     }
     
     @Test
@@ -92,10 +90,10 @@ public class ColonyTest {
 
     @Test
     public void printPheromonesTest(){
-        final City a = new City("A");
-        final City b = new City("B");
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),2);
-        Configuration.instance.landscape.addNeighbour(new CityPair(b,a),2);
+        final City a = new City(1);
+        final City b = new City(2);
+        Configuration.instance.landscape.addNeighbour(a,b,2);
+        Configuration.instance.landscape.addNeighbour(b,a,2);
 
         Colony colony = new Colony();
         try {

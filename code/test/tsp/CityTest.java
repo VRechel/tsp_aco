@@ -9,7 +9,7 @@ import org.junit.Test;
 public class CityTest {
     @Test
     public void travelToCity(){
-        City city = new City("A");
+        City city = new City(1);
         try {
             city.visit();
         } catch (VisitationException ve){
@@ -21,7 +21,7 @@ public class CityTest {
 
     @Test
     public void travelToVisitedCity(){
-        City city = new City("A");
+        City city = new City(1);
         try {
             city.visit();
         }catch(VisitationException ve){

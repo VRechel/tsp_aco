@@ -5,7 +5,6 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import tsp.City;
-import tsp.CityPair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +16,7 @@ import java.util.Map;
 public class AntTest {
     @Test
     public void calculateLambdaTest() {
-        final City a = new City("A");
+        final City a = new City(1);
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
 
@@ -27,35 +26,34 @@ public class AntTest {
 
     @Test
     public void calculateLambdasTest() {
-        final City a = new City("A");
-        final City b = new City("B");
-        final City c = new City("C");
+        final City a = new City(1);
+        final City b = new City(2);
+        final City c = new City(3);
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
-        ArrayList<CityPair> cities = new ArrayList<>();
+        ArrayList<City> cities = new ArrayList<>();
 
         double expected = ((double) 1) / ((double)3);
 
-        cities.add(new CityPair(a, b));
-        cities.add(new CityPair(a, c));
-        for (CityPair pair: cities) {
-            Configuration.instance.landscape.addNeighbour(pair,3);
+        cities.add(b);
+        cities.add(c);
+        for (City city: cities) {
+            Configuration.instance.landscape.addNeighbour(ant.getCurrentCity() ,city,3);
         }
-        for (CityPair pair: cities){
-            ant.getColony().updatePheromones(pair, 1);
+        for (City city: cities){
+            ant.getColony().updatePheromones(ant.getCurrentCity(), city, 1);
         }
-        Map<CityPair, Double> lambdas = ant.calculateLambdas(cities);
+        Map<City, Double> lambdas = ant.calculateLambdas(cities);
 
         Assert.assertTrue(lambdas.size() > 0);
-        for (Map.Entry<CityPair, Double> entry:
-             lambdas.entrySet()) {
+        for (Map.Entry<City, Double> entry: lambdas.entrySet()) {
             Assert.assertEquals(expected, entry.getValue(), 0.);
         }
     }
 
     @Test
     public void calculateProbabilityTest(){
-        final City a = new City("A");
+        final City a = new City(1);
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
 
@@ -68,31 +66,31 @@ public class AntTest {
 
     @Test
     public void calculateProbabilitiesTest() {
-        final City a = new City("A");
-        final City b = new City("B");
-        final City c = new City("C");
+        final City a = new City(1);
+        final City b = new City(2);
+        final City c = new City(3);
 
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
-        Map<CityPair, Double> probabilities;
-        Map<CityPair, Double> lambdas = new HashMap<>();
-        ArrayList<CityPair> cities = new ArrayList<>();
+        Map<City, Double> probabilities;
+        Map<City, Double> lambdas = new HashMap<>();
+        ArrayList<City> cities = new ArrayList<>();
 
-        cities.add(new CityPair(a, b));
-        cities.add(new CityPair(a, c));
-        for (CityPair pair: cities) {
-            Configuration.instance.landscape.addNeighbour(pair,3);
+        cities.add(b);
+        cities.add(c);
+        for (City city: cities) {
+            Configuration.instance.landscape.addNeighbour(ant.getCurrentCity(), city,3);
         }
-        for (CityPair pair: cities){
-            ant.getColony().updatePheromones(pair, 1);
+        for (City city: cities){
+            ant.getColony().updatePheromones(ant.getCurrentCity(), city, 1);
         }
-        for (CityPair pair: cities) {
-            lambdas.put(pair,1./3.);
+        for (City city: cities) {
+            lambdas.put(city, 1./3.);
         }
 
         probabilities = ant.calculateProbabilities(cities, lambdas);
         Assert.assertTrue(probabilities.size() != 0);
-        for (Map.Entry<CityPair, Double> entry:
+        for (Map.Entry<City, Double> entry:
              probabilities.entrySet()) {
             Assert.assertEquals(0.5, entry.getValue(),0.);
         }
@@ -100,26 +98,26 @@ public class AntTest {
 
     @Test
     public void runTest(){
-        final City a = new City("A");
-        final City b = new City("B");
-        final City c = new City("C");
+        final City a = new City(1);
+        final City b = new City(2);
+        final City c = new City(3);
 
         Configuration.instance.setMaxIterations(10);
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,b), 2);
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,c), 2);
-        Configuration.instance.landscape.addNeighbour(new CityPair(b,a), 2);
-        Configuration.instance.landscape.addNeighbour(new CityPair(b,c), 2);
-        Configuration.instance.landscape.addNeighbour(new CityPair(c,a), 2);
-        Configuration.instance.landscape.addNeighbour(new CityPair(c,b), 2);
+        Configuration.instance.landscape.addNeighbour(a,b, 2);
+        Configuration.instance.landscape.addNeighbour(a,c, 2);
+        Configuration.instance.landscape.addNeighbour(b,a, 2);
+        Configuration.instance.landscape.addNeighbour(b,c, 2);
+        Configuration.instance.landscape.addNeighbour(c,a, 2);
+        Configuration.instance.landscape.addNeighbour(c,b, 2);
 
-        ant.getColony().updatePheromones(new CityPair(a,b),1.5);
-        ant.getColony().updatePheromones(new CityPair(a,c),1.5);
-        ant.getColony().updatePheromones(new CityPair(b,a),1.5);
-        ant.getColony().updatePheromones(new CityPair(b,c),1.5);
-        ant.getColony().updatePheromones(new CityPair(c,a),1.5);
-        ant.getColony().updatePheromones(new CityPair(c,b),1.5);
+        ant.getColony().updatePheromones(a,b,1.5);
+        ant.getColony().updatePheromones(a,c,1.5);
+        ant.getColony().updatePheromones(b,a,1.5);
+        ant.getColony().updatePheromones(b,c,1.5);
+        ant.getColony().updatePheromones(c,a,1.5);
+        ant.getColony().updatePheromones(c,b,1.5);
 
         ant.run();
         Assert.assertTrue(ant.getRoute().size()!=1);
@@ -128,18 +126,14 @@ public class AntTest {
 
     @Test
     public void updatePheromonesTest(){
-        final City a = new City("A");
-        final City b = new City("B");
-        final City c = new City("C");
+        final City a = new City(1);
+        final City b = new City(2);
+        final City c = new City(3);
+
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
         ArrayList<City> route = new ArrayList<>();
-        Map<CityPair, Double> expected = new HashMap<>();
-
-        for (Map.Entry<CityPair, Double> entry:
-            colony.getPheromones().entrySet()) {
-            expected.put(entry.getKey(),entry.getValue());
-        }
+        double[][] tempPheromones = ant.getColony().getPheromones().clone();
 
         route.add(b);
         route.add(c);
@@ -147,22 +141,22 @@ public class AntTest {
         ant.setRoute(route);
 
         for(int x = 0; x < route.size()-1;x++){
-            CityPair key = new CityPair(route.get(x), route.get(x+1));
-            expected.put(key, (1+(1./3.)));
+            tempPheromones[x][x+1] = (1+(1./3.));
         }
         for(int x = 0; x < route.size()-1;x++){
-            Configuration.instance.landscape.addNeighbour(new CityPair(route.get(x), route.get(x+1)), 3);
+            Configuration.instance.landscape.addNeighbour(route.get(x), route.get(x+1), 3);
         }
 
         ant.updatePheromones();
-        Assert.assertEquals(expected,ant.getColony().getPheromones());
+        Assert.assertArrayEquals(tempPheromones,ant.getColony().getPheromones());
     }
 
     @Test
     public void visitCityTest(){
-        final City a = new City("A");
-        final City b = new City("B");
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),2);
+        final City a = new City(1);
+        final City b = new City(2);
+
+        Configuration.instance.landscape.addNeighbour(a,b,2);
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
         ArrayList<City> temp = new ArrayList<>();
@@ -177,15 +171,16 @@ public class AntTest {
 
     @Test
     public void visitVisitedCityTest(){
-        final City a = new City("A");
-        final City b = new City("B");
-        final City c = new City("C");
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,b),2);
-        Configuration.instance.landscape.addNeighbour(new CityPair(a,c),2);
-        Configuration.instance.landscape.addNeighbour(new CityPair(b,a),2);
-        Configuration.instance.landscape.addNeighbour(new CityPair(b,c),2);
-        Configuration.instance.landscape.addNeighbour(new CityPair(c,a),2);
-        Configuration.instance.landscape.addNeighbour(new CityPair(c,b),2);
+        final City a = new City(1);
+        final City b = new City(2);
+        final City c = new City(3);
+
+        Configuration.instance.landscape.addNeighbour(a,b, 2);
+        Configuration.instance.landscape.addNeighbour(a,c, 2);
+        Configuration.instance.landscape.addNeighbour(b,a, 2);
+        Configuration.instance.landscape.addNeighbour(b,c, 2);
+        Configuration.instance.landscape.addNeighbour(c,a, 2);
+        Configuration.instance.landscape.addNeighbour(c,b, 2);
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
 

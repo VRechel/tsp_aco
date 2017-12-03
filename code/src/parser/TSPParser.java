@@ -2,15 +2,11 @@ package parser;
 
 import javafx.util.Pair;
 import main.Configuration;
-import sun.security.krb5.Config;
 import tsp.City;
-import tsp.CityPair;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
 
 /**
  * @author Viktor
@@ -47,8 +43,7 @@ public class TSPParser implements Parser {
             System.out.println("Error while reading the file!");
         }finally {
             try {
-                if (br != null)
-                    br.close();
+                br.close();
             }catch(IOException iex){
                 System.out.println("Error while closing the file readers!");
             }
@@ -64,12 +59,10 @@ public class TSPParser implements Parser {
                  temp.entrySet()) {
                 double distance = getDistance(city.getValue().getKey(), city.getValue().getValue()
                         , neighbour.getValue().getKey(), neighbour.getValue().getValue());
-                if(Configuration.instance.landscape.addNeighbour(new CityPair(city.getKey(), neighbour.getKey())
-                        , distance)==1)
+                if(Configuration.instance.landscape.addNeighbour(city.getKey(), neighbour.getKey(), distance)==1)
                     logEntry(city.getKey(), neighbour.getKey(), distance);
 
-                if(Configuration.instance.landscape.addNeighbour(new CityPair(neighbour.getKey(), city.getKey())
-                        , distance)==1)
+                if(Configuration.instance.landscape.addNeighbour(neighbour.getKey(), city.getKey(), distance)==1)
                     logEntry(neighbour.getKey(), city.getKey(), distance);
             }
         }

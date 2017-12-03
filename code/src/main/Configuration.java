@@ -4,7 +4,6 @@ import tsp.Landscape;
 import util.HSQLDBManager;
 import util.MersenneTwisterFast;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;

@@ -2,7 +2,6 @@ package aco;
 
 import main.Configuration;
 import tsp.City;
-import tsp.CityPair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -53,24 +52,23 @@ class Ant extends Thread {
 
     public void run(){
         while(!finished && Configuration.maxIterations > runs && this.colony.getSolutionQuality() < Configuration.instance.getQuality()) {
-            Map<CityPair, Double> neighbours = Configuration.instance.landscape.getSpecifiedNeighbours(this.getCurrentCity());
-            ArrayList<CityPair> cities = new ArrayList<>();
+            double[] neighbours = Configuration.instance.landscape.getSpecifiedNeighbours(this.getCurrentCity());
+
+            ArrayList<City> neighboursList = new ArrayList<>();
             //Adding all neighbours of the current city to a temporary local list
-            for (Map.Entry<CityPair, Double> entry : neighbours.entrySet()) {
-                cities.add(entry.getKey());
+            for (int x = 0; x < neighbours.length; x++) {
+                neighboursList.add(new City(x));
             }
 
             //Checks which of the neighbours can be reached (weren't visited before)
-            for(int i = 0; i < cities.size(); i++){
-                if(this.route.contains(cities.get(i).getCityB()))
-                    cities.remove(i--);
+            for (int x = 0; x < neighboursList.size(); x++) {
+                if(this.route.contains(neighboursList.get(x)))
+                    neighboursList.remove(x--);
             }
 
             //Adds all reachable neighbours to a local list for easier comparison
             this.availableCities.clear();
-            for (CityPair pair: cities) {
-                this.availableCities.add(pair.getCityB());
-            }
+            this.availableCities.addAll(neighboursList);
 
             //If all cities have been reached the ant has to travel back to the colony (the colony equals the first city)
             if(availableCities.size()==0) {
@@ -79,16 +77,16 @@ class Ant extends Thread {
                 availableCities.add(start);
                 visitCity(start);
             } else {
-                Map<CityPair, Double> lambdas = calculateLambdas(cities);
-                Map<CityPair, Double> probabilities = calculateProbabilities(cities, lambdas);
+                Map<City, Double> lambdas = calculateLambdas(this.availableCities);
+                Map<City, Double> probabilities = calculateProbabilities(this.availableCities, lambdas);
 
                 double rand = Configuration.instance.randomNumberGenerator.nextDouble();
 
                 boolean trip = false;
-                for (Map.Entry<CityPair, Double> probability :
+                for (Map.Entry<City, Double> probability :
                         probabilities.entrySet()) {
                     if (probability.getValue() > rand) {
-                        this.visitCity(probability.getKey().getCityB());
+                        this.visitCity(probability.getKey());
 //                    System.out.println("Probability: " + probability.getValue());
 //                    System.out.println("Random: " + rand);
 //                    System.out.println("Ant " + this.id  + " went from " + temp + " to " + currentCity);
@@ -98,11 +96,11 @@ class Ant extends Thread {
                 }
                 if (!trip) {
                     double sum = 0;
-                    for (Map.Entry<CityPair, Double> probability :
+                    for (Map.Entry<City, Double> probability :
                             probabilities.entrySet()) {
                         sum += probability.getValue();
                         if (sum > rand) {
-                            this.visitCity(probability.getKey().getCityB());
+                            this.visitCity(probability.getKey());
 //                        System.out.println("Ant " + this.id  + " went from " + temp + " to " + currentCity);
                             runs++;
                             trip = true;
@@ -146,9 +144,8 @@ class Ant extends Thread {
 
     public void updatePheromones() {
         for(int x = 0; x < route.size()-1; x++){
-            CityPair key = new CityPair(route.get(x), route.get(x+1));
-            this.colony.updatePheromones(key
-                    , 1+(1./Configuration.instance.landscape.getDistance(route.get(x),route.get(x+1))));
+            this.colony.updatePheromones(route.get(x),route.get(x+1)
+                    , (1./Configuration.instance.landscape.getDistance(route.get(x),route.get(x+1))));
         }
     }
 
@@ -168,17 +165,16 @@ class Ant extends Thread {
         return route;
     }
 
-    public Map<CityPair, Double> calculateProbabilities(ArrayList<CityPair> cities, Map<CityPair, Double> lambdas) {
-        Map<CityPair, Double> probabilities = new HashMap<>();
+    public Map<City, Double> calculateProbabilities(ArrayList<City> cities, Map<City, Double> lambdas) {
+        Map<City, Double> probabilities = new HashMap<>();
         double sum = 0;
-        for (Map.Entry<CityPair, Double> lambda:
+        for (Map.Entry<City, Double> lambda:
                 lambdas.entrySet()) {
             sum += lambda.getValue();
         }
-        for (CityPair c:
+        for (City city:
              cities) {
-            probabilities.put(c,
-                    calculateProbability(lambdas.get(c), sum));
+            probabilities.put(city, calculateProbability(lambdas.get(city), sum));
         }
         return probabilities;
     }
@@ -187,13 +183,13 @@ class Ant extends Thread {
         return lambda / sum;
     }
 
-    public Map<CityPair, Double> calculateLambdas(ArrayList<CityPair> cities) {
-        Map<CityPair, Double> lambdas = new HashMap<>();
-        for (CityPair pair:
+    public Map<City, Double> calculateLambdas(ArrayList<City> cities) {
+        Map<City, Double> lambdas = new HashMap<>();
+        for (City city:
              cities) {
-            lambdas.put(pair, calculateLambda(
-                                    Configuration.instance.landscape.getDistance(pair.getCityA(), pair.getCityB())
-                                    ,this.getColony().getPheromone(pair)));
+            lambdas.put(city, calculateLambda(
+                                    Configuration.instance.landscape.getDistance(this.currentCity, city)
+                                    ,this.getColony().getPheromone(this.currentCity, city)));
         }
         return lambdas;
     }
