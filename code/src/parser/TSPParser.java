@@ -12,10 +12,16 @@ import java.util.Map;
  * @author Viktor
  */
 public class TSPParser implements Parser {
-    @Override
+    /*
+        The parser will take a .tsp file and parse it to the landscape.
+        The format is as follows:   <city ID> <x coordinate> <y coordinate>
+
+        @param  File    The file which will be parsed
+     */
     public void parse(File file) {
         HashMap<City, Pair<Integer, Integer>> cities = new HashMap<>();
 
+        //A buffered reader will be used to parse the file. If no file can be found the exception will be catched.
         BufferedReader br;
         try {
             br = new BufferedReader(new FileReader(file.getAbsolutePath()));
@@ -28,6 +34,7 @@ public class TSPParser implements Parser {
             String currentLine;
             String[] split;
 
+            //The first three lines specify the problem but are not useful for the application.
             for (int i = 0; i < 3; i++) {
                 br.readLine();
             }
@@ -36,12 +43,16 @@ public class TSPParser implements Parser {
             currentLine = br.readLine();
             split = currentLine.trim().split("\\s+");
             int dimension = Integer.parseInt(split[1]);
+            //The landscape has to set up by naming the dimension
             Configuration.instance.landscape.initNeighbours(dimension);
 
+            //The next two lines further name parameters of the problem but are not applicable to this use.
             for (int i = 0; i < 2; i++) {
                 br.readLine();
             }
 
+            //Read in all lines which name the cities
+            //If EOF has been reached the parsing will end
             while ((currentLine = br.readLine()) != null) {
                 if(currentLine.equals("EOF"))
                     break;
@@ -62,6 +73,7 @@ public class TSPParser implements Parser {
             }
         }
 
+        //With the HashMap cities the landscape will be initialized while adding every city to the landscape
         HashMap<City, Pair<Integer, Integer>> temp;
         for (Map.Entry<City, Pair<Integer, Integer>> city:
              cities.entrySet()) {
@@ -81,6 +93,15 @@ public class TSPParser implements Parser {
         }
     }
 
+    /*
+        The parser will calculate the distance between both cities with the Pythagorean theorem
+
+        @param  int     The x coordinate of the first city
+        @param  int     Y coordinate of the first city
+        @param  int     The x coordinate of the second city
+        @param  int     Second y coordinate
+        @return double  The distance between both cities
+     */
     public double getDistance(int xSource, int ySource, int xDestination, int yDestination){
         double tempX = Math.pow((xDestination - xSource),2);
         double tempY = Math.pow((yDestination - ySource),2);

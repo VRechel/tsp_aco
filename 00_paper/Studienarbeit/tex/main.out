@@ -40,8 +40,11 @@
 \BOOKMARK [0][-]{chapter.4}{Implementierung}{}% 40
 \BOOKMARK [1][-]{section.4.1}{Klassendiagramm}{chapter.4}% 41
 \BOOKMARK [1][-]{section.4.2}{Beschreibung der Implementierung}{chapter.4}% 42
-\BOOKMARK [1][-]{section.4.3}{ER-Diagramm}{chapter.4}% 43
-\BOOKMARK [1][-]{section.4.4}{Komponenten-Diagramm}{chapter.4}% 44
-\BOOKMARK [1][-]{section.4.5}{Paket-Diagramm}{chapter.4}% 45
-\BOOKMARK [1][-]{section.4.6}{Perforamce-Analyse und -Optimierung}{chapter.4}% 46
-\BOOKMARK [0][-]{chapter.5}{Fazit}{}% 47
+\BOOKMARK [2][-]{subsection.4.2.1}{Persistenz}{section.4.2}% 43
+\BOOKMARK [2][-]{subsection.4.2.2}{Applikation}{section.4.2}% 44
+\BOOKMARK [2][-]{subsection.4.2.3}{Pr\344sentation}{section.4.2}% 45
+\BOOKMARK [1][-]{section.4.3}{ER-Diagramm}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.4}{Komponenten-Diagramm}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.5}{Paket-Diagramm}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.6}{Perforamce-Analyse und -Optimierung}{chapter.4}% 49
+\BOOKMARK [0][-]{chapter.5}{Fazit}{}% 50

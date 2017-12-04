@@ -18,11 +18,23 @@ import java.io.IOException;
  * @author Viktor
  */
 public class XMLParser implements Parser {
+    /*
+        The XML parser will read in a xml file and set up the landscape with the information from it.
+        Until now only one format will be accepted:
+        <entry>
+            <CityA>ID</CityA>
+            <CityB>ID</CityB>
+            <distance>DISTANCE</distance>
+        </entry>
+
+        @param  File    The file has to be parsed
+     */
     public void parse(File file) {
         DocumentBuilderFactory factory;
         DocumentBuilder builder;
         Document doc = null;
 
+        //If the document builder can't find/open the specified file it will return a error message
         try {
             factory = DocumentBuilderFactory.newInstance();
             builder = factory.newDocumentBuilder();
@@ -34,11 +46,13 @@ public class XMLParser implements Parser {
         if(doc != null) {
             NodeList nList = doc.getElementsByTagName("entry");
 
+            //Go through every node in the xml file
             for (int x = 0; x < nList.getLength(); x++) {
                 Node node = nList.item(x);
 
                 Element element = (Element) node;
 
+                //Get the information from the different elements
                 City a = new City(Integer.valueOf(element.getElementsByTagName("cityA").item(0).getTextContent()));
                 City b = new City(Integer.valueOf(element.getElementsByTagName("cityB").item(0).getTextContent()));
                 Double distance = Double.parseDouble(element.getElementsByTagName("distance").item(0).getTextContent());
