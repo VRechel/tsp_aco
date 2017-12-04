@@ -26,7 +26,6 @@ public enum Configuration {
     final String filePath = "tspProblems/a280.tsp";
     public static final int maxDistance = 2708;
     public static final int numberAnts = 2;
-    private static int maxIterations = 1;
 
     //DB parameters
     private final String fileSeparator = System.getProperty("file.separator");
@@ -46,10 +45,6 @@ public enum Configuration {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void setMaxIterations(int maxIterations) {
-        Configuration.maxIterations = maxIterations;
     }
 
     public String getFilePath() {

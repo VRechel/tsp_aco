@@ -16,7 +16,7 @@ public enum HSQLDBManager {
             Class.forName("org.hsqldb.jdbcDriver");
             String driverName = "jdbc:hsqldb:";
             String databaseURL = driverName + Configuration.instance.databaseFile;
-            String username = "sa";
+            String username = "SA";
             String password = "";
             connection = DriverManager.getConnection(databaseURL, username, password);
             initialized = true;
@@ -25,10 +25,12 @@ public enum HSQLDBManager {
         }
     }
 
-    public void init(double cities) throws DBInitializationException {
+    public void init() throws DBInitializationException {
         if(initialized) throw new DBInitializationException();
-        dropTable();
-        createTable(cities);
+        else{
+            dropTable();
+            createTable();
+        }
     }
 
     private synchronized void update(String sqlStatement) {
@@ -55,14 +57,14 @@ public enum HSQLDBManager {
         update(sqlStringBuilder.toString());
     }
 
-    public void createTable(double cities) {
+    public void createTable() {
         StringBuilder sqlStringBuilder = new StringBuilder();
         sqlStringBuilder.append("CREATE TABLE HISTORY ")
                 .append(" ( ")
                 .append("id BIGINT NOT NULL")
                 .append(",")
                 .append("route VARCHAR(")
-                .append((int) cities)
+                .append(255)
                 .append(") NOT NULL")
                 .append(",")
                 .append("distance BIGINT NOT NULL")
@@ -77,7 +79,7 @@ public enum HSQLDBManager {
                 .append("id BIGINT NOT NULL")
                 .append(",")
                 .append("route VARCHAR(")
-                .append((int) cities)
+                .append(255)
                 .append(") NOT NULL")
                 .append(",")
                 .append("distance BIGINT NOT NULL")
@@ -88,23 +90,27 @@ public enum HSQLDBManager {
     }
 
     public void updateTable(String table, String route, int distance){
-        String sqlStringBuilder = "INSERT INTO " +
-                table +
-                " ( " +
-                "id " +
-                "," +
-                "route" +
-                "," +
-                "distance" +
-                " ) " +
-                " VALUES " +
-                " ( " +
+        String sqlStringBuilder = "INSERT INTO " + table +
+                " ( " + "id " + "," + "route" + "," +  "distance" + " ) " +
+                " VALUES " +  " ( " +
                 Configuration.instance.randomNumberGenerator.nextInt() +
-                "," +
-                route +
-                "," +
-                distance;
+                "," + route + "," + distance + " ) ";
         update(sqlStringBuilder);
+    }
+
+    private synchronized ResultSet select(String sqlStatement) {
+        try {
+            Statement statement = connection.createStatement();
+            return statement.executeQuery(sqlStatement);
+        } catch (SQLException sqle) {
+            System.out.println(sqle.getMessage());
+            return null;
+        }
+    }
+
+    public ResultSet getTable(String table){
+        String sqlStringBuilder = "SELECT * FROM " + table;
+        return select(sqlStringBuilder);
     }
 
     public void shutdown() {

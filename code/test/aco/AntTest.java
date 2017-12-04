@@ -114,7 +114,6 @@ public class AntTest {
         final City c = new City(3);
         Configuration.instance.landscape.initNeighbours(3);
 
-        Configuration.instance.setMaxIterations(10);
         Colony colony = new Colony();
 
         Ant ant = new Ant(1, a, colony);

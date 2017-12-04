@@ -66,7 +66,7 @@ class Application {
             throw new DBInitializationException();
         }
         try {
-            Configuration.instance.dbManager.init(Configuration.instance.landscape.getNeighboursSize());
+            Configuration.instance.dbManager.init();
         } catch (DBInitializationException e) {
             throw new DBInitializationException();
         }

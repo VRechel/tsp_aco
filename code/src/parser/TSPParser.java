@@ -21,7 +21,7 @@ public class TSPParser implements Parser {
     public void parse(File file) {
         HashMap<City, Pair<Integer, Integer>> cities = new HashMap<>();
 
-        //A buffered reader will be used to parse the file. If no file can be found the exception will be catched.
+        //A buffered reader will be used to parse the file. If no file can be found the exception will be caught.
         BufferedReader br;
         try {
             br = new BufferedReader(new FileReader(file.getAbsolutePath()));

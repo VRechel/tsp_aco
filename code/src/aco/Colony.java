@@ -99,7 +99,7 @@ public class Colony {
 
         @param  City    The source city
         @param  City    The target city
-        @param  double  The pheromon value which will be added to the current value in the pheromone matrix
+        @param  double  The pheromone value which will be added to the current value in the pheromone matrix
      */
     synchronized void updatePheromones(City a, City b, double plevel) {
         pheromones[a.getId()][b.getId()] += plevel;
@@ -119,11 +119,13 @@ public class Colony {
 
         if(new_ < current){
             bestRoute = route;
-//            for (int x = 0; x < route.size()-1; x++) {
-//                City a = route.get(x);
-//                City b = route.get(x+1);
-//                updatePheromones(a, b,(1./Configuration.instance.landscape.getDistance(a,b)));
-//            }
+            //The following code could be used to weigh the new best route additionally
+            //It is not used at the moment as pheromone weights should be kept low
+            //for (int x = 0; x < route.size()-1; x++) {
+            //  City a = route.get(x);
+            //  City b = route.get(x+1);
+            //  updatePheromones(a, b,(1./Configuration.instance.landscape.getDistance(a,b)));
+            //}
         }
     }
 
@@ -165,6 +167,7 @@ public class Colony {
     /*
         The current pheromone matrix can be printed by going through the matrix and printing every value with 2 decimals.
      */
+    @SuppressWarnings("unused")
     public void printPheromones(){
         System.out.println("Pheromones:");
         for (double[] pheromone : pheromones) {
