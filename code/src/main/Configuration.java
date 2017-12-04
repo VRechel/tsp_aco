@@ -5,6 +5,7 @@ import util.HSQLDBManager;
 import util.MersenneTwisterFast;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,7 +26,8 @@ public enum Configuration {
     //Parameters
     final String filePath = "tspProblems/a280.tsp";
     public static final int maxDistance = 2708;
-    public static final int numberAnts = 2;
+    public static final int numberAnts = 6;
+    private static final BigDecimal idiocrazyFilter = BigDecimal.valueOf(0.005);
 
     //DB parameters
     private final String fileSeparator = System.getProperty("file.separator");
@@ -49,5 +51,9 @@ public enum Configuration {
 
     public String getFilePath() {
         return filePath;
+    }
+
+    public BigDecimal getIdiocrazyFilter() {
+        return idiocrazyFilter;
     }
 }

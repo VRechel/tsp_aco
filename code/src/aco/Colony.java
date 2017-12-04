@@ -16,8 +16,8 @@ public class Colony {
     private static double[][] pheromones;
     private final ArrayList<Ant> ants = new ArrayList<>();
     private ArrayList<City> bestRoute = null;
-    private static final int alpha = 2;  //Pheromongewichtung
-    private static final int beta = 1;   //Distanzgewichtung
+    private static final int alpha = 3;  //Pheromongewichtung
+    private static final int beta = 2;   //Distanzgewichtung
     boolean debug = false;
 
     public Colony(){
