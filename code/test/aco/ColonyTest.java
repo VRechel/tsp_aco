@@ -116,6 +116,7 @@ public class ColonyTest {
         ArrayList<City> temp = new ArrayList<>();
         temp.add(a);
         temp.add(b);
+        System.out.println(colony.getBestRoute());
         colony.updateRoute(temp);
 
         colony.notifyColony();

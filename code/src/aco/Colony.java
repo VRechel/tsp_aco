@@ -15,7 +15,7 @@ public class Colony {
     private final City start = Configuration.instance.landscape.getStartingCity();
     private static double[][] pheromones;
     private final ArrayList<Ant> ants = new ArrayList<>();
-    private static ArrayList<City> bestRoute = null;
+    private ArrayList<City> bestRoute = null;
     private static final int alpha = 2;  //Pheromongewichtung
     private static final int beta = 1;   //Distanzgewichtung
     boolean debug = false;
@@ -57,7 +57,7 @@ public class Colony {
         The colony will create a number of ants according to the value of the configuration parameter
         Every ant will be synchronized with the same CyclicBarrier.
      */
-    public void initAnts() {
+    void initAnts() {
         CyclicBarrier barrier = new CyclicBarrier(Configuration.numberAnts, this::notifyColony);
         for(int i = 1; i < Configuration.numberAnts+1; i++)
             ants.add(new Ant(i, start,this, barrier));
@@ -88,7 +88,7 @@ public class Colony {
         The method which will be called by every ant caught by the barrier.
         The colony will print the best route to the console and then generate a new generation of ants.
      */
-    public void notifyColony() {
+    void notifyColony() {
         System.out.println("Generation " + currentGeneration + " finished!");
         printRoute(bestRoute);
         newGeneration();
@@ -101,7 +101,7 @@ public class Colony {
         @param  City    The target city
         @param  double  The pheromon value which will be added to the current value in the pheromone matrix
      */
-    public synchronized void updatePheromones(City a, City b, double plevel) {
+    synchronized void updatePheromones(City a, City b, double plevel) {
         pheromones[a.getId()][b.getId()] += plevel;
     }
 
@@ -111,7 +111,7 @@ public class Colony {
 
         @param  ArrayList<City> The route of cities
      */
-    public synchronized void updateRoute(ArrayList<City> route) {
+    synchronized void updateRoute(ArrayList<City> route) {
         if(bestRoute == null)
             bestRoute = route;
         double current = getDistance(bestRoute);
@@ -132,7 +132,7 @@ public class Colony {
 
         @param  Ant The ant which has to be killed
      */
-    public void killAnt(Ant a) {
+    void killAnt(Ant a) {
         ants.remove(a);
         System.out.println("ERROR: Ant " + a.id + " was killed!");
     }
@@ -143,7 +143,7 @@ public class Colony {
         @param  ArrayList<City> The route of which the whole distance will be calculated
         @return double          The distance value of the given route
      */
-    public double getDistance(ArrayList<City> route) {
+    double getDistance(ArrayList<City> route) {
         double sum = 0;
         for (int i = 0; i < route.size()-1; i++) {
             sum += Configuration.instance.landscape.getDistance(route.get(i), route.get(i+1));
@@ -157,7 +157,7 @@ public class Colony {
 
         @return double  The solution quality
      */
-    public double getSolutionQuality() {
+    double getSolutionQuality() {
         if(bestRoute == null){return 0;}
         return Configuration.maxDistance / getDistance(bestRoute);
     }
@@ -192,10 +192,10 @@ public class Colony {
         System.out.println(sb.toString());
     }
 
-    public double[][] getPheromones(){
+    double[][] getPheromones(){
         return pheromones;
     }
-    public boolean getInitialized() {
+    boolean getInitialized() {
         return initialized;
     }
     int getAlpha() {
@@ -204,10 +204,13 @@ public class Colony {
     int getBeta() {
         return beta;
     }
-    public double getPheromone(City a, City b) {
+    double getPheromone(City a, City b) {
         return pheromones[a.getId()][b.getId()];
     }
-    public ArrayList<Ant> getAnts() {
+    ArrayList<Ant> getAnts() {
         return ants;
+    }
+    ArrayList<City> getBestRoute() {
+        return bestRoute;
     }
 }
