@@ -86,20 +86,34 @@ class Ant extends Thread {
                 availableCities.add(start);
                 visitCity(start);
             } else {
+                boolean trip = false;
+                BigDecimal idiocrazy = BigDecimal.valueOf(Configuration.instance.randomNumberGenerator.nextDouble());
+
+                //Idiocrazy filter
+                //A ant has a very low probability to just use a random city instead of checking the best path
+                //This is used to make sure that a single path will have too much weight
+                if(idiocrazy.compareTo(BigDecimal.valueOf(0.0005)) < 1) {
+                    int city = Configuration.instance.randomNumberGenerator.nextInt(availableCities.size());
+                    visitCity(availableCities.get(city));
+                    runs++;
+                    trip = true;
+                }
+
                 Map<City, BigDecimal> lambdas = calculateLambdas(this.availableCities);
                 Map<City, BigDecimal> probabilities = calculateProbabilities(this.availableCities, lambdas);
 
                 BigDecimal rand = BigDecimal.valueOf(Configuration.instance.randomNumberGenerator.nextDouble());
 
-                boolean trip = false;
                 //If one city has a probability higher than the random number it will be targeted
-                for (Map.Entry<City, BigDecimal> probability :
-                        probabilities.entrySet()) {
-                    if (probability.getValue().compareTo(rand) > 0) {
-                        this.visitCity(probability.getKey());
-                        runs++;
-                        trip = true;
-                        break;
+                if(!trip){
+                    for (Map.Entry<City, BigDecimal> probability :
+                            probabilities.entrySet()) {
+                        if (probability.getValue().compareTo(rand) > 0) {
+                            this.visitCity(probability.getKey());
+                            runs++;
+                            trip = true;
+                            break;
+                        }
                     }
                 }
                 //If no city can be found which has a higher probability than rand than the probabilities will be added
