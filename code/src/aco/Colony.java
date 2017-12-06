@@ -5,22 +5,25 @@ import tsp.City;
 
 import java.util.ArrayList;
 import java.util.concurrent.CyclicBarrier;
+import java.util.logging.Level;
 
 public class Colony {
     private boolean initialized;
     boolean started;
     //private double solutionQuality;
     int currentGeneration = 1;
-
+    private final int alpha;
+    private final int beta;
     private final City start = Configuration.instance.landscape.getStartingCity();
     private static double[][] pheromones;
     private final ArrayList<Ant> ants = new ArrayList<>();
     private ArrayList<City> bestRoute = null;
-    private static final int alpha = 3;  //Pheromongewichtung
-    private static final int beta = 2;   //Distanzgewichtung
+
     boolean debug = false;
 
     public Colony(){
+        alpha = Configuration.alpha;
+        beta = Configuration.beta;
         initAnts();
     }
 
@@ -90,7 +93,8 @@ public class Colony {
      */
     void notifyColony() {
         System.out.println("Generation " + currentGeneration + " finished!");
-        printRoute(bestRoute);
+        String route = printRoute(bestRoute);
+        Configuration.log(Level.INFO, route);
         newGeneration();
     }
 
@@ -184,7 +188,7 @@ public class Colony {
 
         @param  ArrayList<City> The given route
      */
-    private void printRoute(ArrayList<City> route) {
+    private String printRoute(ArrayList<City> route) {
         StringBuilder sb = new StringBuilder();
         sb.append(" Distance: ").append(getDistance(route));
         sb.append(" Best Route: ");
@@ -192,7 +196,7 @@ public class Colony {
             sb.append(city).append(",");
         }
         sb.deleteCharAt(sb.lastIndexOf(","));
-        System.out.println(sb.toString());
+        return sb.toString();
     }
 
     double[][] getPheromones(){

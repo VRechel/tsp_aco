@@ -46,17 +46,24 @@ public class XMLParser implements Parser {
         if(doc != null) {
             NodeList nList = doc.getElementsByTagName("entry");
 
-            //Go through every node in the xml file
-            for (int x = 0; x < nList.getLength(); x++) {
-                Node node = nList.item(x);
+            Node node = nList.item(0);
 
-                Element element = (Element) node;
+            Element element = (Element) node;
+
+            Configuration.instance.landscape.initNeighbours(Integer.valueOf(element.getElementsByTagName("dimension").item(0).getTextContent()));
+
+            //Go through every node in the xml file
+            for (int x = 1; x < nList.getLength(); x++) {
+                node = nList.item(x);
+
+                element = (Element) node;
 
                 //Get the information from the different elements
                 City a = new City(Integer.valueOf(element.getElementsByTagName("cityA").item(0).getTextContent()));
                 City b = new City(Integer.valueOf(element.getElementsByTagName("cityB").item(0).getTextContent()));
                 Double distance = Double.parseDouble(element.getElementsByTagName("distance").item(0).getTextContent());
                 Configuration.instance.landscape.addNeighbour(a,b, distance);
+                logEntry(a, b, distance);
             }
         }
     }

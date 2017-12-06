@@ -63,11 +63,13 @@ public enum HSQLDBManager {
                 .append(" ( ")
                 .append("id BIGINT NOT NULL")
                 .append(",")
+                .append("generation BIGINT NOT NULL")
+                .append(",")
                 .append("route VARCHAR(")
                 .append(255)
                 .append(") NOT NULL")
                 .append(",")
-                .append("distance BIGINT NOT NULL")
+                .append("distance DOUBLE NOT NULL")
                 .append(",")
                 .append("PRIMARY KEY (id)")
                 .append(" )");
@@ -82,7 +84,7 @@ public enum HSQLDBManager {
                 .append(255)
                 .append(") NOT NULL")
                 .append(",")
-                .append("distance BIGINT NOT NULL")
+                .append("distance DOUBLE NOT NULL")
                 .append(",")
                 .append("PRIMARY KEY (id)")
                 .append(" )");

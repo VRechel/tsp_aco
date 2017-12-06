@@ -1,4 +1,17 @@
 \section{Performance-Analyse und -Optimierung}
+Selbstverständlich ist für eine richtige Implementierung nicht nur wichtig, dass diese funktioniert. Sie muss dies auch möglichst performant und effizient tun. Hierzu werden mehrere Testläufe in Hinblick auf die Performance durchgeführt. Im Folgenden werden diese Testfälle beschrieben, sowie auch die Hardware, auf welcher die Tests durchgeführt werden. Ohne die Referenz zur verwendeten Hardware wäre eine Aussage über die Performance nur sehr bedingt verwendbar. In Abbildung \ref{hardware} sind die beiden relevanten Komponenten aufgelistet. Zu beachten ist hierbei, dass AMD-Prozessoren allgemein eine höhere Multithreading-Performance besitzen, welche in der vorliegenden Software genutzt wird.
+
+\begin{table}
+	\centering
+	\setstretch{0.75}
+	\begin{tabular}{c c c c c c c}
+		Komponente & Name & Technische Daten\\
+		CPU & AMD FX8350 & 8 Kerne, 4.2 GHz\\ 
+		RAM & Kingston 99U5471 & 24 GB DDR3, 666 MHz  \\ 
+	\end{tabular}
+	\caption{Für Performance-Benchmarks verwendete relevante Hardware}
+	\label{hardware}
+\end{table}
 
 \subsection{CPU-Auslastung}
 

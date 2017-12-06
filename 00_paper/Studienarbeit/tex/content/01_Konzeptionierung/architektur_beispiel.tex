@@ -1,12 +1,13 @@
 \subsection{Arbeitsweise der Architektur}
+\label{numerschiesBeispiel}
 	Die einzelnen Abschnitte der Architektur wurden bereits erklärt. Aber das Zusammenspiel der einzelnen Komponenten und der eigentliche Arbeitsablauf des Systems wurde noch nicht beschrieben. Im Folgenden wird ein Beispiel so durchgeführt, wie es auch die geplante Architektur umsetzen würden.
 		
-	In Abbildung \ref{tspAcoNumerisch} ist ein Beispiel für das TSP gegeben. Sechs Städte sind untereinander so vernetzt, dass jede Stadt von jeder anderen erreichbar ist. Auch ist Stadt A schon rot markiert, wodurch diese als Standort für die Ameisenkolonie ausgewählt wurde. 
+	In Abbildung \ref{tspAcoNumerisch} ist ein Beispiel für das \ac{TSP} gegeben. Sechs Städte sind untereinander so vernetzt, dass jede Stadt von jeder anderen erreichbar ist. Auch ist Stadt A schon rot markiert, wodurch diese als Standort für die Ameisenkolonie ausgewählt wurde. 
 	
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.9\linewidth]{images/TSP_ACO_numerisch.png}
-		\caption{Darstellung des TSP-Beispiels zur Darlegung der Arbeitsweise der Architektur}
+		\caption{Darstellung des \ac{TSP}-Beispiels zur Darlegung der Arbeitsweise der Architektur}
 		\label{tspAcoNumerisch}
 	\end{figure}
 
@@ -25,11 +26,11 @@
 			E & 11 & 9 & 6 & 2 & -1 & 8\\
 			F & 5 & 8 & 10 & 12 & 8 & -1\\
 		\end{tabular}
-		\caption{Distanzmatrix des TSP-Beispiels}
+		\caption{Distanzmatrix des \ac{TSP}-Beispiels}
 		\label{tspAcoNumerisch_matrix}
 	\end{table}
 
-	Besonders wichtig für die Berechnung der ACO-Lösung ist die Pheromonmatrix, welche in Tabelle \ref{tspAcoNumerisch_pheromon_initial} im initialisierten Zustand gezeigt ist. Die Normalisierung mit einem durchgängigen Wert von 1 bewirkt, dass im ersten Durchlauf die Pheromone keinerlei Einfluss auf die Entscheidungen der Ameisen haben. Dies entspricht dem Umstand einer neu aufgebauten Ameisenkolonie, welche sich erst zurecht finden muss.
+	Besonders wichtig für die Berechnung der \ac{ACO}-Lösung ist die Pheromonmatrix, welche in Tabelle \ref{tspAcoNumerisch_pheromon_initial} im initialisierten Zustand gezeigt ist. Die Normalisierung mit einem durchgängigen Wert von 1 bewirkt, dass im ersten Durchlauf die Pheromone keinerlei Einfluss auf die Entscheidungen der Ameisen haben. Dies entspricht dem Umstand einer neu aufgebauten Ameisenkolonie, welche sich erst zurecht finden muss.
 	
 	\begin{table}
 		\centering
@@ -44,11 +45,11 @@
 			E & 1 & 1 & 1 & 1 & 1 & 1\\
 			F & 1 & 1 & 1 & 1 & 1 & 1\\
 		\end{tabular}
-		\caption{Initiale Pheromonmatrix des TSP-Beispiels}
+		\caption{Initiale Pheromonmatrix des \ac{TSP}-Beispiels}
 		\label{tspAcoNumerisch_pheromon_initial}
 	\end{table}
 
-	Mit den vorliegenden Daten, der Streckenlängenmatrix und der initialen Matrix, kann nun das TSP mithilfe von ACO berechnet werden. In diesem Beispiel werden drei Ameisen verwendet, um das Verhalten zeigen zu können, aber gleichzeitig den Aufwand gering zu halten.
+	Mit den vorliegenden Daten, der Streckenlängenmatrix und der initialen Matrix, kann nun das \ac{TSP} mithilfe von \ac{ACO} berechnet werden. In diesem Beispiel werden drei Ameisen verwendet, um das Verhalten zeigen zu können, aber gleichzeitig den Aufwand gering zu halten.
 	
 	Jede Ameise startet bei der Kolonie, welche bei Stadt A liegt. Daher muss für jede Ameise jetzt ausgewählt werden, wohin diese gehen soll. Für jede mögliche Strecke wird nun eine Variabel berechnet, welche im Folgenden mit $\lambda$ \footnote{Mehr zu diesen beiden Werten in Kapitel \ref{parameter}.} bezeichnet wird. $\lambda$ setzt sich zusammen aus dem Pheromonwert der betrachteten Strecke und der zugehörigen Streckenlänge.
 
@@ -165,7 +166,7 @@
 			E & $\frac{12}{11}$ & 1 & $\frac{7}{6}$ & 3 & 1 & 1\\
 			F & $\frac{6}{5}$ & 1 & 1 & $\frac{13}{12}$ & $\frac{3}{2}$ & 1\\
 		\end{tabular}
-		\caption{Pheromonmatrix des TSP-Beispiels nach dem zweiten Durchlauf}
+		\caption{Pheromonmatrix des \ac{TSP}-Beispiels nach dem zweiten Durchlauf}
 		\label{tspAcoNumerisch_pheromon_2}
 	\end{table}
 
@@ -198,7 +199,7 @@
 			E & $\frac{12}{11}$ & 1 & $\frac{7}{6}$ & 4 & 1 & $\frac{9}{8}$\\
 			F & $\frac{9}{5}$ & 1 & 1 & $\frac{13}{12}$ & $\frac{3}{2}$ & 1\\
 		\end{tabular}
-		\caption{Pheromonmatrix des TSP-Beispiels nach dem finalen dritten Durchlauf}
+		\caption{Pheromonmatrix des \ac{TSP}-Beispiels nach dem finalen dritten Durchlauf}
 		\label{tspAcoNumerisch_pheromon_3}
 	\end{table}
 

@@ -73,7 +73,7 @@ public class HSQLDBManagerTest {
         }
         Configuration.instance.dbManager.dropTable();
         try {
-            Assert.assertEquals(null,Configuration.instance.dbManager.getTable("GENERATIONS").getMetaData().getColumnCount());
+            Assert.assertEquals(0,Configuration.instance.dbManager.getTable("GENERATIONS").getMetaData().getColumnCount());
         } catch (SQLException e) {
             e.printStackTrace();
             Assert.fail();
@@ -99,7 +99,7 @@ public class HSQLDBManagerTest {
             Assert.fail();
         }
         try {
-            Assert.assertEquals(null,Configuration.instance.dbManager.getTable("TEST").getMetaData().getColumnCount());
+            Assert.assertEquals(0,Configuration.instance.dbManager.getTable("TEST").getMetaData().getColumnCount());
         } catch (SQLException e) {
             e.printStackTrace();
             Assert.fail();

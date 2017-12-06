@@ -43,7 +43,7 @@ class Ant extends Thread {
         @param colony   The Colony the ant belongs to.
         @param barrier  A CyclicBarrier used to synchronize the threads (ants)
      */
-    public Ant(int i, City start, Colony colony, CyclicBarrier barrier) {
+    Ant(int i, City start, Colony colony, CyclicBarrier barrier) {
         this.id = i;
         this.colony = colony;
         this.currentCity = start;
@@ -58,7 +58,7 @@ class Ant extends Thread {
         For every city all reachable neighbours have to be accounted as a potential target.
      */
     public void run(){
-        while(!finished && /*Configuration.maxIterations > runs &&*/ this.colony.getSolutionQuality() < 0.95) {
+        while(!finished /*&& Configuration.maxIterations > runs/* /*&& this.colony.getSolutionQuality() < 0.95*/) {
             double[] neighbours = Configuration.instance.landscape.getSpecifiedNeighbours(this.getCurrentCity());
 
             ArrayList<City> neighboursList = new ArrayList<>();
@@ -263,7 +263,7 @@ class Ant extends Thread {
         sb.deleteCharAt(sb.lastIndexOf(","));
 
         sb.append(" Distance: ").append(this.colony.getDistance(this.route));
-        Configuration.instance.logger.log(Level.INFO, sb.toString());
+        Configuration.logger.log(Level.CONFIG, sb.toString());
     }
 
     public Colony getColony() {

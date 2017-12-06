@@ -14,18 +14,22 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Darstellung des TSP-Beispiels zur Darlegung der Arbeitsweise der Architektur\relax }}{8}{figure.caption.11}
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Darstellung des \ac {TSP}-Beispiels zur Darlegung der Arbeitsweise der Architektur\relax }}{8}{figure.caption.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces UML-Modellierung des Architekturentwurfs\relax }}{14}{figure.caption.20}
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Modellierung einer Ameisenkolonie mit zwei unterschiedlichen Nahrungsquellen.\relax }}{18}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Modellierung einer Ameisenkolonie mit zwei unterschiedlichen Nahrungsquellen.\relax }}{18}{figure.caption.21}
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Modellierung der Parametereinstellung, sodass der Wert Alpha merklich gr\IeC {\"o}\IeC {\ss }er als der von Beta ist.\relax }}{19}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Modellierung der Parametereinstellung, sodass der Wert Alpha merklich gr\IeC {\"o}\IeC {\ss }er als der von Beta ist.\relax }}{19}{figure.caption.22}
+\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Modellierung der Parametereinstellung, sodass der Wert Alpha genauso gro\IeC {\ss } ist wie der von Beta.\relax }}{20}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Modellierung der Parametereinstellung, sodass der Wert Alpha genauso gro\IeC {\ss } ist wie der von Beta.\relax }}{20}{figure.caption.23}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Modellierung der Parametereinstellung, sodass der Wert Alpha merklich kleiner als der von Beta ist.\relax }}{21}{figure.caption.24}
+\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Modellierung der Parametereinstellung, sodass der Wert Alpha merklich kleiner als der von Beta ist.\relax }}{21}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Klassendiagramm der vorliegenden Softwarel\IeC {\"o}sung\relax }}{24}{figure.caption.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces Ausschnitt der Log-Datei bei der Berechnung des numerischen Beispiels aus \ref {numerschiesBeispiel}\relax }}{27}{figure.caption.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 4.3}{\ignorespaces Klassendiagramm der vorliegenden Softwarel\IeC {\"o}sung\relax }}{28}{figure.caption.28}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
