@@ -24,7 +24,7 @@ class Ant extends Thread {
     private int runs = 0;
     private boolean finished = false;
 
-    /*
+    /**
         Constructor for testing purposes. It is used to minimize the amount of variables to be initialized for testing.
      */
     Ant(int i, City start, Colony colony) {
@@ -35,7 +35,7 @@ class Ant extends Thread {
         this.route.add(currentCity);
     }
 
-    /*
+    /**
         Constructor for productive use. All ants used by the program have to be initialized by using this constructor.
 
         @param i        An ID used to identify it by the application.
@@ -52,7 +52,7 @@ class Ant extends Thread {
         this.barrier = barrier;
     }
 
-    /*
+    /**
         The routine every ant has to run through. It will do a travel between every city while only visiting every city
         just once.
         For every city all reachable neighbours have to be accounted as a potential target.
@@ -154,7 +154,7 @@ class Ant extends Thread {
         }
     }
 
-    /*
+    /**
         An ant updates the colony by updating the pheromones and checking if its own route is better than the one from
         the colony.
     */
@@ -163,7 +163,7 @@ class Ant extends Thread {
         this.colony.updateRoute(this.route);
     }
 
-    /*
+    /**
         The pheromones are updated by adding eta (1/distance) to every path taken by the ant
      */
     public void updatePheromones() {
@@ -173,10 +173,10 @@ class Ant extends Thread {
         }
     }
 
-    /*
+    /**
         An ant travels between two cities. If the ant has the given city not as a reachable target she won't leave
 
-        @param  City    The city the ant has to go to
+        @param  b   The city the ant has to go to
      */
     public void visitCity(City b){
         if(!availableCities.contains(b))
@@ -185,11 +185,11 @@ class Ant extends Thread {
         this.route.add(b);
     }
 
-    /*
+    /**
         For every reachable city the probability has to be calculated which will be used to decide the target
 
-        @param  ArrayList<City>         A list of the cities which can be reached
-        @param  Map<City, BigDecimal>   The list of lambdas which has to generated before calculating the probabilities
+        @param  cities                  A list of the cities which can be reached
+        @param  lambdas                 The list of lambdas which has to generated before calculating the probabilities
         @return Map<City, BigDecimal>   The list of probabilities
      */
     public Map<City, BigDecimal> calculateProbabilities(ArrayList<City> cities, Map<City, BigDecimal> lambdas) {
@@ -204,21 +204,21 @@ class Ant extends Thread {
         return probabilities;
     }
 
-    /*
+    /**
         A probability to travel to a singe city is defined through the lambda and the sum of all lambdas
 
-        @param  BigDecimal  The lambda for a single city
-        @param  BigDecimal  The sum of the lambdas of all reachable cities
+        @param  lambda  The lambda for a single city
+        @param  sum  The sum of the lambdas of all reachable cities
         @return BigDecimal  The probability
      */
     public BigDecimal calculateProbability(BigDecimal lambda, BigDecimal sum) {
         return lambda.divide(sum, 20, BigDecimal.ROUND_CEILING);
     }
 
-    /*
+    /**
         From the list of reachable cities a HashMap of the cities and their lambda has to be created
 
-        @param  ArrayList<City>         The list of all reachable cities
+        @param  cities       The list of all reachable cities
         @return Map<City, BigDecimal>   A mapping between the cities and the corresponding lambda
      */
     public Map<City, BigDecimal> calculateLambdas(ArrayList<City> cities) {
@@ -232,12 +232,12 @@ class Ant extends Thread {
         return lambdas;
     }
 
-    /*
+    /**
         A single lambda for a single city is calculated by multiplying tau (pheromone level of the path) and eta
         (inverse of the distance). Eta and tau are weighted with alpha and beta (from the colony=
 
-        @param double       The distance between the current city and the target
-        @param double       The pheromone level between both cities
+        @param distance       The distance between the current city and the target
+        @param pheromone       The pheromone level between both cities
         @return BigDecimal  Lambda
      */
     public BigDecimal calculateLambda(double distance, double pheromone) {
@@ -250,7 +250,7 @@ class Ant extends Thread {
         return tau.multiply(eta);
     }
 
-    /*
+    /**
         Every ant will log their route to the central log file.
      */
     private void printRoute() {

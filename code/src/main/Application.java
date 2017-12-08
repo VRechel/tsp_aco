@@ -16,7 +16,7 @@ import java.util.logging.SimpleFormatter;
  * @author Viktor
  */
 class Application {
-    /*
+    /**
         First of all the application will start the corresponding parser to the file specified in the Configuration.
         The application will then startup the database which will be used by the colony to save the achievements of each
         generation.
@@ -40,7 +40,7 @@ class Application {
         Configuration.instance.dbManager.shutdown();
     }
 
-    /*
+    /**
         The application will decide which parser is needed and initialize it. Then the file will be read and the problem
         will be created.
      */
@@ -62,7 +62,7 @@ class Application {
         }
     }
 
-    /*
+    /**
         The HSQLDB has to be initialized at the first time.
      */
     private static void initDB() throws DBInitializationException {
@@ -78,7 +78,7 @@ class Application {
         }
     }
 
-    /*
+    /**
         A new colony will be created. To function the colony has to initialize its pheromone matrix.
     */
     private static void initColony() {

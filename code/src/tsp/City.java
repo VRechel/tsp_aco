@@ -8,7 +8,7 @@ import java.util.Objects;
 public class City {
     private final int id;
 
-    /*
+    /**
         The city will be named by its id. As arrays start at zero and to not waste space all city ids will be
         decremented before usage.
      */

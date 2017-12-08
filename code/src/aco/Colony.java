@@ -27,7 +27,7 @@ public class Colony {
         initAnts();
     }
 
-    /*
+    /**
         If the colony has not already been started all threads (ants) will be started
      */
     public void start(){
@@ -43,7 +43,7 @@ public class Colony {
         }
     }
 
-    /*
+    /**
         If a generation finished an the colony is already updated it will generate a new generation of ants.
         The debug parameter is only for testing purposes and will prevent any automatic start of the ants.
      */
@@ -56,7 +56,7 @@ public class Colony {
         currentGeneration++;
     }
 
-    /*
+    /**
         The colony will create a number of ants according to the value of the configuration parameter
         Every ant will be synchronized with the same CyclicBarrier.
      */
@@ -66,7 +66,7 @@ public class Colony {
             ants.add(new Ant(i, start,this, barrier));
     }
 
-    /*
+    /**
         The colony will initialize the 2D matrix for the pheromone values according to the neighbourhood matrix from
         the landscape.
      */
@@ -87,7 +87,7 @@ public class Colony {
         }
     }
 
-    /*
+    /**
         The method which will be called by every ant caught by the barrier.
         The colony will print the best route to the console and then generate a new generation of ants.
      */
@@ -98,22 +98,22 @@ public class Colony {
         newGeneration();
     }
 
-    /*
+    /**
         For every traveled path within the generation the value has to be updated.
 
-        @param  City    The source city
-        @param  City    The target city
-        @param  double  The pheromone value which will be added to the current value in the pheromone matrix
+        @param  a    The source city
+        @param  b    The target city
+        @param  plevel  The pheromone value which will be added to the current value in the pheromone matrix
      */
     synchronized void updatePheromones(City a, City b, double plevel) {
         pheromones[a.getId()][b.getId()] += plevel;
     }
 
-    /*
+    /**
         Every ant checks if their route is better than the current best solution. If it is the route will be saved as
         the new best route.
 
-        @param  ArrayList<City> The route of cities
+        @param  route The route of cities
      */
     synchronized void updateRoute(ArrayList<City> route) {
         if(bestRoute == null)
@@ -133,21 +133,21 @@ public class Colony {
         }
     }
 
-    /*
+    /**
         This method is only called by an ant which has to suicide. It will stop itself and tell the colony to remove it.
 
-        @param  Ant The ant which has to be killed
+        @param  a The ant which has to be killed
      */
     void killAnt(Ant a) {
         ants.remove(a);
         System.out.println("ERROR: Ant " + a.id + " was killed!");
     }
 
-    /*
+    /**
         The distance of a route is the fitness factor of this implementation. This method will sum up every traveled path.
 
-        @param  ArrayList<City> The route of which the whole distance will be calculated
-        @return double          The distance value of the given route
+        @param  route   The route of which the whole distance will be calculated
+        @return double  The distance value of the given route
      */
     double getDistance(ArrayList<City> route) {
         double sum = 0;
@@ -157,7 +157,7 @@ public class Colony {
         return sum;
     }
 
-    /*
+    /**
         For given and "solved" TSP problems it is possible to provide a approximately solution.
         To get the current solution quality of the colony the both values have to be divided.
 
@@ -168,7 +168,7 @@ public class Colony {
         return Configuration.maxDistance / getDistance(bestRoute);
     }
 
-    /*
+    /**
         The current pheromone matrix can be printed by going through the matrix and printing every value with 2 decimals.
      */
     @SuppressWarnings("unused")
@@ -183,10 +183,10 @@ public class Colony {
         }
     }
 
-    /*
+    /**
         A given route can be printed by printing out the distance followed by the cities in order of visit.
 
-        @param  ArrayList<City> The given route
+        @param  route The given route
      */
     private String printRoute(ArrayList<City> route) {
         StringBuilder sb = new StringBuilder();

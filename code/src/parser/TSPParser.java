@@ -12,11 +12,11 @@ import java.util.Map;
  * @author Viktor
  */
 public class TSPParser implements Parser {
-    /*
+    /**
         The parser will take a .tsp file and parse it to the landscape.
         The format is as follows:   <city ID> <x coordinate> <y coordinate>
 
-        @param  File    The file which will be parsed
+        @param  file    The file which will be parsed
      */
     public void parse(File file) {
         HashMap<City, Pair<Integer, Integer>> cities = new HashMap<>();
@@ -93,13 +93,13 @@ public class TSPParser implements Parser {
         }
     }
 
-    /*
+    /**
         The parser will calculate the distance between both cities with the Pythagorean theorem
 
-        @param  int     The x coordinate of the first city
-        @param  int     Y coordinate of the first city
-        @param  int     The x coordinate of the second city
-        @param  int     Second y coordinate
+        @param  xSource     The x coordinate of the first city
+        @param  ySource     Y coordinate of the first city
+        @param  xDestination     The x coordinate of the second city
+        @param  yDestination     Second y coordinate
         @return double  The distance between both cities
      */
     public double getDistance(int xSource, int ySource, int xDestination, int yDestination){

@@ -26,9 +26,9 @@ public enum Configuration {
     //Parameters
     public static final int alpha = 3;  //Pheromongewichtung
     public static final int beta = 2;   //Distanzgewichtung
-    final String filePath = "tspProblems/xmlTest.xml";
+    final String filePath = "tspProblems/a280.tsp";
     public static final int maxDistance = 2708;
-    public static final int numberAnts = 1;
+    public static final int numberAnts = 12;
     private static final BigDecimal idiocrazyFilter = BigDecimal.valueOf(0.005);
 
     //DB parameters

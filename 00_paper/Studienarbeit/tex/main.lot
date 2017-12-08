@@ -16,7 +16,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {table}{\numberline {\relax 3.1}{\ignorespaces Komplexit\IeC {\"a}tseinsch\IeC {\"a}tzung des Projekts im Rahmen einer Absch\IeC {\"a}tzung der Funktionspunkte\relax }}{5}{table.caption.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {\relax 3.2}{\ignorespaces Distanzmatrix des \ac {TSP}-Beispiels\relax }}{8}{table.caption.14}
+\contentsline {table}{\numberline {\relax 3.2}{\ignorespaces Distanzmatrix des numerischen \ac {TSP}-Beispiels\relax }}{8}{table.caption.14}
 \defcounter {refsection}{0}\relax 
 \contentsline {table}{\numberline {\relax 3.3}{\ignorespaces Initiale Pheromonmatrix des \ac {TSP}-Beispiels\relax }}{9}{table.caption.15}
 \defcounter {refsection}{0}\relax 
@@ -34,6 +34,10 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {\relax 4.1}{\ignorespaces F\IeC {\"u}r Performance-Benchmarks verwendete relevante Hardware\relax }}{29}{table.caption.29}
+\contentsline {table}{\numberline {\relax 4.1}{\ignorespaces F\IeC {\"u}r Performance-Benchmarks verwendete relevante Hardware\relax }}{31}{table.caption.33}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }

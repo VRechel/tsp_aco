@@ -18,7 +18,7 @@ import java.io.IOException;
  * @author Viktor
  */
 public class XMLParser implements Parser {
-    /*
+    /**
         The XML parser will read in a xml file and set up the landscape with the information from it.
         Until now only one format will be accepted:
         <entry>
@@ -27,7 +27,7 @@ public class XMLParser implements Parser {
             <distance>DISTANCE</distance>
         </entry>
 
-        @param  File    The file has to be parsed
+        @param  file    The file has to be parsed
      */
     public void parse(File file) {
         DocumentBuilderFactory factory;
