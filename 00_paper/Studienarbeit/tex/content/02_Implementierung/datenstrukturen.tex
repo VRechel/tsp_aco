@@ -1,6 +1,33 @@
 \section{Beschreibung der verwendeten Datenstrukturen}
+Nachdem nun die logischen Schritte der Implementierung aufgezeigt wurden, folgt ein kurzer Ausblick auf die Auswahl der verwendeten Datenstrukturen. Hierbei wird auch eine Einschätzung auf die Effizienz dieser Datenstrukturen gegeben und die Entscheidung, welche Datenstruktur verwendet wird, begründet.
+
+\subsection{BigDecimal}
+Eine Besonderheit der vorliegenden Implementierung ist die Verwendung von BigDecimal statt Double als zentrale Zahlenwerte. Hierbei werden BigDecimal vor allem dann verwendet, wenn die Berchnung der Lambda- bzw. Wahrscheinlichkeitswerte durchgeführt werden muss. Hier hat sich schnell gezeigt, dass der Zahlenraum von Double\footnote{4,94065645841246544E-324 bis 1,79769131486231570E+308 \cite{Ullenboom2011}} bzw. auch die Implementierung von Double selbst nicht genau genug ist, um mit extrem kleinen Werten arbeiten zu können. Diese extrem kleinen Werte werden in der Applikation dann erreicht, wenn ein recht hoher Gewichtungswert gewählt wird, welcher zu einer hohen Potenzierung führt. Da die Applikation aber unabhängig der Gewichtung immer zuverlässig und genau arbeiten soll und muss, ist dieser Zustand nicht haltbar.
+
+Um dieses Problem zu lösen, wurden BigDecimal als Ausweg gewählt. BigDecimal-Zahlen werden nicht zwingend als einzelner Speicher allokiert. Dies hat den Vorteil, dass eine beliebig genaue Genauigkeit erzeugt werden kann, da die Nachkommastellen nicht begrenzt werden durch einen maximalen Wert, wie bei primitiven Datentypen. Der Nachteil dieser Vorgehensweise ist ein Overhead, den das System verwalten muss, welcher bei primitiven Datentypen nicht vorhanden ist. Allerdings ist dieser Overhead, falls Genauigkeit wichtig ist, immer einer ungenauen Arbeitsweise vorzuziehen.
 
 \subsection{ArrayList}
+ArrayList ist eine gängige Datenstruktur in Java, wie auch in wie vielen anderen Programmiersprachen\footnote{In anderen Sprachen heißt die Datenstruktur zwar anders, hat aber meist die selbe Arbeitsweise.} Sie hat den Vorteil, dass bei Erstellung der Liste nicht klar sein muss, wie lang die Liste werden wird. Dadurch kann die Liste dynamische bearbeitet werden, indem immer Objekte hinzugefügt und entfernt werden können. Wie immer gibt es aber nicht nur Vorteile. 
+
+Ein großer Nachteil von ArrayList ist der unperformante Speichervorgang der Daten. Da nicht bekannt ist, wie lange die Liste wird, kann auch kein zusammenhängeneder Speicher allokiert werden. Dies bedeutet, dass die Daten in der Liste meist fragmentiert abgespeichert werden müssen. Dadurch wird die Performance eingeschränkt, da zwischen den Daten immer die Pointer-Referenz aufgelöst werden muss. Bei Arrays ist dies nicht der Fall. Denn hier würde ein einziger Block an Daten belegt werden, über den in einem Zug iteriert werden kann. Somit ist eine Nutzung von Arrays generell der einer ArrayList vorzuziehen, solange die Größe bekannt ist. 
+
+Ein weiterer Nachteil ist der Struktur einer ArrayList geschuldet. Wenn eine ArrayList erstellt wird, belegt diese ein Array in welchem die zu speichernden Objekte abgelegt werden. Sollte das Array während der Laufzeit zu klein werden, muss ein neues Array belegt werden und das alte kopiert werden. Dies verursacht wiederum einen Performance-Einbruch bei der eigentlichen Applikation.\footnote{vgl. \cite{Smyth2007}}
+
+Im vorliegenden Fall wurden ArrayList vor allem benutzt, um die möglichen erreichbaren Nachbarn abzuspeichern. Man könnte über einen Zähler und die Länge der Distanzmatrix zwar einen Algorithmus implementieren, welcher die nötige Länge berechnet und damit ein Array erzeugt. Allerdings wäre dies zum Einen umständlich und zum Anderen unschön. Auch würde der Performance-Gewinn relativ klein ausfallen, da bei jedem Schritt die Berechnung durchgeführt werden muss. Generell würde die Wartbarkeit des Codes darunter leiden. Um diese Punkte zu vermeiden wurde ArrayList als standardisierte Datenstruktur verwendet, um trotz allem eine möglichst performante und speichereffiziente Arbeitsweise in allen Methoden zu gewährleisten.
 
 \subsection{HashMap vs zweidimensionales Array}
+Zu Beginn der Implementierung wurden die Möglichkeiten zur Darstellung der Distanzen und Pheromonwerte betrachtet. Da alle Städte untereinander vernetzt sind, gibt es für jeden Pfad jeweils einen Distanzwert und einen Pheromonwert. Somit ergibt sich immer eine zweidimensionale Matrix. Der logische Schritt wäre diese Matrix über ein zweidimensionales Array zu implementieren. Allerdings wäre auch eine Implementierung über eine HashMap möglich. Um die beiden Möglichkeiten auszuloten wurden mehrere Aspekte beachtet:
+\begin{itemize}
+	\item Performance
+	\item Übersichtlichkeit
+	\item Umständlichkeit
+\end{itemize}
+Der Punkt der Performance ist relativ schnell abgehandelt. Denn ähnlich zur ArrayList arbeitet auch eine HashMap mit einem Array als "Backend". Somit kann eine HashMap nicht schneller als ein Array sein. Dennoch kann es Anwendungsfälle geben, in denen es sinnvoller ist eine HashMap zu verwenden.
+
+Ein möglicher Anwendungsfall wäre zum Beispiel, wenn durch eine HashMap eine bessere Übersichtlichkeit gewährleistet wäre. Denn in einem Array können immer nur Integer-Werte als Referenzen gewählt werden, bei einer HashMap aber auch ein beliebiges Objekt. Dadurch ist im objektorientierten Umfeld ein besseres Verständnis gewährleistet. Dies ist auch der Grund, warum zu Beginn die HashMap ausgewählt wurde, um Distanz- und Pheromon-Werte abzuspeichern. Da diese Werte immer in Beziehung zwischen zwei Städten stehen, wäre es auch sinnvoll diese beiden Städte als Referenz zu benutzen. Dies wäre bei einem Array nicht ohne weiteres möglich.
+
+Der letzte Punkt der beachtet wurde war die Umständlichkeit. Auch wenn eine HashMap deutlich sinnvoller und übersichtlicher erscheint gibt es wieder einen Nachteil. Man kann nicht ohne weiteres der Reihe nach über alle Einträge iterieren. Auch kann nicht ohne weiteres ein Ausschnitt aus einem Array übergeben werden. Bei einem Array kann eine einzelne Spalte zurückgegeben werden, was zum Beispiel bei der Abfrage der Nachbarn einer Stadt sinnvoll ist. Im Falle einer HashMap müssten alle Einträge durchlaufen werden und geprüft werden, ob die derzeitige Stadt in dem Key-Paar als erste Stadt eingetragen ist.
+Dies führt zum Einen zu schlechterer Code-Qualität und zum Anderen zu Performance-Verlusten, da die ganze HashMap durchlaufen werden muss.
+
+Vor allem wegen der Umständlichkeit wurde relativ schnell von einer Struktur mittels HashMaps auf einen, auf zweidimensionalen Arrays basierenden, Aufbau gewechselt.
 

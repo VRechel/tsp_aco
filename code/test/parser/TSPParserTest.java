@@ -20,7 +20,7 @@ public class TSPParserTest {
     }
 
     @Test
-    public void parserTest(){
+    public void parseTest(){
         Configuration.instance.landscape = new Landscape();
 
         File file = new File("tspProblems/tspTest.tsp");

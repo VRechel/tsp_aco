@@ -16,5 +16,57 @@
   {}
 \endgroup
 
-\sortlist[entry]{nty/global/}\endsortlist
+\sortlist[entry]{nty/global/}
+  \entry{Smyth2007}{report}{}
+    \name{author}{1}{}{%
+      {{hash=ST}{%
+         family={Smyth},
+         familyi={S\bibinitperiod},
+         given={Tamara},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ST1}
+    \strng{fullhash}{ST1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{CMPT 126: Lecture 11 Collections: Abstract Data Types and
+  Dynamic Representation}
+    \list{institution}{1}{%
+      {Simon Fraser University}%
+    }
+    \field{type}{techreport}
+    \field{day}{30}
+    \field{month}{10}
+    \field{year}{2007}
+    \warn{\item Can't use 'date' + 'year'}
+  \endentry
+
+  \entry{Ullenboom2011}{book}{}
+    \name{author}{1}{}{%
+      {{hash=UC}{%
+         family={Ullenboom},
+         familyi={U\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Galileo Press}%
+    }
+    \strng{namehash}{UC1}
+    \strng{fullhash}{UC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{U}
+    \field{sortinithash}{U}
+    \field{edition}{10}
+    \field{maintitle}{Java ist auch eine Insel}
+    \field{subtitle}{Das umfassende Handbuch}
+    \field{title}{Java ist auch eine Insel}
+    \field{year}{2011}
+  \endentry
+\endsortlist
 \endinput

@@ -94,34 +94,42 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Beschreibung der verwendeten Datenstrukturen}{29}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}ArrayList}{29}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}BigDecimal}{29}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}HashMap vs zweidimensionales Array}{29}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}ArrayList}{30}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Beschreibung der verwendeten Testf\IeC {\"a}lle}{29}{section.4.3}
+\contentsline {subsection}{\numberline {4.2.3}HashMap vs zweidimensionales Array}{31}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Beweis der Funktionsf\IeC {\"a}higkeit}{29}{section.4.4}
+\contentsline {section}{\numberline {4.3}Beschreibung der Testabdeckung}{32}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}numerisches Beispiel}{29}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.4}Beweis der Funktionsf\IeC {\"a}higkeit}{32}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}a280 drilling problem}{30}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.1}numerisches Beispiel}{33}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Vergleich der Auswirkung der Parametergewichtung}{31}{section.4.5}
+\contentsline {subsection}{\numberline {4.4.2}a280 drilling problem}{33}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Performance-Analyse und -Optimierung}{31}{section.4.6}
+\contentsline {section}{\numberline {4.5}Performance-Analyse und -Optimierung}{34}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.1}CPU-Auslastung}{32}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.5.1}CPU-Auslastung}{35}{subsection.4.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.2}Heap-Nutzung}{33}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.5.2}Heap-Nutzung}{35}{subsection.4.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.3}Anzahl Threads pro Minute}{34}{subsection.4.6.3}
+\contentsline {subsection}{\numberline {4.5.3}Anzahl Threads pro Minute}{36}{subsection.4.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.4}Fazit zur Performance}{35}{subsection.4.6.4}
+\contentsline {subsection}{\numberline {4.5.4}Fazit zur Performance}{37}{subsection.4.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Proof Of Concept}{36}{chapter.5}
+\contentsline {chapter}{\numberline {5}Evaluation der Implementierung}{39}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Fazit}{37}{chapter.6}
+\contentsline {section}{\numberline {5.1}Betrachtung der Auswirkung der Parametergewichtung}{39}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Literaturverzeichnis}{38}{section*.37}
+\contentsline {section}{\numberline {5.2}Auswirkung von hoher Anzahl an parallelen Threads}{39}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Anhang}{38}{chapter*.38}
+\contentsline {section}{\numberline {5.3}Verhalten bei hoher Laufzeit}{39}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Proof Of Concept}{40}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Fazit}{41}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Literaturverzeichnis}{42}{section*.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Anhang}{43}{chapter*.40}

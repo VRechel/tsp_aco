@@ -11,13 +11,23 @@
 }
 
 @Article{B.Booba2014,
-  author   = {B.Booba; Dr.T.V.Gopal},
+  author   = {B. Booba; Dr. T. V. Gopal},
   title    = {Comparison of Ant Colony Optimization \& Particle Swarm Optimization In Grid Scheduling},
   journal  = {Australian Journal of Basic and Applied Sciences},
   year     = {2014},
   date     = {2014-06-08},
   language = {English},
   pages    = {1-6},
+}
+
+@Book{Ullenboom2011,
+  author    = {Christian Ullenboom},
+  title     = {Java ist auch eine Insel},
+  year      = {2011},
+  subtitle  = {Das umfassende Handbuch},
+  maintitle = {Java ist auch eine Insel},
+  edition   = {10},
+  publisher = {Galileo Press},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}

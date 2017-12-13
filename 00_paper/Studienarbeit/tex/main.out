@@ -44,19 +44,23 @@
 \BOOKMARK [2][-]{subsection.4.1.4}{TSP}{section.4.1}% 44
 \BOOKMARK [2][-]{subsection.4.1.5}{ACO}{section.4.1}% 45
 \BOOKMARK [1][-]{section.4.2}{Beschreibung der verwendeten Datenstrukturen}{chapter.4}% 46
-\BOOKMARK [2][-]{subsection.4.2.1}{ArrayList}{section.4.2}% 47
-\BOOKMARK [2][-]{subsection.4.2.2}{HashMap vs zweidimensionales Array}{section.4.2}% 48
-\BOOKMARK [1][-]{section.4.3}{Beschreibung der verwendeten Testf\344lle}{chapter.4}% 49
-\BOOKMARK [1][-]{section.4.4}{Beweis der Funktionsf\344higkeit}{chapter.4}% 50
-\BOOKMARK [2][-]{subsection.4.4.1}{numerisches Beispiel}{section.4.4}% 51
-\BOOKMARK [2][-]{subsection.4.4.2}{a280 drilling problem}{section.4.4}% 52
-\BOOKMARK [1][-]{section.4.5}{Vergleich der Auswirkung der Parametergewichtung}{chapter.4}% 53
-\BOOKMARK [1][-]{section.4.6}{Performance-Analyse und -Optimierung}{chapter.4}% 54
-\BOOKMARK [2][-]{subsection.4.6.1}{CPU-Auslastung}{section.4.6}% 55
-\BOOKMARK [2][-]{subsection.4.6.2}{Heap-Nutzung}{section.4.6}% 56
-\BOOKMARK [2][-]{subsection.4.6.3}{Anzahl Threads pro Minute}{section.4.6}% 57
-\BOOKMARK [2][-]{subsection.4.6.4}{Fazit zur Performance}{section.4.6}% 58
-\BOOKMARK [0][-]{chapter.5}{Proof Of Concept}{}% 59
-\BOOKMARK [0][-]{chapter.6}{Fazit}{}% 60
-\BOOKMARK [0][-]{section*.37}{Literaturverzeichnis}{}% 61
-\BOOKMARK [0][-]{chapter*.38}{Anhang}{}% 62
+\BOOKMARK [2][-]{subsection.4.2.1}{BigDecimal}{section.4.2}% 47
+\BOOKMARK [2][-]{subsection.4.2.2}{ArrayList}{section.4.2}% 48
+\BOOKMARK [2][-]{subsection.4.2.3}{HashMap vs zweidimensionales Array}{section.4.2}% 49
+\BOOKMARK [1][-]{section.4.3}{Beschreibung der Testabdeckung}{chapter.4}% 50
+\BOOKMARK [1][-]{section.4.4}{Beweis der Funktionsf\344higkeit}{chapter.4}% 51
+\BOOKMARK [2][-]{subsection.4.4.1}{numerisches Beispiel}{section.4.4}% 52
+\BOOKMARK [2][-]{subsection.4.4.2}{a280 drilling problem}{section.4.4}% 53
+\BOOKMARK [1][-]{section.4.5}{Performance-Analyse und -Optimierung}{chapter.4}% 54
+\BOOKMARK [2][-]{subsection.4.5.1}{CPU-Auslastung}{section.4.5}% 55
+\BOOKMARK [2][-]{subsection.4.5.2}{Heap-Nutzung}{section.4.5}% 56
+\BOOKMARK [2][-]{subsection.4.5.3}{Anzahl Threads pro Minute}{section.4.5}% 57
+\BOOKMARK [2][-]{subsection.4.5.4}{Fazit zur Performance}{section.4.5}% 58
+\BOOKMARK [0][-]{chapter.5}{Evaluation der Implementierung}{}% 59
+\BOOKMARK [1][-]{section.5.1}{Betrachtung der Auswirkung der Parametergewichtung}{chapter.5}% 60
+\BOOKMARK [1][-]{section.5.2}{Auswirkung von hoher Anzahl an parallelen Threads}{chapter.5}% 61
+\BOOKMARK [1][-]{section.5.3}{Verhalten bei hoher Laufzeit}{chapter.5}% 62
+\BOOKMARK [0][-]{chapter.6}{Proof Of Concept}{}% 63
+\BOOKMARK [0][-]{chapter.7}{Fazit}{}% 64
+\BOOKMARK [0][-]{section*.38}{Literaturverzeichnis}{}% 65
+\BOOKMARK [0][-]{chapter*.40}{Anhang}{}% 66

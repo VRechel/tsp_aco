@@ -121,8 +121,27 @@ public class Colony {
         double current = getDistance(bestRoute);
         double new_ = getDistance(route);
 
+        /*
+          The database connection is a bottleneck for the application.
+          It should only be used if desperately necessary.
+         */
+//        //The database needs a String to save it not an ArrayList
+//        StringBuilder sRoute = new StringBuilder();
+//        for (City c:
+//             route) {
+//            sRoute.append(c.toString()).append(",");
+//        }
+//        sRoute.reverse().deleteCharAt(0).reverse();
+//        //The column is currently maxed at 255 chars
+//        //If the String is longer we cut it off
+//        if(sRoute.length() > 255)
+//            sRoute.setLength(255);
+//        Configuration.instance.dbManager.updateTable("GENERATIONS", currentGeneration, sRoute.toString(), new_);
+
         if(new_ < current){
             bestRoute = route;
+//            Configuration.instance.dbManager.updateTable("HISTORY", currentGeneration, sRoute.toString(), new_);
+
             //The following code could be used to weigh the new best route additionally
             //It is not used at the moment as pheromone weights should be kept low
             //for (int x = 0; x < route.size()-1; x++) {

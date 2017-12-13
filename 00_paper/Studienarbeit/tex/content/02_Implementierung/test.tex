@@ -1,1 +1,18 @@
-\section{Beschreibung der verwendeten Testfälle}
+\section{Beschreibung der Testabdeckung}
+Bevor die Applikation im Gesamten getestet wird, sollte immer ein Komponenttest durchgeführt werden. Hierbei sollen die einzelnen Methoden und Algorithmen der Software unabhängig von einander einzeln geprüft werden. In dieser Arbeit wurde der Ansatz des TDD verfolgt, wodurch ein Code-Coverage-Wert von 100 Prozent angestrebt wird. Zum Zeitpunkt dieses Kapitels ergaben sich folgende Coverage-Daten:
+
+\begin{table}[h]
+	\centering
+	\setstretch{1}
+	\begin{tabular}{l c c c}
+		& Klassenabdeckung & Methodenabdeckung & Zeilenabdeckung\\
+		aco & 100\% 	& 92\% 	& 82\%\\ 
+		tsp & 100\% 	& 100\% & 100\%\\ 
+		parser & 100\% 	& 80\% 	& 83\%\\
+		util.HSQLDBManager & 100\% & 100\% & 94\%\\
+	\end{tabular}
+	\caption{Werte der Test-Coverage-Daten}
+	\label{coverage}
+\end{table}
+
+In den Coverage-Daten nicht abgebildet ist das Paket $main$\footnote{s. Abbildung \ref{packageDiagram}}, da innerhalb von $Application$ nur Methoden anderer Klassen aufgerufen werden, welche bereits getestet wurde. Ebenfalls nicht getestet wurde das Paket $util$\footnote{s. Abbildung \ref{packageDiagram}} mit Ausnahme des $HSQLDBManager$, welcher im Gegensatz zu $MersenneTwisterFast$ selbst implementiert wurde.

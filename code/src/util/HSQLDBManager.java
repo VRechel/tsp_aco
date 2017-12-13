@@ -34,7 +34,7 @@ public enum HSQLDBManager {
     /**
      * The database can be initiliazed by dropping all existing tables and creating them again.
      */
-    public void init() throws DBInitializationException {
+    public void init(){
         dropTable();
         createTable();
     }
@@ -45,7 +45,7 @@ public enum HSQLDBManager {
      *
      * @param sqlStatement  The statement which will be executed on the database
      */
-    private synchronized void update(String sqlStatement) {
+    synchronized void update(String sqlStatement) {
         try {
             Statement statement = connection.createStatement();
             int result = statement.executeUpdate(sqlStatement);
@@ -99,6 +99,8 @@ public enum HSQLDBManager {
                 .append(" ( ")
                 .append("id BIGINT NOT NULL")
                 .append(",")
+                .append("generation BIGINT NOT NULL")
+                .append(",")
                 .append("route VARCHAR(")
                 .append(255)
                 .append(") NOT NULL")
@@ -117,12 +119,13 @@ public enum HSQLDBManager {
      * @param route     The route which will be saved
      * @param distance  The distance of the given route which will also be saved
      */
-    public void updateTable(String table, String route, int distance){
+    public void updateTable(String table, int generation, String route, double distance){
         String sqlStringBuilder = "INSERT INTO " + table +
-                " ( " + "id " + "," + "route" + "," +  "distance" + " ) " +
+                " ( " + "id " + "," + "generation" + "," + "route" + "," +  "distance" + " ) " +
                 " VALUES " +  " ( " +
-                Configuration.instance.randomNumberGenerator.nextInt() +
-                "," + route + "," + distance + " ) ";
+                Configuration.instance.randomNumberGenerator.nextInt() + "," +
+                generation +
+                "," + "'" + route + "'" + "," + distance + " ) ";
         update(sqlStringBuilder);
     }
 
@@ -132,7 +135,7 @@ public enum HSQLDBManager {
      * @param   sqlStatement    The SQL statement which will be excuted on the database
      * @return  ResultSet       The results of the statement
      */
-    private synchronized ResultSet select(String sqlStatement) {
+    synchronized ResultSet select(String sqlStatement) {
         try {
             Statement statement = connection.createStatement();
             return statement.executeQuery(sqlStatement);

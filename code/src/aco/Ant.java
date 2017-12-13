@@ -89,7 +89,7 @@ class Ant extends Thread {
                 boolean trip = false;
                 BigDecimal idiocrazy = BigDecimal.valueOf(Configuration.instance.randomNumberGenerator.nextDouble());
 
-                //Idiocrazy filter
+                //Idiocrazy(tm) filter
                 //A ant has a very low probability to just use a random city instead of checking the best path
                 //This is used to make sure that a single path will have too much weight
                 if(idiocrazy.compareTo(Configuration.instance.getIdiocrazyFilter()) < 1) {

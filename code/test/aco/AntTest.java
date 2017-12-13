@@ -22,9 +22,10 @@ public class AntTest {
         Colony colony = new Colony();
         Ant ant = new Ant(1, a, colony);
 
-        BigDecimal expected = BigDecimal.valueOf(1./3.);
-        expected = expected.setScale(2, BigDecimal.ROUND_UP);
-        Assert.assertEquals(0,expected.compareTo(ant.calculateLambda(3.,1.).setScale(2, BigDecimal.ROUND_UP)));
+        BigDecimal expected = new BigDecimal((1./3.));
+        expected = expected.pow(colony.getBeta());
+
+        Assert.assertEquals(0,expected.compareTo(ant.calculateLambda(3.,1.)));
     }
 
     @Test
@@ -43,8 +44,8 @@ public class AntTest {
         Ant ant = new Ant(1, a, colony);
         ArrayList<City> cities = new ArrayList<>();
 
-        BigDecimal expected = BigDecimal.valueOf(1./3.);
-        expected = expected.setScale(2, BigDecimal.ROUND_UP);
+        BigDecimal expected = new BigDecimal((1./3.));
+        expected = expected.pow(colony.getBeta());
 
         cities.add(b);
         cities.add(c);
@@ -55,7 +56,7 @@ public class AntTest {
 
         Assert.assertTrue(lambdas.size() > 0);
         for (Map.Entry<City, BigDecimal> entry: lambdas.entrySet()) {
-            Assert.assertEquals(0, expected.compareTo(entry.getValue().setScale(2, BigDecimal.ROUND_UP)));
+            Assert.assertEquals(0, expected.compareTo(entry.getValue()));
         }
     }
 
@@ -188,7 +189,7 @@ public class AntTest {
     }
 
     @Test
-    public void visitVisitedCityTest(){
+    public void visitNonAvailableCityTest(){
         final City a = new City(1);
         final City b = new City(2);
         final City c = new City(3);

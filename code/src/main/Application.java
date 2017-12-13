@@ -8,9 +8,6 @@ import parser.XMLParser;
 import util.DBInitializationException;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.logging.FileHandler;
-import java.util.logging.SimpleFormatter;
 
 /**
  * @author Viktor
@@ -37,7 +34,7 @@ class Application {
 
         // TODO: 05.12.2017 DB darf erst nach Ende sich schließen
         //At the end of the program the db has to be shutdown!
-        Configuration.instance.dbManager.shutdown();
+        //Configuration.instance.dbManager.shutdown();
     }
 
     /**
@@ -71,11 +68,7 @@ class Application {
         } catch (DBInitializationException e) {
             throw new DBInitializationException();
         }
-        try {
-            Configuration.instance.dbManager.init();
-        } catch (DBInitializationException e) {
-            throw new DBInitializationException();
-        }
+        Configuration.instance.dbManager.init();
     }
 
     /**

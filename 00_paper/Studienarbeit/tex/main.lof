@@ -36,22 +36,44 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {\relax 4.5}{\ignorespaces Modellierung der Klassen des \ac {ACO}-Bereichs \IeC {\"u}ber CRC-Karten\relax }}{28}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 4.6}{\ignorespaces Ausschnitt der Log-Datei bei der Berechnung des numerischen Beispiels aus \ref {numerschiesBeispiel}. Jede Log-Zeile steht hier f\IeC {\"u}r eine Generation an Ameisen.\relax }}{30}{figure.caption.31}
+\contentsline {figure}{\numberline {\relax 4.6}{\ignorespaces Ausschnitt der Log-Datei bei der Berechnung des numerischen Beispiels aus \ref {numerschiesBeispiel}. Jede Log-Zeile steht hier f\IeC {\"u}r eine Generation an Ameisen.\relax }}{33}{figure.caption.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 4.7}{\ignorespaces Ausschnitt der Log-Datei bei der Berechnung des ``a280 drilling problem''. Auch hier steht jede Log-Zeile f\IeC {\"u}r eine Generation an Ameisen.\relax }}{31}{figure.caption.32}
+\contentsline {figure}{\numberline {\relax 4.7}{\ignorespaces Ausschnitt der Log-Datei bei der Berechnung des ``a280 drilling problem''. Auch hier steht jede Log-Zeile f\IeC {\"u}r eine Generation an Ameisen.\relax }}{34}{figure.caption.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 4.8}{\ignorespaces Aufzeichnung der CPU-Beanspruchung der Applikation \IeC {\"u}ber die gesamte Laufzeit\relax }}{32}{figure.caption.34}
+\contentsline {figure}{\numberline {\relax 4.8}{\ignorespaces Aufzeichnung der CPU-Beanspruchung der Applikation \IeC {\"u}ber die gesamte Laufzeit\relax }}{36}{figure.caption.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 4.9}{\ignorespaces Aufzeichnung des Speicherverbrauchs der Applikation \IeC {\"u}ber die gesamte Laufzeit. Blau markiert ist der derzeit verwendete Speicher, in orange der allokierte Speicher.\relax }}{33}{figure.caption.35}
+\contentsline {figure}{\numberline {\relax 4.9}{\ignorespaces Aufzeichnung des Speicherverbrauchs der Applikation \IeC {\"u}ber die gesamte Laufzeit. Blau markiert ist der derzeit verwendete Speicher, in orange der allokierte Speicher.\relax }}{37}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 4.10}{\ignorespaces Aufzeichnung der Menge an gleichzeitig aktiven Threads des Programms. In blau gezeichnet ist die Menge an Daemon-Threads, in orange die Anzahl an aktiven Live-Threads.\relax }}{34}{figure.caption.36}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 4.10}{\ignorespaces Aufzeichnung der Menge an gleichzeitig aktiven Threads des Programms. In blau gezeichnet ist die Menge an Daemon-Threads, in orange die Anzahl an aktiven Live-Threads.\relax }}{38}{figure.caption.37}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 1}{\ignorespaces Paketdiagramm der vorliegenden Softwarel\IeC {\"o}sung\relax }}{38}{figure.caption.39}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {\relax 2}{\ignorespaces ER-Diagramm der vorliegenden Softwarel\IeC {\"o}sung\relax }}{39}{figure.caption.40}
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 1}{\ignorespaces Paketdiagramm der vorliegenden Softwarel\IeC {\"o}sung\relax }}{43}{figure.caption.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 2}{\ignorespaces ER-Diagramm der vorliegenden Softwarel\IeC {\"o}sung\relax }}{44}{figure.caption.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 3}{\ignorespaces Testf\IeC {\"a}lle der Klasse $Ant$, Seite 1\relax }}{45}{figure.caption.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 4}{\ignorespaces Testf\IeC {\"a}lle der Klasse $Ant$, Seite 2\relax }}{46}{figure.caption.44}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 5}{\ignorespaces Testf\IeC {\"a}lle der Klasse $Ant$, Seite 3\relax }}{47}{figure.caption.45}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 6}{\ignorespaces Testf\IeC {\"a}lle der Klasse $Colony$, Seite 1\relax }}{48}{figure.caption.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 7}{\ignorespaces Testf\IeC {\"a}lle der Klasse $Colony$, Seite 2\relax }}{49}{figure.caption.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 8}{\ignorespaces Testf\IeC {\"a}lle der Klasse $Landscape$, Seite 1\relax }}{50}{figure.caption.48}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 9}{\ignorespaces Testf\IeC {\"a}lle der Klasse $Landscape$, Seite 2\relax }}{51}{figure.caption.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 10}{\ignorespaces Testf\IeC {\"a}lle der Klassen von $Parser$\relax }}{52}{figure.caption.50}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 11}{\ignorespaces Testf\IeC {\"a}lle der Klasse $HSQLDBManager$, Seite 1\relax }}{53}{figure.caption.51}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {\relax 12}{\ignorespaces Testf\IeC {\"a}lle der Klasse $HSQLDBManager$, Seite 2\relax }}{54}{figure.caption.52}

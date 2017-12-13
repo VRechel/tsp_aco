@@ -12,7 +12,7 @@ import java.io.File;
  */
 public class XMLParserTest {
     @Test
-    public void parserTest(){
+    public void parseTest(){
         Configuration.instance.landscape = new Landscape();
 
         File file = new File("tspProblems/xmlTest.xml");

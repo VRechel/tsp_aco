@@ -64,8 +64,9 @@ public class LandscapeTest {
         final City b = new City(2);
         Configuration.instance.landscape.initNeighbours(2);
 
-        Configuration.instance.landscape.addNeighbour(a,b,1);
+        Assert.assertEquals(1, Configuration.instance.landscape.addNeighbour(a,b,1));
         Assert.assertEquals(2, Configuration.instance.landscape.getNeighbours().length);
+        Assert.assertEquals(1, Configuration.instance.landscape.getDistance(a,b), 0.);
     }
 
     @Test
