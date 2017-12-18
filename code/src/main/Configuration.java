@@ -27,7 +27,6 @@ public enum Configuration {
     public static final int alpha = 3;  //Pheromongewichtung
     public static final int beta = 2;   //Distanzgewichtung
     final String filePath = "tspProblems/a280.tsp";
-    public static final int maxDistance = 2708;
     public static final int numberAnts = 12;
     private static final BigDecimal idiocrazyFilter = BigDecimal.valueOf(0.005);
 
@@ -36,7 +35,9 @@ public enum Configuration {
     private final String userDirectory = System.getProperty("user.dir");
 
     private final String dataDirectory = userDirectory + fileSeparator + "data" + fileSeparator;
+    @SuppressWarnings("unused")
     public final String dataFilePath = dataDirectory + "tsp_antColony.csv";
+    @SuppressWarnings("unused")
     public final String dataRDirectory = userDirectory;
     public final String databaseFile = dataDirectory + "datastore.db";
 

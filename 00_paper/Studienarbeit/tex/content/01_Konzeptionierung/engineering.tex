@@ -1,13 +1,11 @@
 \section{Software Engineering}{
 Innerhalb einer Software-Entwicklung - wie im vorliegenden Fall - gilt es immer zuerst eine gründliche Anforderungsanalyse durchzuführen, um sicherzustellen dass alle Anforderungen erfasst und dokumentiert sind. Ebenso müssen eventuelle unbewusste Anforderungen ebenso herausgefunden werden, wie mögliche Begeisterungsfaktoren.
 
-Um eine zeitliche Einschätzung durchführen zu können bietet sich das Constructive Cost Modell an - kurz COCOMO. Hierbei werden der Aufwand der Implementierung geschätzt und eine ungefähre Anzahl der Codezeilen angegeben. Aus dieser Zahl kann dann per Formel eine Implementierungslaufzeit errechnet werden. 
+Um eine zeitliche Einschätzung durchführen zu können bietet sich das \ac{COCOMO} an. Hierbei werden der Aufwand der Implementierung geschätzt und eine ungefähre Anzahl der Codezeilen angegeben. Aus dieser Zahl kann dann per Formel eine Implementierungszeit errechnet werden. 
 
 	\subsection{Requirements Engineering}
 	Zu den grundsätzlichen Anforderungen gehören eine performante Umsetzung einer Softwarelösung des \ac{TSP}, der Verwendung einer effizienten Implementierung des \ac{ACO} und die Entwicklung einer durchdachten Architektur.
-	Diese generellen Eigenschaften lassen sich aufteilen in genauer spezifizierte Anforderungen, sowohl aus funktionaler Sicht als auch aus nicht-funktionaler Sicht.
-	
-	Die funktionalen Anforderungen wären somit:
+	Diese generellen Eigenschaften lassen sich aufteilen in genauer spezifizierte Anforderungen, sowohl aus funktionaler Sicht als auch aus nicht-funktionaler Sicht. Die funktionalen Anforderungen wären somit:
 	\begin{itemize}
 		\item Möglichkeit das \ac{TSP} lösen zu können
 		\item Lösungsweg wird mit \ac{ACO} berechnet
@@ -23,11 +21,12 @@ Um eine zeitliche Einschätzung durchführen zu können bietet sich das Construc
 		\item Lesbarer, dokumentierter Sourcecode
 		\item Lösungsqualität von 95%
 		\item Programmiersprache: Java 8
-		\item Zugelassene externe Bibliothek: JUnit
+		\item Zugelassene externe Bibliotheken: JUnit, HSQLDB
 	\end{itemize}
 	
+	\newpage
 	\subsection{COCOMO}
-	Um eine wirtschaftliche Analyse in Bezug auf das vorliegende Softwareprojekt durchführen zu können, wurde das COCOMO angewendet. Hierbei wurde die Funktionspunkt-Methode angewendet, da ein Implizieren der Anzahl der Codezeilen nicht verlässlich möglich ist. Hierbei wurden die verschiedenen Teile der Architektur nach der Komplexität bewertet und aufgeteilt. Daraus ergab sich folgende Liste:
+	Um eine wirtschaftliche Analyse in Bezug auf das vorliegende Softwareprojekt durchführen zu können, wird das \ac{COCOMO} angewendet. Hierbei wird die Funktionspunkt-Methode angewendet, da ein Implizieren der Anzahl der Codezeilen nicht verlässlich möglich ist. Hierzu werden die verschiedenen Teile der Architektur nach der Komplexität bewertet und aufgeteilt. Daraus ergibt sich folgende Liste:
 	\begin{table}[H]
 		\centering
 		\footnotesize
@@ -42,11 +41,9 @@ Um eine zeitliche Einschätzung durchführen zu können bietet sich das Construc
 	\end{tabular}
 	\caption{Komplexitätseinschätzung des Projekts im Rahmen einer Abschätzung der Funktionspunkte}
 	\end{table}
-	Somit ergeben sich als Summe der Anforderungen an die Software 28 Funktionspunkte. In der verwendeten Programmiersprache Java entspricht ein Funktionspunkt im Durchschnitt ca. 53 Zeilen Code. Somit ergibt sich als Zeilenanzahl eine erwartete Menge von 1484 Zeilen.
-	
-	Mithilfe der "COCOMO II"-Formel lässt sich aus der Anzahl der Zeilen eine Arbeitsaufwand berechnen:
+	Somit ergeben sich als Summe der Anforderungen an die Software 28 Funktionspunkte. In der verwendeten Programmiersprache Java entspricht ein Funktionspunkt im Durchschnitt ca. 53 Zeilen Code. Somit ergibt sich als Zeilenanzahl eine erwartete Menge von 1484 Zeilen. Mithilfe der ``\ac{COCOMO} II''-Formel lässt sich mit der Anzahl der Zeilen eine Arbeitsaufwand berechnen:
 	\begin{equation}\label{cocomo}
-	Aufwand = C * (Size)^{Prozessfaktoren} * M
+		Aufwand = C * (Size)^{Prozessfaktoren} * M
 	\end{equation}
 	\begin{conditions*}
 		C & Konstante\\
@@ -54,7 +51,6 @@ Um eine zeitliche Einschätzung durchführen zu können bietet sich das Construc
 		Prozessfaktoren & Kombinierte Prozessfaktoren\\
 		M & Leistungsfaktoren\\
 	\end{conditions*}
-	\myequations{COCOMO II-Formel zur Berechnung der Arbeitsaufwände bei der Entwicklung \& Implementierung eines Software-Projekts}
-
-	Nach dieser Formel beträgt der zeitliche Aufwand für dieses Projekt ca. 2.5 Monate. Diese Zahl ist entsprechend einer Dauer eines Semesters von drei Monaten nachvollziehbar. Somit lässt sich auch sagen, dass das Projekt durchführbar ist und auch einen ausreichen großen Anspruch besitzt, um eine zu kurze Beschäftigung zu verhindern.
+	\myequations{\ac{COCOMO} II-Formel zur Berechnung der Arbeitsaufwände bei der Entwicklung \& Implementierung eines Software-Projekts}
+	Nach dieser Formel beträgt der zeitliche Aufwand für dieses Projekt ca. 2.5 Monate. Diese Zahl ist entsprechend einer Dauer eines Semesters von drei Monaten nachvollziehbar. Somit lässt sich auch sagen, dass das Projekt durchführbar ist und auch einen ausreichend großen Anspruch besitzt, um eine zu kurze Beschäftigungszeit zu verhindern.
 }

@@ -1,66 +1,76 @@
-\BOOKMARK [0][-]{chapter*.3}{Abstract}{}% 1
-\BOOKMARK [0][-]{chapter*.4}{Zusammenfassung}{}% 2
-\BOOKMARK [0][-]{chapter*.6}{Abk\374rzungsverzeichnis}{}% 3
-\BOOKMARK [0][-]{section*.7}{Abbildungsverzeichnis}{}% 4
-\BOOKMARK [0][-]{section*.10}{Tabellenverzeichnis}{}% 5
-\BOOKMARK [0][-]{section*.11}{Formelverzeichnis}{}% 6
-\BOOKMARK [0][-]{chapter.1}{Einleitung}{}% 7
-\BOOKMARK [0][-]{chapter.2}{Stand der Technik \046 Forschung}{}% 8
-\BOOKMARK [1][-]{section.2.1}{Traveling Salesman Problem}{chapter.2}% 9
+\BOOKMARK [0][-]{chapter*.7}{Abk\374rzungsverzeichnis}{}% 1
+\BOOKMARK [0][-]{section*.8}{Abbildungsverzeichnis}{}% 2
+\BOOKMARK [0][-]{section*.10}{Tabellenverzeichnis}{}% 3
+\BOOKMARK [0][-]{section*.11}{Formelverzeichnis}{}% 4
+\BOOKMARK [0][-]{chapter.1}{Einleitung}{}% 5
+\BOOKMARK [0][-]{chapter.2}{Stand der Technik \046 Forschung}{}% 6
+\BOOKMARK [1][-]{section.2.1}{Traveling Salesman Problem}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.1.1}{Beschreibung des Problems}{section.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.1.2}{Menge der M\366glichkeiten in Bezug auf Anzahl der St\344dte}{section.2.1}% 9
 \BOOKMARK [1][-]{section.2.2}{Ant Colony Optimization}{chapter.2}% 10
-\BOOKMARK [0][-]{chapter.3}{Konzeptionierung}{}% 11
-\BOOKMARK [1][-]{section.3.1}{Software Engineering}{chapter.3}% 12
-\BOOKMARK [2][-]{subsection.3.1.1}{Requirements Engineering}{section.3.1}% 13
-\BOOKMARK [2][-]{subsection.3.1.2}{COCOMO}{section.3.1}% 14
-\BOOKMARK [1][-]{section.3.2}{Architektur}{chapter.3}% 15
-\BOOKMARK [2][-]{subsection.3.2.1}{Persistenz}{section.3.2}% 16
-\BOOKMARK [2][-]{subsection.3.2.2}{Applikation}{section.3.2}% 17
-\BOOKMARK [2][-]{subsection.3.2.3}{TSP}{section.3.2}% 18
-\BOOKMARK [2][-]{subsection.3.2.4}{ACO}{section.3.2}% 19
-\BOOKMARK [2][-]{subsection.3.2.5}{Arbeitsweise der Architektur}{section.3.2}% 20
-\BOOKMARK [1][-]{section.3.3}{Umsetzung der SOLID-Prinzipien}{chapter.3}% 21
-\BOOKMARK [2][-]{subsection.3.3.1}{Single Responsibility}{section.3.3}% 22
-\BOOKMARK [2][-]{subsection.3.3.2}{Open / Closed}{section.3.3}% 23
-\BOOKMARK [2][-]{subsection.3.3.3}{Liskov Substitution}{section.3.3}% 24
-\BOOKMARK [2][-]{subsection.3.3.4}{Interface Segregation}{section.3.3}% 25
-\BOOKMARK [2][-]{subsection.3.3.5}{Dependency Inversion}{section.3.3}% 26
-\BOOKMARK [1][-]{section.3.4}{Parameterbeschreibung}{chapter.3}% 27
-\BOOKMARK [2][-]{subsection.3.4.1}{Tau - }{section.3.4}% 28
-\BOOKMARK [2][-]{subsection.3.4.2}{Eta - }{section.3.4}% 29
-\BOOKMARK [2][-]{subsection.3.4.3}{Alpha - \040und Beta - }{section.3.4}% 30
-\BOOKMARK [1][-]{section.3.5}{Sensitivit\344tsanalyse}{chapter.3}% 31
-\BOOKMARK [2][-]{subsection.3.5.1}{ hoch - \040niedrig}{section.3.5}% 32
-\BOOKMARK [2][-]{subsection.3.5.2}{ mittel - \040mittel}{section.3.5}% 33
-\BOOKMARK [2][-]{subsection.3.5.3}{ niedrig - \040hoch}{section.3.5}% 34
-\BOOKMARK [1][-]{section.3.6}{Ausgew\344hlte Algorithmen}{chapter.3}% 35
-\BOOKMARK [2][-]{subsection.3.6.1}{Ant - iteration\(\)}{section.3.6}% 36
-\BOOKMARK [2][-]{subsection.3.6.2}{Colony - killAnt\(\)}{section.3.6}% 37
-\BOOKMARK [2][-]{subsection.3.6.3}{Colony - updatePheromone\(\)}{section.3.6}% 38
-\BOOKMARK [0][-]{chapter.4}{Implementierung}{}% 39
-\BOOKMARK [1][-]{section.4.1}{Beschreibung der Implementierung}{chapter.4}% 40
-\BOOKMARK [2][-]{subsection.4.1.1}{Klassendiagramm}{section.4.1}% 41
-\BOOKMARK [2][-]{subsection.4.1.2}{Persistenz}{section.4.1}% 42
-\BOOKMARK [2][-]{subsection.4.1.3}{Applikation}{section.4.1}% 43
-\BOOKMARK [2][-]{subsection.4.1.4}{TSP}{section.4.1}% 44
-\BOOKMARK [2][-]{subsection.4.1.5}{ACO}{section.4.1}% 45
-\BOOKMARK [1][-]{section.4.2}{Beschreibung der verwendeten Datenstrukturen}{chapter.4}% 46
-\BOOKMARK [2][-]{subsection.4.2.1}{BigDecimal}{section.4.2}% 47
-\BOOKMARK [2][-]{subsection.4.2.2}{ArrayList}{section.4.2}% 48
-\BOOKMARK [2][-]{subsection.4.2.3}{HashMap vs zweidimensionales Array}{section.4.2}% 49
-\BOOKMARK [1][-]{section.4.3}{Beschreibung der Testabdeckung}{chapter.4}% 50
-\BOOKMARK [1][-]{section.4.4}{Beweis der Funktionsf\344higkeit}{chapter.4}% 51
-\BOOKMARK [2][-]{subsection.4.4.1}{numerisches Beispiel}{section.4.4}% 52
-\BOOKMARK [2][-]{subsection.4.4.2}{a280 drilling problem}{section.4.4}% 53
-\BOOKMARK [1][-]{section.4.5}{Performance-Analyse und -Optimierung}{chapter.4}% 54
-\BOOKMARK [2][-]{subsection.4.5.1}{CPU-Auslastung}{section.4.5}% 55
-\BOOKMARK [2][-]{subsection.4.5.2}{Heap-Nutzung}{section.4.5}% 56
-\BOOKMARK [2][-]{subsection.4.5.3}{Anzahl Threads pro Minute}{section.4.5}% 57
-\BOOKMARK [2][-]{subsection.4.5.4}{Fazit zur Performance}{section.4.5}% 58
-\BOOKMARK [0][-]{chapter.5}{Evaluation der Implementierung}{}% 59
-\BOOKMARK [1][-]{section.5.1}{Betrachtung der Auswirkung der Parametergewichtung}{chapter.5}% 60
-\BOOKMARK [1][-]{section.5.2}{Auswirkung von hoher Anzahl an parallelen Threads}{chapter.5}% 61
-\BOOKMARK [1][-]{section.5.3}{Verhalten bei hoher Laufzeit}{chapter.5}% 62
-\BOOKMARK [0][-]{chapter.6}{Proof Of Concept}{}% 63
-\BOOKMARK [0][-]{chapter.7}{Fazit}{}% 64
-\BOOKMARK [0][-]{section*.38}{Literaturverzeichnis}{}% 65
-\BOOKMARK [0][-]{chapter*.40}{Anhang}{}% 66
+\BOOKMARK [2][-]{subsection.2.2.1}{Ameisen in der Natur}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.2}{Reale Pheromonverteilung}{section.2.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.3}{Adaption in einer Applikation}{section.2.2}% 13
+\BOOKMARK [1][-]{section.2.3}{Hash-Theorie}{chapter.2}% 14
+\BOOKMARK [0][-]{chapter.3}{Konzeptionierung}{}% 15
+\BOOKMARK [1][-]{section.3.1}{Software Engineering}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.1.1}{Requirements Engineering}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.2}{COCOMO}{section.3.1}% 18
+\BOOKMARK [1][-]{section.3.2}{Architektur}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.2.1}{Persistenz}{section.3.2}% 20
+\BOOKMARK [2][-]{subsection.3.2.2}{Applikation}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.3}{TSP}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.4}{ACO}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.5}{Arbeitsweise der Architektur}{section.3.2}% 24
+\BOOKMARK [1][-]{section.3.3}{Umsetzung der SOLID-Prinzipien}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.1}{Single Responsibility}{section.3.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.2}{Open / Closed}{section.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.3}{Liskov Substitution}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.4}{Interface Segregation}{section.3.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.5}{Dependency Inversion}{section.3.3}% 30
+\BOOKMARK [1][-]{section.3.4}{Parameterbeschreibung}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.4.1}{Tau - }{section.3.4}% 32
+\BOOKMARK [2][-]{subsection.3.4.2}{Eta - }{section.3.4}% 33
+\BOOKMARK [2][-]{subsection.3.4.3}{Alpha - \040und Beta - }{section.3.4}% 34
+\BOOKMARK [1][-]{section.3.5}{Sensitivit\344tsanalyse}{chapter.3}% 35
+\BOOKMARK [2][-]{subsection.3.5.1}{ hoch - \040niedrig}{section.3.5}% 36
+\BOOKMARK [2][-]{subsection.3.5.2}{ mittel - \040mittel}{section.3.5}% 37
+\BOOKMARK [2][-]{subsection.3.5.3}{ niedrig - \040hoch}{section.3.5}% 38
+\BOOKMARK [1][-]{section.3.6}{Ausgew\344hlte Algorithmen}{chapter.3}% 39
+\BOOKMARK [2][-]{subsection.3.6.1}{Ant - iteration\(\)}{section.3.6}% 40
+\BOOKMARK [2][-]{subsection.3.6.2}{Colony - killAnt\(\)}{section.3.6}% 41
+\BOOKMARK [2][-]{subsection.3.6.3}{Colony - updatePheromone\(\)}{section.3.6}% 42
+\BOOKMARK [0][-]{chapter.4}{Implementierung}{}% 43
+\BOOKMARK [1][-]{section.4.1}{Beschreibung der Implementierung}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.1.1}{Klassendiagramm}{section.4.1}% 45
+\BOOKMARK [2][-]{subsection.4.1.2}{Persistenz}{section.4.1}% 46
+\BOOKMARK [2][-]{subsection.4.1.3}{Applikation}{section.4.1}% 47
+\BOOKMARK [2][-]{subsection.4.1.4}{TSP}{section.4.1}% 48
+\BOOKMARK [2][-]{subsection.4.1.5}{ACO}{section.4.1}% 49
+\BOOKMARK [1][-]{section.4.2}{Beschreibung der verwendeten Datenstrukturen}{chapter.4}% 50
+\BOOKMARK [2][-]{subsection.4.2.1}{BigDecimal}{section.4.2}% 51
+\BOOKMARK [2][-]{subsection.4.2.2}{ArrayList}{section.4.2}% 52
+\BOOKMARK [2][-]{subsection.4.2.3}{HashMap vs zweidimensionales Array}{section.4.2}% 53
+\BOOKMARK [1][-]{section.4.3}{Beschreibung der Testabdeckung}{chapter.4}% 54
+\BOOKMARK [1][-]{section.4.4}{Beweis der Funktionsf\344higkeit}{chapter.4}% 55
+\BOOKMARK [2][-]{subsection.4.4.1}{numerisches Beispiel}{section.4.4}% 56
+\BOOKMARK [2][-]{subsection.4.4.2}{a280 drilling problem}{section.4.4}% 57
+\BOOKMARK [1][-]{section.4.5}{Performance-Analyse}{chapter.4}% 58
+\BOOKMARK [2][-]{subsection.4.5.1}{CPU-Auslastung}{section.4.5}% 59
+\BOOKMARK [2][-]{subsection.4.5.2}{Heap-Nutzung}{section.4.5}% 60
+\BOOKMARK [2][-]{subsection.4.5.3}{Anzahl Threads pro Minute}{section.4.5}% 61
+\BOOKMARK [2][-]{subsection.4.5.4}{Fazit zur Performance}{section.4.5}% 62
+\BOOKMARK [0][-]{chapter.5}{Evaluation der Implementierung}{}% 63
+\BOOKMARK [1][-]{section.5.1}{Betrachtung der Auswirkung der Parametergewichtung}{chapter.5}% 64
+\BOOKMARK [1][-]{section.5.2}{Auswirkung von hoher Anzahl an parallelen Threads}{chapter.5}% 65
+\BOOKMARK [1][-]{section.5.3}{Verhalten bei hoher Laufzeit}{chapter.5}% 66
+\BOOKMARK [0][-]{chapter.6}{Proof Of Concept}{}% 67
+\BOOKMARK [0][-]{chapter.7}{Optimierung der Softwarel\366sung}{}% 68
+\BOOKMARK [1][-]{section.7.1}{Ben\366tigter Heap-Speicher}{chapter.7}% 69
+\BOOKMARK [1][-]{section.7.2}{Optimierung der Datenbankzugriffe}{chapter.7}% 70
+\BOOKMARK [1][-]{section.7.3}{Ans\344tze zur Verbesserung der Distanzwerte}{chapter.7}% 71
+\BOOKMARK [2][-]{subsection.7.3.1}{Verringerung der Werte innerhalb der Pheromonmatrix nach einer festen Zeit}{section.7.3}% 72
+\BOOKMARK [2][-]{subsection.7.3.2}{Mutation der Pheromonmatrix}{section.7.3}% 73
+\BOOKMARK [0][-]{chapter.8}{Fazit}{}% 74
+\BOOKMARK [0][-]{section*.43}{Literaturverzeichnis}{}% 75
+\BOOKMARK [0][-]{chapter*.45}{Anhang}{}% 76

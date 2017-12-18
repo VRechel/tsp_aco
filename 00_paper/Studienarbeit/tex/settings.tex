@@ -6,7 +6,7 @@
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{float}
-\usepackage{acronym}
+\usepackage[printonlyused]{acronym}
 \usepackage{booktabs}
 \usepackage{caption}
 \usepackage{csquotes}
@@ -21,6 +21,7 @@
 \usepackage{setspace}
 \usepackage{appendix}
 \usepackage{tocloft}
+\usepackage{amsmath}
 \renewcommand{\cftaftertoctitle}{\thispagestyle{fancy}}
 \renewcommand{\cftafterloftitle}{\thispagestyle{fancy}}
 \renewcommand{\cftafterlottitle}{\thispagestyle{fancy}}
@@ -30,25 +31,26 @@
 \renewcommand*{\arraystretch}{1.5}
 \renewcommand{\headsep}{15pt}
 
-\setlength{\parskip}{1.5ex}
-\setlength{\belowdisplayskip}{0.5pt}
-\setlength{\abovedisplayskip}{0.5pt}
-
 \renewcommand*\chapterpagestyle{fancy}
 
+%1,5 Zeilenabstand
 \onehalfspacing
 
 \input{header_footer.tex}
 
 \newenvironment{conditions*}
-{\par\vspace{\abovedisplayskip}\noindent\setstretch{0.5}\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+{\par\vspace{\abovedisplayskip}\noindent\setstretch{0.5}\begin{tabular}{>{$}l<{$} @{${}:{}$} l}}
 	{\end{tabular}\par\vspace{\belowdisplayskip}}
 
 \newcommand{\listequationsname}{\Large{List of Equations}}
 \newlistof{myequations}{equ}{\listequationsname}
-\newcommand{\myequations}[1]{
-	\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}
-}
+\newcommand{\myequations}[1]{\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}}
 \setlength{\cftmyequationsnumwidth}{2.3em}
 \setlength{\cftmyequationsindent}{1.5em}
 \renewcommand{\cftafterequtitle}{\thispagestyle{fancy}} 
+
+\setlength{\parskip}{1.5ex}
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}

@@ -126,21 +126,22 @@ public class Colony {
           It should only be used if desperately necessary.
          */
 //        //The database needs a String to save it not an ArrayList
-//        StringBuilder sRoute = new StringBuilder();
-//        for (City c:
-//             route) {
-//            sRoute.append(c.toString()).append(",");
-//        }
-//        sRoute.reverse().deleteCharAt(0).reverse();
-//        //The column is currently maxed at 255 chars
-//        //If the String is longer we cut it off
-//        if(sRoute.length() > 255)
-//            sRoute.setLength(255);
-//        Configuration.instance.dbManager.updateTable("GENERATIONS", currentGeneration, sRoute.toString(), new_);
-
+        StringBuilder sRoute = new StringBuilder();
+        if(!this.debug) {
+            for (City c :
+                    route) {
+                sRoute.append(c.toString()).append(",");
+            }
+            sRoute.reverse().deleteCharAt(0).reverse();
+            //The column is currently maxed at 255 chars
+            //If the String is longer we cut it off
+            if (sRoute.length() > 255)
+                sRoute.setLength(255);
+            Configuration.instance.dbManager.updateTable("GENERATIONS", currentGeneration, sRoute.toString(), new_);
+        }
         if(new_ < current){
             bestRoute = route;
-//            Configuration.instance.dbManager.updateTable("HISTORY", currentGeneration, sRoute.toString(), new_);
+            if(!this.debug) Configuration.instance.dbManager.updateTable("HISTORY", currentGeneration, sRoute.toString(), new_);
 
             //The following code could be used to weigh the new best route additionally
             //It is not used at the moment as pheromone weights should be kept low
@@ -174,17 +175,6 @@ public class Colony {
             sum += Configuration.instance.landscape.getDistance(route.get(i), route.get(i+1));
         }
         return sum;
-    }
-
-    /**
-        For given and "solved" TSP problems it is possible to provide a approximately solution.
-        To get the current solution quality of the colony the both values have to be divided.
-
-        @return double  The solution quality
-     */
-    double getSolutionQuality() {
-        if(bestRoute == null){return 0;}
-        return Configuration.maxDistance / getDistance(bestRoute);
     }
 
     /**

@@ -10,33 +10,31 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {\relax 3.1}{\ignorespaces Komplexit\IeC {\"a}tseinsch\IeC {\"a}tzung des Projekts im Rahmen einer Absch\IeC {\"a}tzung der Funktionspunkte\relax }}{5}{table.caption.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {\relax 3.2}{\ignorespaces Distanzmatrix des numerischen \ac {TSP}-Beispiels\relax }}{9}{table.caption.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {\relax 3.3}{\ignorespaces Initiale Pheromonmatrix des \ac {TSP}-Beispiels\relax }}{9}{table.caption.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {\relax 3.4}{\ignorespaces Ergebnisse der drei Ameisen der ersten Generation\relax }}{12}{table.caption.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {\relax 3.5}{\ignorespaces Pheromonmatrix des TSP-Beispiels nach dem ersten Durchlauf\relax }}{12}{table.caption.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {\relax 3.6}{\ignorespaces Ergebnisse der drei Ameisen der zweiten Generation\relax }}{13}{table.caption.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {\relax 3.7}{\ignorespaces Pheromonmatrix des \ac {TSP}-Beispiels nach dem zweiten Durchlauf\relax }}{13}{table.caption.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {\relax 3.8}{\ignorespaces Pheromonmatrix des \ac {TSP}-Beispiels nach dem finalen dritten Durchlauf\relax }}{13}{table.caption.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {\relax 3.9}{\ignorespaces Ergebnisse der drei Ameisen der dritten Generation\relax }}{14}{table.caption.26}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {\relax 3.1}{\ignorespaces Komplexit\IeC {\"a}tseinsch\IeC {\"a}tzung des Projekts im Rahmen einer Absch\IeC {\"a}tzung der Funktionspunkte\relax }}{5}{table.caption.12}
+\contentsline {table}{\numberline {\relax 4.1}{\ignorespaces Werte der Test-Coverage-Daten\relax }}{31}{table.caption.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {\relax 3.2}{\ignorespaces Distanzmatrix des numerischen \ac {TSP}-Beispiels\relax }}{8}{table.caption.14}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {\relax 3.3}{\ignorespaces Initiale Pheromonmatrix des \ac {TSP}-Beispiels\relax }}{9}{table.caption.15}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {\relax 3.4}{\ignorespaces Ergebnisse der drei Ameisen der ersten Generation\relax }}{11}{table.caption.16}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {\relax 3.5}{\ignorespaces Pheromonmatrix des TSP-Beispiels nach dem ersten Durchlauf\relax }}{11}{table.caption.17}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {\relax 3.6}{\ignorespaces Ergebnisse der drei Ameisen der zweiten Generation\relax }}{12}{table.caption.18}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {\relax 3.7}{\ignorespaces Pheromonmatrix des \ac {TSP}-Beispiels nach dem zweiten Durchlauf\relax }}{12}{table.caption.19}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {\relax 3.8}{\ignorespaces Ergebnisse der drei Ameisen der dritten Generation\relax }}{12}{table.caption.20}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {\relax 3.9}{\ignorespaces Pheromonmatrix des \ac {TSP}-Beispiels nach dem finalen dritten Durchlauf\relax }}{13}{table.caption.21}
+\contentsline {table}{\numberline {\relax 4.2}{\ignorespaces F\IeC {\"u}r Performance-Benchmarks verwendete relevante Hardware\relax }}{34}{table.caption.39}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {\relax 4.1}{\ignorespaces Werte der Test-Coverage-Daten\relax }}{32}{table.caption.31}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {\relax 4.2}{\ignorespaces F\IeC {\"u}r Performance-Benchmarks verwendete relevante Hardware\relax }}{35}{table.caption.34}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

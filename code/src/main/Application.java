@@ -32,8 +32,8 @@ class Application {
         Configuration.initLogger();
         initColony();
 
-        // TODO: 05.12.2017 DB darf erst nach Ende sich schließen
-        //At the end of the program the db has to be shutdown!
+        //Currently there is no end to the application
+        //Every start of the application will initiate a new database
         //Configuration.instance.dbManager.shutdown();
     }
 

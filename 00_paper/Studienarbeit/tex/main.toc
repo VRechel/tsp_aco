@@ -2,17 +2,13 @@
 \defcounter {refsection}{0}\relax 
 \select@language {ngerman}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Abstract}{ii}{chapter*.3}
+\contentsline {chapter}{\nonumberline Abk\IeC {\"u}rzungsverzeichnis}{viii}{chapter*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Zusammenfassung}{iii}{chapter*.4}
+\contentsline {chapter}{Abbildungsverzeichnis}{ix}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Abk\IeC {\"u}rzungsverzeichnis}{vii}{chapter*.6}
+\contentsline {chapter}{Tabellenverzeichnis}{xi}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Abbildungsverzeichnis}{viii}{section*.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Tabellenverzeichnis}{x}{section*.10}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Formelverzeichnis}{xi}{section*.11}
+\contentsline {chapter}{Formelverzeichnis}{xii}{section*.11}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -20,7 +16,19 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Traveling Salesman Problem}{2}{section.2.1}
 \defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}Beschreibung des Problems}{2}{subsection.2.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}Menge der M\IeC {\"o}glichkeiten in Bezug auf Anzahl der St\IeC {\"a}dte}{2}{subsection.2.1.2}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Ant Colony Optimization}{2}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Ameisen in der Natur}{2}{subsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Reale Pheromonverteilung}{2}{subsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Adaption in einer Applikation}{2}{subsection.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Hash-Theorie}{2}{section.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Konzeptionierung}{3}{chapter.3}
 \defcounter {refsection}{0}\relax 
@@ -28,53 +36,53 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.1}Requirements Engineering}{4}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}COCOMO}{4}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.2}COCOMO}{5}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Architektur}{5}{section.3.2}
+\contentsline {section}{\numberline {3.2}Architektur}{6}{section.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.1}Persistenz}{6}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Applikation}{6}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Applikation}{7}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.3}TSP}{7}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.4}ACO}{7}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}Arbeitsweise der Architektur}{7}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.5}Arbeitsweise der Architektur}{8}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Umsetzung der SOLID-Prinzipien}{13}{section.3.3}
+\contentsline {section}{\numberline {3.3}Umsetzung der SOLID-Prinzipien}{14}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Single Responsibility}{13}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}Single Responsibility}{14}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Open / Closed}{14}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.2}Open / Closed}{15}{subsection.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}Liskov Substitution}{14}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.3}Liskov Substitution}{15}{subsection.3.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.4}Interface Segregation}{15}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.4}Interface Segregation}{16}{subsection.3.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.5}Dependency Inversion}{15}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.5}Dependency Inversion}{16}{subsection.3.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Parameterbeschreibung}{16}{section.3.4}
+\contentsline {section}{\numberline {3.4}Parameterbeschreibung}{17}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.1}Tau - $\tau $}{16}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.1}Tau - $\tau $}{18}{subsection.3.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.2}Eta - $\eta $}{17}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Eta - $\eta $}{18}{subsection.3.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.3}Alpha - $\alpha $ und Beta - $\beta $}{17}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.3}Alpha - $\alpha $ und Beta - $\beta $}{18}{subsection.3.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Sensitivit\IeC {\"a}tsanalyse}{17}{section.3.5}
+\contentsline {section}{\numberline {3.5}Sensitivit\IeC {\"a}tsanalyse}{18}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.1}$\alpha $ hoch - $\beta $ niedrig}{18}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.1}$\alpha $ hoch - $\beta $ niedrig}{19}{subsection.3.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.2}$\alpha $ mittel - $\beta $ mittel}{18}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.2}$\alpha $ mittel - $\beta $ mittel}{20}{subsection.3.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.3}$\alpha $ niedrig - $\beta $ hoch}{19}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.3}$\alpha $ niedrig - $\beta $ hoch}{20}{subsection.3.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Ausgew\IeC {\"a}hlte Algorithmen}{20}{section.3.6}
+\contentsline {section}{\numberline {3.6}Ausgew\IeC {\"a}hlte Algorithmen}{21}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.1}Ant - iteration()}{20}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.1}Ant - iteration()}{21}{subsection.3.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.2}Colony - killAnt()}{21}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.2}Colony - killAnt()}{22}{subsection.3.6.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.6.3}Colony - updatePheromone()}{22}{subsection.3.6.3}
 \defcounter {refsection}{0}\relax 
@@ -92,23 +100,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.5}ACO}{27}{subsection.4.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Beschreibung der verwendeten Datenstrukturen}{29}{section.4.2}
+\contentsline {section}{\numberline {4.2}Beschreibung der verwendeten Datenstrukturen}{28}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}BigDecimal}{29}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}BigDecimal}{28}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}ArrayList}{30}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}ArrayList}{29}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}HashMap vs zweidimensionales Array}{31}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.3}HashMap vs zweidimensionales Array}{30}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Beschreibung der Testabdeckung}{32}{section.4.3}
+\contentsline {section}{\numberline {4.3}Beschreibung der Testabdeckung}{31}{section.4.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.4}Beweis der Funktionsf\IeC {\"a}higkeit}{32}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}numerisches Beispiel}{33}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.1}numerisches Beispiel}{32}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.2}a280 drilling problem}{33}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Performance-Analyse und -Optimierung}{34}{section.4.5}
+\contentsline {section}{\numberline {4.5}Performance-Analyse}{34}{section.4.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.5.1}CPU-Auslastung}{35}{subsection.4.5.1}
 \defcounter {refsection}{0}\relax 
@@ -116,7 +124,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.5.3}Anzahl Threads pro Minute}{36}{subsection.4.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.4}Fazit zur Performance}{37}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.4}Fazit zur Performance}{38}{subsection.4.5.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Evaluation der Implementierung}{39}{chapter.5}
 \defcounter {refsection}{0}\relax 
@@ -128,8 +136,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Proof Of Concept}{40}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Fazit}{41}{chapter.7}
+\contentsline {chapter}{\numberline {7}Optimierung der Softwarel\IeC {\"o}sung}{41}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Literaturverzeichnis}{42}{section*.38}
+\contentsline {section}{\numberline {7.1}Ben\IeC {\"o}tigter Heap-Speicher}{41}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Anhang}{43}{chapter*.40}
+\contentsline {section}{\numberline {7.2}Optimierung der Datenbankzugriffe}{41}{section.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.3}Ans\IeC {\"a}tze zur Verbesserung der Distanzwerte}{41}{section.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.3.1}Verringerung der Werte innerhalb der Pheromonmatrix nach einer festen Zeit}{41}{subsection.7.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.3.2}Mutation der Pheromonmatrix}{41}{subsection.7.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}Fazit}{42}{chapter.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Literaturverzeichnis}{43}{section*.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Anhang}{44}{chapter*.45}

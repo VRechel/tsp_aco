@@ -1,7 +1,6 @@
 \documentclass[a4paper, 12pt, oneside]{scrbook}
 
 \input{settings.tex}
-
 \input{variables.tex}
 
 \bibliography{bibliography}
@@ -9,12 +8,15 @@
 \begin{document}
 \frontmatter
 \input{prefix/title.tex}
+\input{prefix/declaration.tex}
 \input{prefix/abstract.tex}
 \input{prefix/abstractDE.tex}
 
 \cleardoublepage
+\input{header_footer.tex}
 \phantomsection
 \tableofcontents
+
 
 \input{prefix/abbreviation.tex}
 %\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
@@ -42,6 +44,7 @@
 \input{content/03_implementierung.tex}
 \input{content/04_evaluation.tex}
 \input{content/05_proofOfConcept.tex}
+\input{content/06_optimierung.tex}
 \input{content/99_fazit.tex}
 
 \backmatter

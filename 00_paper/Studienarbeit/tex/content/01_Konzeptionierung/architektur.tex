@@ -1,17 +1,13 @@
 \section{Architektur}{
 	\label{architektur}
-	Die Architektur wurde inhaltlich so aufgeteilt, dass eine modulare Implementierung möglich ist. So wurden die vier folgenden Bereiche definiert: Persistenz, Applikation, TSP und ACO
+	Die Architektur wurde inhaltlich so aufgeteilt, dass eine modulare Implementierung möglich ist. So wurden die folgenden vier Bereiche definiert: Persistenz, Applikation, TSP und ACO
 	
-	Der Begriff der Persistenz beschreibt in diesem Fall zusätzlich zum dauerhaften Abspeichern der Daten, auch das Einlesen der verschiedenen Problemstellungen.
-	\newline
-	Applikation umfasst den Teil des Programms, der sich nicht direkt mit Daten befasst aber auch nicht zur Problemlösung beiträgt, wie die zwei folgenden Bereiche.
-	\newline
-	Innerhalb des Begriffs TSP werden alle nötigen Parameter und Methoden behandelt, die basierend auf dem \ac{TSP} notwendig werden. 
-	\newline
-	Zuletzt gibt es in der Architektur noch das Feld ACO, welches die komplette Berechnung des zu lösenden Problems übernimmt. In dem Fall, dieser Arbeit handelt es sich um das \ac{TSP}. Allerdings könnte das Problemfeld auch dadurch ausgewechselt werden, dass der Bereich \ac{TSP} durch das neue Problem ersetzt wird.
+	Der Begriff der Persistenz beschreibt in diesem Fall zusätzlich zum dauerhaften Abspeichern der Daten, auch das Einlesen der verschiedenen Problemstellungen. Applikation umfasst den Teil des Programms, der sich nicht direkt mit Daten befasst aber auch nicht zur Problemlösung beiträgt, wie die zwei folgenden Bereiche. Innerhalb des Begriffs TSP werden alle nötigen Parameter und Methoden behandelt, die basierend auf dem \ac{TSP} notwendig werden. Zuletzt gibt es in der Architektur noch das Feld ACO, welches die komplette Berechnung des zu lösenden Problems übernimmt. In dem Fall, dieser Arbeit handelt es sich um das \ac{TSP}. Allerdings könnte das Problemfeld auch dadurch ausgewechselt werden, dass der Bereich \ac{TSP} durch eine  Implementierung des neuen Problems ersetzt wird.
 	
 	\subsection{Persistenz}
-	Um ein starres Definieren des Problems innerhalb der Applikation zu verhindern, werden zu Beginn des Programms alle Parameter, wie Städtematrix, Wahrscheinlichkeiten und Lösungsparameter aus einer gegebenen XML-Datei eingelesen. Durch eine Bearbeitung der XML ist ein einfaches Abändern der Problemstellung möglich. Hierdurch ist auch gesichert, dass die Algorithmen effizient getestet werden können, da mehrere verschiedenen bekannte Testwerte benannt werden können.
+	Um ein starres Definieren des Problems innerhalb der Applikation zu verhindern, werden zu Beginn des Programms alle Parameter, wie Städtematrix, Wahrscheinlichkeiten und Lösungsparameter aus einer gegebenen XML-Datei eingelesen. Durch eine Bearbeitung der XML ist ein einfaches Abändern der Problemstellung möglich. Hierdurch ist auch gesichert, dass die Algorithmen effizient getestet werden können, da mehrere verschiedene bekannte Testwerte benannt werden können.
+	
+	Ebenfalls Teil der Persistenz ist die Verbindung zur \ac{DB}, welche in diesem Fall eine \ac{HSQLDB} ist. Über diese sollen die Ergebnisse jeder Generation abgespeichert werden. Zusätzlich soll jedes Mal wenn eine bessere Route gefunden wird, diese in einer anderen Tabelle abgespeichert inkl. der Nummer der Generation, welche die Verbesserung bewirkt hat. Dadurch ist es möglich nachzuverfolgen, wann welche Verbesserung eingetreten ist und ab wann der Distanzwert stagniert.
 	
 	\subsection{Applikation}
 	Wie bereits genannt, liegt bei der vorliegenden Architektur ein Fokus auf Modularität, Portabilität und Usability. Aber auch auf verlässliche und effiziente Algorithmen muss geachtet werden. Daher wird für die Wahrscheinlichkeitsberechnung die externe Klasse MersenneTwisterFast \footnote{s. http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html} genutzt, welche eine bessere Distribution der Pseudozufallszahlen bieten als die Default-Implementierung in Java.
@@ -19,13 +15,14 @@
 	Ein weiterer Bestandteil des Applikationsbereichs werden das Logging der Arbeitsvorgänge, sowie die zentrale Konfiguration der Problemstellung auf der die Lösung basiert.
 	
 	\subsection{TSP}
-	Der Bereich des TSP definiert sich in dieser Architektur rein durch die Städte-Objekte, welche zur Darstellung der Städtematrix genutzt werden. Der einzige andere Bestandteil ist die zentrale Aufstellung der Städtematrix, die von den restlichen Klassen referenziert wird.
+	Der Bereich des TSP definiert sich in dieser Architektur rein durch die Städte-Objekte, welche zur Darstellung der Städtematrix genutzt werden. Der einzige andere Bestandteil ist die zentrale Aufstellung der Städtematrix, die von den restlichen Klassen referenziert wird. Eine durchdachte Strukturierung der Distanzmatrix zwischen den Städten ist extrem wichtig, da die Performance aller anderen Teile der Applikation auf der Distanzmatrix aufbauen. Ist diese ineffizient oder umständlich aufgebaut, so kann mit dieser auch nicht performant gearbeitet werden.
 	
 	\subsection{ACO}
-	Um den Ameisenalgorithmus umzusetzen sind deutlich mehr Aufwände nötig, als zur Darstellung des TSP. Hier werden mindestens eine Ameisenkolonie benötigt \footnote{Die Architektur würde bei ausreichenden Systemressourcen auch eine parallele Berechnung mehrerer Städtematrizen erlauben},
-	sowie je Kolonie mehrere Ameisen.
-	\newline
-	Die Ameisen werden in der Applikation als einzelne Threads gestartet, die über eine CyclicBarrier kontrolliert werden. Dies erlaubt ein möglichst effizientes Parallelisieren der Lösung.
+	Um den Ameisenalgorithmus umzusetzen sind deutlich mehr Aufwände nötig, als zur Darstellung des TSP. Hier wird mindestens eine Ameisenkolonie benötigt \footnote{Die Architektur würde bei ausreichenden Systemressourcen auch eine parallele Berechnung mehrerer Städtematrizen erlauben}, sowie pro Kolonie mehrere Ameisen. Die Ameisen werden in der Applikation als einzelne Threads gestartet, die über eine CyclicBarrier kontrolliert werden. Dies erlaubt ein möglichst effizientes Parallelisieren der Lösung.
+	
+	In dem Bereich \ac{ACO} gibt es im Konzept mehrere Besonderheiten, welche zu einem besseren Ergebnis führen sollen. Vorhanden sind diese vor allem im Bereich der Kolonie, sowie der Ameisen. Der Kolonie soll es möglich sein, falls eine bessere Route gefunden wird als die bisherige, die neue Route doppelt in der Pheromonmatrix zu gewichten. Die Kolonie belegt also die Strecke zusätzlich zu den Pheromonen der Ameise nochmals mit neuen Pheromonen.
+	
+	Die Ameise hat zum normalen Vorgehen noch einen Filter implementiert, welcher dafür sorgen soll, dass die Wegsuche nicht ab einem Zeitpunkt komplett stagniert und nur noch die gleiche Route befolgt wird. Dieser ``Idiocrazy''\footnote{Benannt nach dem Film ``Idiocrazy'' aus dem Jahr 2006. In der Satire-Komödie wird eine Welt im Jahr 2500 behandelt, die komplett verblödet ist.}-Filter sorgt dafür, dass eine Ameise vor der Berechnung der Wahrscheinlichkeiten, später im Kapitel \ref{parameter} behandelt, zuerst eine Zufallszahl berechnen lässt. Sollte diese Zufallszahl kleiner als ein definierter Wert\footnote{Derzeitiger Standard: 0.5 \%} sein, so bestimmt die Ameise eine zufällige Stadt aus der Menge der erreichbaren aus und geht zu dieser. Sollte der Filter in Kraft treten, werden für den derzeitigen Schritt keinerlei Berechnungen außer den Zufallszahlen durchgeführt. Auch werden die Distanz- und Pheromonwerte ignoriert, wodurch neue Routen erschlossen werden können. In Verbindung mit einer höher gewichteten besten Route kann dieses Verfahren zu einer besseren und schnelleren Berechnung der Routen führen.
 	
 	\input{content/01_Konzeptionierung/architektur_beispiel.tex}
 }

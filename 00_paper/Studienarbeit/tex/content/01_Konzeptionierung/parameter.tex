@@ -1,6 +1,8 @@
 \section{Parameterbeschreibung}{
 \label{parameter}
-	Die Berechnung der optimalen Wegstrecke läuft über eine Wahrscheinlichkeitsrechnung, die jeweils von den einzelnen Threads bzw. Ameisen in jeder Stadt aufs neue durchgeführt wird.
+	Nachdem nun die Strukturen der Architektur genannt wurden und auch die Beachtung von gängigen Prinzipien im Softwaredesign beachtet wurden, muss noch ein Feld analysiert werden. Bereits im numerischen Beispiel wurden Formeln angewendet, welche zur Berechnung verwendet werden. In den folgenden Kapiteln wird die Grundlage zur Arbeitsweise der Ameisen beschrieben.
+	 
+	Die Berechnung der optimalen Wegstrecke läuft über eine Wahrscheinlichkeitsrechnung, die jeweils von den einzelnen Threads bzw. Ameisen in jeder Stadt aufs Neue durchgeführt wird.
 	Dabei werden die Wahrscheinlichkeiten nach folgender Formel berechnet:
 
 	\begin{equation}\label{eq:P}
@@ -17,16 +19,17 @@
 	\end{conditions*}
 	\myequations{Formel zum Berechnen der Gewichtungen bei der Wegwahl}
 
-	Einige der Parameter sind herleitbar, wie zum Beispiel i und j die die Städte abbilden. Ebenso is N lediglich die Menge der Städte, die eine Ameise in einer bestimmten Situation noch besuchen kann. Diese wird Menge wird über den Umstand definiert, dass bereits besuchte Städte "gesperrt" sind.
+	Einige der Parameter sind herleitbar, wie zum Beispiel $i$ und $j$, die die Städte abbilden. Ebenso is $N$ lediglich die Menge der Städte, die eine Ameise in einer bestimmten Situation noch besuchen kann. Diese Menge wird über den Umstand definiert, dass bereits besuchte Städte "gesperrt" sind.
 	
-	Allerdings gibt es auch einige Werte, die genauer beleuchtet werden müssen. Hierbei ist von $\tau$, $\eta$, $\alpha$ und $\beta$ die Rede, welche den zentralen Bereich dieser Formel bilden. Alle vier Parameter zusammen sind ausschlaggebend dafür welche Stadt von der Ameise besucht wird. Im Folgenden werden diese einzeln erklärt und Ihre Funktion dargelegt.
+	Allerdings gibt es auch einige Werte, die genauer beleuchtet werden müssen. Hierbei ist von $\tau$, $\eta$, $\alpha$ und $\beta$ die Rede, welche den zentralen Bereich dieser Formel bilden. Alle vier Parameter zusammen sind ausschlaggebend dafür, welche Stadt von der Ameise besucht wird. Im Folgenden werden diese einzeln erklärt und Ihre Funktion dargelegt.
 	
+	\newpage
 	\subsection{Tau - $\tau$}
-	Tau steht in der dargestellten Formel für den Pheromonwert für die Strecke zwischen i und j. Dieser wird von der Gesamtheit der Ameisen einer Kolonie bestimmt. Die Berechnung des Pheromonwerts wird im Kapitel \ref{algorithms} noch behandelt. Von der Ameise wird also der Wert der Strecke bestimmt und mit Eta verrechnet.
+	Tau steht in der dargestellten Formel für den Pheromonwert für die Strecke zwischen i und j. Dieser wird von der Gesamtheit der Ameisen einer Kolonie bestimmt. Die Berechnung des Pheromonwerts wird im Kapitel \ref{algorithms} noch behandelt. Von der Ameise wird der Pheromonwert der Strecke bei der Kolonie erfragt und dann mit Eta verrechnet.
 	
 	\subsection{Eta - $\eta$}
-	Eta steht hierbei für einen Wert der nur über Konstanten bestimmt werden kann. Hierbei wird die Länge der Strecke mit einer Konstanten verrechnet, wodurch ein Wert entsteht, der für diese Strecke konstant bleibt. Es lässt sich somit sagen, dass Eta bei einer zu Beginn normalisierten Pheromonverteilung für die Ameise attraktiver erscheint.
+	Eta steht für einen Wert der nur über Konstanten bestimmt werden kann. In dem derzeitigen Konzept wird als Konstante der Kehrwert der Distanz der Strecke gewählt. Es sei hier genannt, dass aber auch eine andere Berechnung möglich ist. So kann die Distanz auch mit einem konstanten Faktor verrechnet werden. Generell lässt sich sagen, dass Eta bei einer zu Beginn normalisierten Pheromonverteilung für die Ameise attraktiver erscheint.
 	
 	\subsection{Alpha - $\alpha$ und Beta - $\beta$}
-	Die beiden konstanten Parameter Alpha und Beta beschreiben die prozentuale Wahrscheinlichkeit, ob eine Ameise der Pheromonspur folgt oder einen neuen Pfad erkundet. Da der Alpha-Wert in Beziehung mit dem Pheromonwert steht, kann durch das Festsetzen bestimmt werden ob dieser Teil der Multiplikation höher ausfällt oder geringer. Dabei werden die Werte immer so gewählt, dass $\alpha + \beta = 1$ gilt. Dies verhindert eine unnötige Berechnung großer Zahlung und stellt trotzdem die Funktionsfähigkeit sicher.
+	Die beiden konstanten Parameter Alpha und Beta beschreiben die prozentuale Wahrscheinlichkeit, ob eine Ameise der Pheromonspur folgt oder einen anderen Pfad erkundet. Da der Alpha-Wert in Beziehung mit dem Pheromonwert steht, kann durch das Festsetzen bestimmt werden ob dieser Teil der Multiplikation höher gewichtet wird oder geringer. Generell können die Parameter beliebig gewählt werden. Allerdings ist von zu großen Zahlen abzuraten, da diese die Berechnungszeit teilweise deutlich erhöhen.
 }

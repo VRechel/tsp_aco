@@ -161,6 +161,6 @@ public class ColonyTest {
         }
 
         Assert.assertEquals(281,tempRoute.size());
-        //Assert.assertEquals(2708, colony.getDistance(tempRoute),0.);
+        Assert.assertEquals(2586.76, colony.getDistance(tempRoute),0.01);
     }
 }

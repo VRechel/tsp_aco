@@ -30,4 +30,66 @@
   publisher = {Galileo Press},
 }
 
+@TechReport{Smyth2007,
+  author      = {Tamara Smyth},
+  title       = {CMPT 126: Lecture 11 Collections: Abstract Data Types and Dynamic Representation},
+  institution = {Simon Fraser University},
+  year        = {2007},
+  date        = {2007-10-30},
+}
+
+@TechReport{Martin2000,
+  author      = {Robert C. Martin},
+  title       = {Design Principles and Design Patterns},
+  institution = {objectmentor.com},
+  year        = {2000},
+  journal     = {objectmentor.com},
+}
+
+@Book{Martin2000Main,
+  author = {Robert C. Martin},
+  title  = {More C++ Gems},
+  year   = {2000},
+}
+
+@Article{MartinDependencyInversion,
+  author  = {Robert C. Martin},
+  title   = {The Dependency Inversion Principle},
+  journal = {C++ Report},
+  year    = {1996},
+  date    = {1996-05},
+}
+
+@Article{MartinInterfaceSegregation,
+  author  = {Robert C. Martin},
+  title   = {The Interface Segregation Principle},
+  journal = {C++ Report},
+  year    = {1996},
+  date    = {1996-06},
+}
+
+@Article{MartinLiskovSubstitution,
+  author  = {Robert C. Martin},
+  title   = {The Liskov Substitution Principle},
+  journal = {C++ Report},
+  year    = {1996},
+  date    = {1996-03},
+}
+
+@Article{MartinOpen-Closed,
+  author  = {Robert C. Martin},
+  title   = {The Open-Closed Principle},
+  journal = {C++ Report},
+  year    = {1996},
+  date    = {1996-01},
+}
+
+@Article{MartinSingleResponsibility,
+  author  = {Robert C. Martin},
+  title   = {The Single Responsibility Principle},
+  journal = {Principles of Object Oriented Design},
+  year    = {2003},
+  date    = {2003},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}

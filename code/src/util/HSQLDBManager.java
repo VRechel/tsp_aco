@@ -32,7 +32,7 @@ public enum HSQLDBManager {
     }
 
     /**
-     * The database can be initiliazed by dropping all existing tables and creating them again.
+     * The database can be initialized by dropping all existing tables and creating them again.
      */
     public void init(){
         dropTable();
@@ -132,7 +132,7 @@ public enum HSQLDBManager {
     /**
      * This method can be called to select data from a table. It has to called with a finished statement which can be executed.
      *
-     * @param   sqlStatement    The SQL statement which will be excuted on the database
+     * @param   sqlStatement    The SQL statement which will be executed on the database
      * @return  ResultSet       The results of the statement
      */
     synchronized ResultSet select(String sqlStatement) {
@@ -146,7 +146,7 @@ public enum HSQLDBManager {
     }
 
     /**
-     * This method takes a given table and genereates a SQL statement which gets every data from that table.
+     * This method takes a given table and generates a SQL statement which gets every data from that table.
      * The statement will then be executed on the database.
      *
      * @param   table       The table on which a select will be executed
